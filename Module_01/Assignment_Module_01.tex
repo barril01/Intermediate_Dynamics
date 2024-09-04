@@ -50,10 +50,323 @@
 
 \begin{document}
 
-\subsection*{Section}
-\subsubsection*{Question}
+\subsection*{EXERCISE 2.11}
+\subsubsection*{A particle slides along the hyperbolic paraboloidal surface $\bm{z = xy/2}$ such that $\bm{x = 6\cos(ku)}$,
+$\bm{y = -6\sin(ku)}$, where $\bm{x}$, $\bm{y}$, and in $\bm{z}$ are in meters and $\bm{u}$ is a parameter.
+Determine the path variable unit vectors,
+the radius of curvature,
+and the torsion of the path at the position where $\bm{ku = 2\pi/3}$}
 
-$$ x(k + 1) = G x(k) + H u(k) $$
+Solving for $r'$, $r''$ and $r'''$:
+
+\begin{equation*}
+\begin{aligned}
+\bar{r}' &= \left[\begin{array}{c} -6\,k\,\sin\left(k\,u\right)\\ -6\,k\,\cos\left(k\,u\right)\\ 18\,k\,{\sin\left(k\,u\right)}^2-18\,k\,{\cos\left(k\,u\right)}^2 \end{array}\right]
+&= &\left[\begin{array}{c} -5.1962\,k\\ 3\,k\\ 9\,k \end{array}\right]\\
+\bar{r}'' &= \left[\begin{array}{c} -6\,k^2\,\cos\left(k\,u\right)\\ 6\,k^2\,\sin\left(k\,u\right)\\ 72\,k^2\,\cos\left(k\,u\right)\,\sin\left(k\,u\right) \end{array}\right]
+&= &\left[\begin{array}{c} 3\,k^2\\ 5.1962\,k^2\\ -31.1769\,k^2 \end{array}\right] \\
+\bar{r}''' &= \left[\begin{array}{c} 6\,k^3\,\sin\left(k\,u\right)\\ 6\,k^3\,\cos\left(k\,u\right)\\ 72\,k^3\,{\cos\left(k\,u\right)}^2-72\,k^3\,{\sin\left(k\,u\right)}^2 \end{array}\right]
+&= &\left[\begin{array}{c} 5.1962\,k^3\\ -3\,k^3\\ -36\,k^3 \end{array}\right]\\
+\end{aligned}
+\end{equation*}
+
+Solving for $s'$, $s''$ and $s'''$:
+
+\begin{equation*}
+    \begin{aligned}
+    {s}' &= \sqrt{\bar{r}' \cdot \bar{r}'} &= & 10.8167\,k\\
+    {s}'' &= \frac{(\bar{r}' \cdot \bar{r}'')}{s'} &= & -25.9408\,k^2 \\
+    {s}''' &= \frac{\bar{r}' \cdot \bar{r}'''+\bar{r}'' \cdot \bar{r}''}{s'} -
+    \frac{(\bar{r}' \cdot \bar{r}'')^2}{(\bar{r}' \cdot \bar{r}')^{3/2}} &= & -2.3041\,k^3\\
+    \end{aligned}
+\end{equation*}
+
+Computing the radius of curvature, $\rho$:
+\begin{answer}
+\begin{equation*}
+    \begin{aligned}
+        \rho &= \frac{{s'}^3}{\sqrt{(\bar{r}'' \cdot \bar{r}''){s'}^2 - (\bar{r}' \cdot \bar{r}'')^2}}\\
+        &= 3\frac{(9\cos(4ku) + 11)^{3/2}}{\sqrt{(47 - 27\cos(4ku))}} \\
+        &= 6.3917 \ \ \textbf{m}
+    \end{aligned}
+\end{equation*}
+\end{answer}
+
+Compute the tangent direction:
+\begin{answer}
+$$ \bar{e}_t = \frac{\bar{r}'}{{s'}} = 
+\left[\begin{array}{r} -0.4804\\ 0.2774\\ 0.8321 \end{array}\right]$$
+\end{answer}
+
+Compute the normal direction:
+\begin{answer}
+$$ \bar{e}_n = \frac{\rho}{{s'}^4}\left(\bar{r}''{s'}^2 - \bar{r}' (\bar{r}' \cdot \bar{r}'')\right)
+=  \left[\begin{array}{r} -0.5169\\ 0.6769\\ -0.5241 \end{array}\right]$$
+\end{answer}
+
+Compute the binormal direction:
+\begin{answer}
+$$ \bar{e}_b = \bar{e}_t \times \bar{e}_n = 
+\left[\begin{array}{r} -0.7086\\ -0.6818\\ -0.1818 \end{array}\right]$$
+\end{answer}
+
+Knowing that:
+
+$$ \frac{1}{\tau} = \frac{d \bar{e}_n}{d s} \cdot \bar{e}_b $$
+
+Since the path is parameterized in u, we can write that:
+
+$$ \frac{d \bar{e}_n}{d u} = \frac{d \bar{e}_n}{d s}\frac{d s}{d u} = 
+\frac{d \bar{e}_n}{d u} s'$$
+
+Or:
+
+$$ \frac{d \bar{e}_n}{d s} = \frac{d \bar{e}_n}{d u} \frac{1}{s'} $$
+
+Computing $\frac{d \bar{e}_n}{d u}$:
+
+\begin{equation*}
+\begin{aligned}
+\frac{d }{d u}\left(\frac{1}{\rho}\bar{e}_n\right)
+&= -\frac{\rho'}{\rho^2} \bar{e}_n + \frac{1}{\rho}\bar{e}_n'\\
+&= -3\frac{r'' s' - r's''}{{s'}^4}{s''}
++ \frac{r''' s' + r''s'' - r''s'' - r's'''}{(s')^3}
+\end{aligned}
+\end{equation*}
+
+We can write this as:
+
+\begin{equation*}
+    \begin{aligned}
+    -\frac{\rho'}{\rho^2} \bar{e}_n + \frac{1}{\rho}\bar{e}_n'
+    &= -3\frac{r'' s' - r's''}{{s'}^4}{s''}
+    + \frac{r''' s' + r''s'' - r''s'' - r's'''}{(s')^3}
+    \end{aligned}
+\end{equation*}
+
+If we multiply both sides by $\bar{e}_b$:
+
+\begin{equation*}
+    \begin{aligned}
+    -\frac{\rho'}{\rho^2} \bar{e}_n \cdot \bar{e}_b + \frac{1}{\rho}\bar{e}_n' \cdot \bar{e}_b
+    &= \left(-3\frac{r'' s' - r's''}{{s'}^4}{s''}
+    + \frac{r''' s' + r''s'' - r''s'' - r's'''}{(s')^3}\right) \cdot \bar{e}_b
+    \end{aligned}
+\end{equation*}
+
+Since $\bar{e}_n \cdot \bar{e}_b = 0$:
+
+\begin{equation*}
+    \begin{aligned}
+        \frac{d \bar{e}_n}{d u} \cdot \bar{e}_b
+    &= \left(-3\frac{r'' s' - r's''}{{s'}^4}{s''}
+    + \frac{r''' s' + r''s'' - r''s'' - r's'''}{(s')^3}\right) \cdot \bar{e}_b
+    \end{aligned}
+\end{equation*}
+
+Since:
+
+$$ \frac{d \bar{e}_n}{d s} = \frac{d \bar{e}_n}{d u} \frac{1}{s'} $$
+
+This gives us:
+
+\begin{equation*}
+    \begin{aligned}
+    \frac{d \bar{e}_n}{d s} \cdot \bar{e}_b
+    &= \left(-3\frac{r'' s' - r's''}{{s'}^4}{s''}
+    + \frac{r''' s' + r''s'' - r''s'' - r's'''}{(s')^3}\right)\frac{1}{s'} \cdot \bar{e}_b \equiv \frac{1}{\tau}
+    \end{aligned}
+\end{equation*}
+
+Evaluating this gives us:
+
+\begin{equation*}
+    \begin{aligned}
+    \frac{1}{\tau} = 0.0248
+    \end{aligned}
+\end{equation*}
+
+Finally:
+
+\begin{answer}
+$$ \tau = 40.3333 \ \ \textbf{m} $$
+\end{answer}
+
+\subsection*{EXERCISE 2.29}
+\subsection*{In an Eulerian description of fluid flow,
+particle velocity components are described as functions of the current position of a particle.
+The polar velocity components of fluid particles in a certain flow are known to be $\bm{v_R = (A/R)\cos\theta}$,
+$\bm{v_\theta = (A/R)\sin\theta}$, where $\bm{R}$, $\bm{\theta}    $ are the polar coordinates of the particle.
+Determine the corresponding expressions for the acceleration.}
+
+$$ v_R      = \left(\frac{A}{R}\right)\cos(\theta) $$
+$$ v_\theta = \left(\frac{A}{R}\right)\sin(\theta) $$
+
+The acceleration can be expressed by equation 2.3.14 from the textbook where the $\bar{e}_z$ term is zero:
+
+$$ \bar{a} = \left( \ddot{R} - R \dot{\theta}^2 \right) \bar{e}_R +
+\left( R \ddot{\theta} - 2 \dot{R} \dot{\theta} \right) \bar{e}_\theta $$
+
+Since,
+
+\begin{equation*}
+\begin{aligned}
+\dot{R} &= v_R = \left(\frac{A}{R}\right)\cos(\theta)\\
+R \dot{\theta} &= v_\theta \ \ \rightarrow \ \ \dot{\theta} = \frac{v_\theta}{R} = \left(\frac{A}{R^2}\right)\sin(\theta) 
+\end{aligned}
+\end{equation*}
+
+We can solve for the remaining undefined terms $\ddot{R}$ and $\ddot{\theta}$
+
+\begin{equation*}
+   \begin{aligned}
+       \ddot{R} &= \frac{\partial \dot{R}}{\partial R} \dot{R} + \frac{\partial \dot{R}}{\partial \theta} \dot{\theta}\\
+       &= -\frac{A^2\,{\cos\left(\theta \right)}^2}{R^3}
+       -\frac{A^2\,{\sin\left(\theta \right)}^2}{R^3}\\
+       &= -\frac{A^2}{R^3}\\
+       \ddot{\theta} &= \frac{\partial \dot{\theta}}{\partial R} \dot{R} + \frac{\partial \dot{\theta}}{\partial \theta} \dot{\theta}\\
+       &= -\frac{2\,A^2}{R^4} \cos\left(\theta \right)\,\sin\left(\theta \right)
+       +\frac{A^2}{R^4}\cos\left(\theta \right)\,\sin\left(\theta \right)\\
+       &= -\frac{A^2}{R^4} \cos\left(\theta \right)\,\sin\left(\theta \right)\\
+       &= -\frac{1}{2}\frac{A^2}{R^4}\sin\left(2\,\theta \right)
+   \end{aligned}
+\end{equation*}
+
+The expressions for acceleration are:
+
+\begin{answer}
+\begin{equation*}
+   \begin{aligned}
+       \bar{a} &= \left( \ddot{R} - R \dot{\theta}^2 \right) \bar{e}_R +
+           \left( R \ddot{\theta} - 2 \dot{R} \dot{\theta} \right) \bar{e}_\theta\\
+       \ddot{R} &= -\frac{A^2}{R^3}\\
+       \ddot{\theta} &= -\frac{1}{2}\frac{A^2}{R^4}\sin\left(2\,\theta \right)
+   \end{aligned}
+\end{equation*}
+\end{answer}
+
+\subsection*{EXERCISE 2.44}
+
+\subsection*{Observation of a small mass attached to the end of the flexible bar reveals that the path of the particle is essentially an ellipse in the horizontal plane.
+The Cartesian coordinates for this motion are measured as $\bm{x = A \sin (\theta)}$, $\bm{y = 2A \cos (\theta)}$, $\bm{\theta = \omega t}$,
+where $\bm{A}$ and $\bm{\omega}$ are constants.
+Determine the speed, the rate of change of the speed,
+and the normal acceleration at the instants when $\bm{\omega t = 0}$, $\bm{\pi/3}$, and $\bm{\pi/2}$.}
+
+Given the definition for $x$ and $y$, we can solve for the following:
+
+\begin{equation*}
+   \begin{aligned}
+       \dot{x} &= A\,\omega \,\cos\left(\omega \,t\right)\\
+       \dot{y} &= -2\,A\,\omega \,\sin\left(\omega \,t\right)\\
+       \ddot{x} &= -A\,\omega ^2\,\sin\left(\omega \,t\right)\\
+       \ddot{y} &= -2\,A\,\omega ^2\,\cos\left(\omega \,t\right)
+   \end{aligned}
+\end{equation*}
+
+Therefore the velocity and acceleration are given by,
+
+\begin{equation*}
+   \begin{aligned}
+       \bar{v} &= A\,\omega \,\cos\left(\omega \,t\right)\hat{i}-2\,A\,\omega \,\sin\left(\omega \,t\right)\hat{j}\\
+       &= A\,\omega\left( \,\cos\left(\omega \,t\right)\hat{i}-2 \,\sin\left(\omega \,t\right)\hat{j}\right)\\
+   \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+   \begin{aligned}
+       \bar{a} &= -A\,\omega ^2\,\sin\left(\omega \,t\right)\hat{i} -2\,A\,\omega ^2\,\cos\left(\omega \,t\right)\hat{j}\\
+       &= -A\,\omega ^2\,\left(\sin\left(\omega \,t\right)\hat{i}+2\,\cos\left(\omega \,t\right)\hat{j}\right)
+   \end{aligned}
+\end{equation*}
+
+Knowing that $\bar{v} = r'$ and solving for:
+
+$$ s' = \left( \bar{r}' \cdot \bar{r}' \right)^\frac{1}{2} = A\,\omega \left( {\cos\left(\omega \,t\right)}^2+4\,{\sin\left(\omega \,t\right)}^2 \right)^\frac{1}{2}
+= A\,\omega \left( 1+3\,{\sin\left(\omega \,t\right)}^2 \right)^\frac{1}{2}$$
+
+The speed is defined as:
+
+\begin{answer}
+$$ v = A\,\omega \left( 1+3\,{\sin\left(\omega \,t\right)}^2 \right)^\frac{1}{2} $$
+\end{answer}
+
+We can solve for the tangent vector:
+
+$$ \bar{e}_t  \equiv \frac{\bar{r}'}{s'} = \frac{1}{{\left(1+ 3\,{\sin\left(\omega \,t\right)}^2\right)}^\frac{1}{2}}
+\left[\begin{array}{c} {\cos\left(\omega \,t\right)} \hat{i}\\ {2\,\sin\left(\omega \,t\right)}\hat{j} \end{array}\right]$$
+
+Rate of change of speed is:
+
+\begin{answer}
+$$ \dot{v} = \bar{a} \cdot \bar{e}_t =
+\frac{3\,A\,\omega ^2\,\cos\left(\omega \,t\right)\,\sin\left(\omega \,t\right)}{{\left(1+ 3\,{\sin\left(\omega \,t\right)}^2\right)}^\frac{1}{2}}$$
+\end{answer}
+
+Given the following definition for acceleration
+
+$$ \bar{a} = \dot{v} \bar{e}_t + \frac{v^2}{\rho}\bar{e}_n \ \ \rightarrow  \frac{v^2}{\rho}\bar{e}_n = \bar{a} - \dot{v} \bar{e}_t  $$
+
+The normal component of acceleration is 
+
+\begin{equation*}
+    \begin{aligned}
+\bar{a} \cdot \bar{e}_n  =  \frac{v^2}{\rho} 
+&= \left(\frac{4\,\omega ^4\,A^2\,\cos\left(\omega \,t\right)^2}{{\left(3\,{\sin\left(\omega \,t\right)}^2+1\right)}^2}+\frac{\omega ^4\,A^2\,\sin\left(\omega \,t\right)^2\,{\left(4\right)}^2}{{\left(3\,{\sin\left(\omega \,t\right)}^2+1\right)}^2}\right)^\frac{1}{2}\\
+&= \omega^2\,A\left(\frac{4\,\cos\left(\omega \,t\right)^2+ \sin\left(\omega \,t\right)^2\,{\left(4\right)}^2}{{\left(3\,{\sin\left(\omega \,t\right)}^2+1\right)}^2}\right)^\frac{1}{2}\\
+&= 2\omega^2\,A\left(\frac{\cos\left(\omega \,t\right)^2+ \sin\left(\omega \,t\right)^2\,{\left(4\right)}}{{\left(3\,{\sin\left(\omega \,t\right)}^2+1\right)}^2}\right)^\frac{1}{2}\\
+&= 2\omega^2\,A\left(\frac{1+ 3\sin\left(\omega \,t\right)^2}{{\left(3\,{\sin\left(\omega \,t\right)}^2+1\right)}^2}\right)^\frac{1}{2}\\
+&= 2\omega^2\,A\left(\frac{1}{{\left(3\,{\sin\left(\omega \,t\right)}^2+1\right)}}\right)^\frac{1}{2}\\
+&= 2\omega^2\,A\frac{1}{{\left(3\,{\sin\left(\omega \,t\right)}^2+1\right)}^\frac{1}{2}}\\
+\end{aligned}
+\end{equation*}
+
+Therefore:
+
+\begin{answer}
+\begin{equation*}
+\begin{aligned}
+\bar{a} \cdot \bar{e}_n
+&= \frac{2\omega^2\,A}{{\left(3\,{\sin\left(\omega \,t\right)}^2+1\right)}^\frac{1}{2}}\\
+\end{aligned}
+\end{equation*}
+\end{answer}
+
+When $\bm{\omega t = 0}$:
+
+\begin{answer}
+\begin{equation*}
+    \begin{aligned}
+    v &= A\,\omega \\
+    \dot{v} &= 0 \\    
+    \bar{a} \cdot \bar{e}_n &= 2\,\omega^2\,{A}
+    \end{aligned}
+\end{equation*}
+\end{answer}
+
+When $\bm{\omega t = \pi/2}$:
+
+\begin{answer}
+\begin{equation*}
+    \begin{aligned}
+    v &= \frac{\sqrt{13}\,A\,\omega }{2} \\
+    \dot{v} &= \frac{3\,\sqrt{3}\,\sqrt{13}\,A\,\omega ^2}{26} \\    
+    \bar{a} \cdot \bar{e}_n &= {\frac{4\,\omega ^2\,A}{\sqrt{13}}}
+    \end{aligned}
+\end{equation*}
+\end{answer}
+
+When $\bm{\omega t = \pi/2}$:
+
+\begin{answer}
+\begin{equation*}
+    \begin{aligned}
+    v &= 2\,A\,\omega \\
+    \dot{v} &= 0 \\    
+    \bar{a} \cdot \bar{e}_n &= {\omega ^2\,{A}}
+    \end{aligned}
+\end{equation*}
+\end{answer}
 
 % \color{white}
 % \hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize]{matlab}
