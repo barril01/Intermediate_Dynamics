@@ -139,11 +139,11 @@ The following sketch shows the rotations:
 % Text Node
 \draw (468,41) node [anchor=north west][inner sep=0.75pt]   [align=left] {$z''$};
 % Text Node
-\draw (86,11) node [anchor=north west][inner sep=0.75pt]   [align=left] {\underline{\textbf{Rotation 1}}};
+\draw (86,10) node [anchor=north west][inner sep=0.75pt]   [align=left] {\underline{\textbf{Rotation 1}}};
 % Text Node
 \draw (267,10) node [anchor=north west][inner sep=0.75pt]   [align=left] {\underline{\textbf{Rotation 2}}};
 % Text Node
-\draw (449,9) node [anchor=north west][inner sep=0.75pt]   [align=left] {\underline{\textbf{Rotation 3}}};
+\draw (449,10) node [anchor=north west][inner sep=0.75pt]   [align=left] {\underline{\textbf{Rotation 3}}};
 \end{tikzpicture}
 \end{center}
 \end{answer}
@@ -160,13 +160,39 @@ This rotation matrix is defined by the following three sequential rotations:
 
 The overall rotation matrix $R$ that maps the $XYZ$ frame to the body-fixed $xyz$ frame is:
 
-$$ R = R_1(\psi) R_2(\theta) R_3(\phi) $$
+$$ R = R_3(\phi)\ R_2(\theta)\ R_1(\psi) $$
 
 Which becomes:
 
 \begin{answer}
-$$ \scriptsize R = \left[\begin{array}{ccc} \cos\left(\psi \right)\,\cos\left(\theta \right) & \cos\left(\phi \right)\,\sin\left(\psi \right)+\cos\left(\psi \right)\,\sin\left(\phi \right)\,\sin\left(\theta \right) & \sin\left(\phi \right)\,\sin\left(\psi \right)-\cos\left(\phi \right)\,\cos\left(\psi \right)\,\sin\left(\theta \right)\\ -\cos\left(\theta \right)\,\sin\left(\psi \right) & \cos\left(\phi \right)\,\cos\left(\psi \right)-\sin\left(\phi \right)\,\sin\left(\psi \right)\,\sin\left(\theta \right) & \cos\left(\psi \right)\,\sin\left(\phi \right)+\cos\left(\phi \right)\,\sin\left(\psi \right)\,\sin\left(\theta \right)\\ \sin\left(\theta \right) & -\cos\left(\theta \right)\,\sin\left(\phi \right) & \cos\left(\phi \right)\,\cos\left(\theta \right) \end{array}\right] $$
+$$ \scriptsize R(\phi,\theta,\psi) = \left[\begin{array}{ccc} 
+    \cos\left(\psi \right)\cos\left(\theta \right) &
+    \cos\left(\theta \right)\sin\left(\psi \right) &
+    -\sin\left(\theta \right)\\
+    \cos\left(\psi \right)\sin\left(\phi \right)\sin\left(\theta \right)-\cos\left(\phi \right)\sin\left(\psi \right) & 
+    \cos\left(\phi \right)\cos\left(\psi \right)+\sin\left(\phi \right)\sin\left(\psi \right)\sin\left(\theta \right) & 
+    \cos\left(\theta \right)\sin\left(\phi \right)\\
+    \sin\left(\phi \right)\sin\left(\psi \right)+\cos\left(\phi \right)\cos\left(\psi \right)\sin\left(\theta \right) &
+    \cos\left(\phi \right)\sin\left(\psi \right)\sin\left(\theta \right)-\cos\left(\psi \right)\sin\left(\phi \right) &
+    \cos\left(\phi \right)\cos\left(\theta \right)
+\end{array}\right] $$
 \end{answer}
+
+This makes sense,
+as if I take the transpose of this matrix,
+I see the matrix in the space-fixed form that I am used to seeing the transform in the aerospace industry:
+
+$$ \scriptsize R(\phi,\theta,\psi)' = \left[\begin{array}{ccc}
+    \cos\left(\psi \right)\,\cos\left(\theta \right) &
+    \cos\left(\psi \right)\,\sin\left(\phi \right)\,\sin\left(\theta \right)-\cos\left(\phi \right)\,\sin\left(\psi \right) &
+    \sin\left(\phi \right)\,\sin\left(\psi \right)+\cos\left(\phi \right)\,\cos\left(\psi \right)\,\sin\left(\theta \right)\\
+    \cos\left(\theta \right)\,\sin\left(\psi \right) &
+    \cos\left(\phi \right)\,\cos\left(\psi \right)+\sin\left(\phi \right)\,\sin\left(\psi \right)\,\sin\left(\theta \right) &
+    \cos\left(\phi \right)\,\sin\left(\psi \right)\,\sin\left(\theta \right)-\cos\left(\psi \right)\,\sin\left(\phi \right)\\
+    -\sin\left(\theta \right) &
+    \cos\left(\theta \right)\,\sin\left(\phi \right) &
+    \cos\left(\phi \right)\,\cos\left(\theta \right)
+\end{array}\right] $$
 
 \subsection*{Problem 2: EXERCISE 3.18}
 \subsubsection*{A hydraulic cylinder allows the length of arm $\bm{AB}$ to vary,
