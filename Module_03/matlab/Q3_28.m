@@ -8,3 +8,5 @@
 %     relative to the xyz axes defined in the sketch. Briefly explain your answer.
 % (c) Describe the angular velocity and angular acceleration of the rotor in terms of
 %     compo- nents relative to xyz.
+
+
