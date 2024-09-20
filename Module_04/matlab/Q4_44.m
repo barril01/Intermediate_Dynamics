@@ -62,7 +62,9 @@ eqns = [ 0.4 == [1,0,0]*v_A
 soln = solve(eqns,...
     [phi_c,beta_dot,Psi_c,phi_dot,Psi_dot]);
 
-disp(['Psi     :',latex(soln.Psi_c(1)*180/pi)])
-disp(['Psi_dot :',latex(soln.Psi_dot(1))])
-disp(['beta_dot:',latex(soln.beta_dot(1))]) 
-disp(['phi_dot :',latex(soln.phi_dot(1))])
+num = 1;
+
+disp(['Psi     :',latex(soln.Psi_c(num)*180/pi)])
+disp(['Psi_dot :',latex(soln.Psi_dot(num))])
+disp(['beta_dot:',latex(soln.beta_dot(num))]) 
+disp(['phi_dot :',latex(soln.phi_dot(num))])
