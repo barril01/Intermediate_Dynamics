@@ -50,367 +50,136 @@
 
 \begin{document}
 
-\subsection*{EXERCISE 3.28}
-\subsubsection*{The entire system rotates about the vertical axis at constant angular speed $\bm{\omega_1}$,
-and the rotation rate $\bm{\omega_2}$ of the rotor relative to bar $\bm{BC}$ also is constant.
+\subsection*{EXERCISE 4.39}
+\subsubsection*{Gear A spins relative to its shaft,
+which rotates at variable rate $\bm{\Omega_1}$ about the horizontal axis.
+Gear B rotates at the variable rate $\bm{\Omega_2}$.
+Determine the angular velocity and angular acceleration of gear A.}
+
 \begin{figure}[H]
     \centering
-    \includegraphics[frame]{images/Q3_28.png}
-\end{figure}}
+    \includegraphics[frame]{images/Q4_39.png}
+\end{figure}
 
-\subsubsection*{(a) Describe the angular velocity of the rotor in terms of a superposition of simple rotations.}
 
-Sketching out the frames of rotation relative to each other:
+\subsection*{EXERCISE 4.44}
+\subsubsection*{The disk rolls without slipping over the horizontal XY plane.
+At the instant when $\bm{\beta = 36.87^\circ}$,
+the X and Y components of the velocity of point B on the horizontal diameter of the disk are 8 m/s and -4 m/s,
+respectively, and the corresponding velocity components of center A at this instant are 4 m/s and 2 m/s.
+Determine the precession angle $\bm{\Psi}$ between the horizontal diameter BAC and the X axis,
+and also evaluate the precession, nutation, and spin rates.}
 
-\begin{center}
-\tikzset{
-pattern size/.store in=\mcSize, 
-pattern size = 5pt,
-pattern thickness/.store in=\mcThickness, 
-pattern thickness = 0.3pt,
-pattern radius/.store in=\mcRadius, 
-pattern radius = 1pt}
-\makeatletter
-\pgfutil@ifundefined{pgf@pattern@name@_3f955ijae}{
-\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_3f955ijae}
-{\pgfqpoint{-\mcThickness}{-\mcThickness}}
-{\pgfpoint{\mcSize}{\mcSize}}
-{\pgfpoint{\mcSize}{\mcSize}}
-{
-\pgfsetcolor{\tikz@pattern@color}
-\pgfsetlinewidth{\mcThickness}
-\pgfpathmoveto{\pgfpointorigin}
-\pgfpathlineto{\pgfpoint{0}{\mcSize}}
-\pgfusepath{stroke}
-}}
-\makeatother
-
-% Pattern Info
- 
-\tikzset{
-pattern size/.store in=\mcSize, 
-pattern size = 5pt,
-pattern thickness/.store in=\mcThickness, 
-pattern thickness = 0.3pt,
-pattern radius/.store in=\mcRadius, 
-pattern radius = 1pt}
-\makeatletter
-\pgfutil@ifundefined{pgf@pattern@name@_6pdewzxwt}{
-\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_6pdewzxwt}
-{\pgfqpoint{-\mcThickness}{-\mcThickness}}
-{\pgfpoint{\mcSize}{\mcSize}}
-{\pgfpoint{\mcSize}{\mcSize}}
-{
-\pgfsetcolor{\tikz@pattern@color}
-\pgfsetlinewidth{\mcThickness}
-\pgfpathmoveto{\pgfpointorigin}
-\pgfpathlineto{\pgfpoint{0}{\mcSize}}
-\pgfusepath{stroke}
-}}
-\makeatother
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,269); %set diagram left start at 0, and has height of 269
-
-%Straight Lines [id:da20435224588937562] 
-\draw [line width=1.5]    (314,151) -- (315,61) ;
-%Straight Lines [id:da03445781531687486] 
-\draw    (314,151) -- (411,152) ;
-%Straight Lines [id:da7893099740949647] 
-\draw [line width=0.75]    (358,85) -- (314,151) ;
-%Straight Lines [id:da8958798831337074] 
-\draw [line width=0.75]    (314,151) -- (366,225) ;
-%Straight Lines [id:da3609400739420203] 
-\draw [pattern=_3f955ijae,pattern size=6pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={rgb, 255:red, 0; green, 0; blue, 0}][line width=0.75]  [dash pattern={on 4.5pt off 4.5pt}]  (314,151) -- (315,241) ;
-%Curve Lines [id:da8730659221398798] 
-\draw    (336,118) .. controls (334,101) and (318,103) .. (314.5,106) ;
-%Curve Lines [id:da41577213022532145] 
-\draw    (314.5,196) .. controls (324.5,204) and (341,186) .. (336,182) ;
-%Straight Lines [id:da6094981848974355] 
-\draw [pattern=_6pdewzxwt,pattern size=6pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={rgb, 255:red, 0; green, 0; blue, 0}][line width=0.75]  [dash pattern={on 4.5pt off 4.5pt}]  (314,151) -- (276,87) ;
-%Curve Lines [id:da6552705712368743] 
-\draw    (314.5,106) .. controls (300,101.5) and (295.5,110) .. (292,113) ;
-
-% Text Node
-\draw (366,220) node [anchor=north west][inner sep=0.75pt]   [align=left] {$x$};
-% Text Node
-\draw (414.54,143.31) node [anchor=north west][inner sep=0.75pt]   [align=left] {$y$};
-% Text Node
-\draw (360,68) node [anchor=north west][inner sep=0.75pt]   [align=left] {$z$};
-% Text Node
-\draw (308,43) node [anchor=north west][inner sep=0.75pt]   [align=left] {$Z$};
-% Text Node
-\draw (298,144) node [anchor=north west][inner sep=0.75pt]   [align=left] {$C$};
-% Text Node
-\draw (313.5,177) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize $40^\circ$}};
-% Text Node
-\draw (315.0,109) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize $50^\circ$}};
-% Text Node
-\draw (295.5,107) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize $40^\circ$}};
-
-\end{tikzpicture}
-\end{center}
-
-Constructing the angular velocity vector $\bar{\omega}$ of $xyz$ by vectorially adding the simple rotation rates according to:
-
-$$ \bar{\omega} = \omega_1 \bar{e}_1 + \omega_2 \bar{e}_2$$
-
-This gives us:
-
-$$ \bar{\omega} = \omega_1 \bar{K} + \omega_2 (-\bar{i})$$
-
-Or:
-
-\begin{answer}
-$$ \bar{\omega} = \omega_1 \bar{K} +  \omega_2 \bar{i}$$
-\end{answer}
-
-\subsubsection*{(b) Solely from an examination of the description in Part (a), predict the direction(s) in which the angular acceleration of the rotor will be situated relative to the xyz axes defined in the sketch. Briefly explain your answer.}
-
-In terms of the reference frame $xyz$, the angular acceleration is only affected by the constant rotations of $\omega_1$ and $\omega_2$.
-% Therefore, the only angular acceleration experienced by the rotor is due to change in orientation relative to the reference frame.
-The angular acceleration component of $\omega_2$ is in the negative in the ${i}$ direction.
-The component of the rotation $\omega_1$ that is perpendicular to the rotor axis is $\omega_1 \cos(50)$.
-The vector cross of these two vectors results in an acceleration of in the $-j$ direction.
-All together the acceleration is:
-
-\begin{answer}
-    $$ \bar{\alpha} = \omega_1 \omega_2 \cos(50^\circ) \left(-\bar{j}\right) $$
-\end{answer}
-
-\subsubsection*{(c) Describe the angular velocity and angular acceleration of the rotor in terms of components relative to xyz.}
-
-Because the first auxiliary reference frame is stationary, and the second one is $xyz$, we have:
-
-$$ \bar{\Omega}_1 = \bar{0}, \ \ \bar{\Omega}_2 = \bar{\omega} $$
-
-We find the global components of the unit vectors by inspection of the sketch, which leads to
-
-\begin{equation*}
-\begin{aligned}
-\bar{K} &= \cos(40^\circ)(-\bar{i}) + \cos(50^\circ)\bar{k} \\
-        &= -\cos(40^\circ)\bar{i} + \cos(50^\circ)\bar{k}  \\
-\bar{i} &= \bar{i} 
-\end{aligned}
-\end{equation*}
-
-This makes the velocity:
-
-\begin{answer}
-$$ \bar{\omega} = \left(\omega_2-\cos(40^\circ)\omega_1\right) \bar{i} + \omega_1\cos(50^\circ)\bar{k} $$
-\end{answer}
-
-Next solve for angular acceleration:
-
-$$ \bar{\alpha} =
-\sum_n \left( \dot{\omega}_n \bar{e}_n + \bar{\Omega}_n \times \omega_n \bar{e}_n \right) $$
-
-Since $n=2$:
-
-$$ \bar{\alpha} =
-\dot{\omega}_1 \bar{e}_1 + \bar{\Omega}_1 \times \omega_1 \bar{e}_1 +
-\dot{\omega}_2 \bar{e}_2 + \bar{\Omega}_2 \times \omega_2 \bar{e}_2 $$
-
-And since $\dot{\omega}_1 = \dot{\omega}_2 = 0$:
-
-$$ \bar{\alpha} =
-\bar{\Omega}_1 \times \omega_1 \bar{e}_1 +
-\bar{\Omega}_2 \times \omega_2 \bar{e}_2 $$
-
-Futher, as stated above that $\bar{\Omega}_1 = \bar{0}$ and $\bar{\Omega}_2 = \bar{\omega}$:
-
-\begin{equation*}
-\begin{aligned}
-\bar{\alpha} &= \bar{\Omega}_2 \times \omega_2 \bar{e}_2\\
-             &= \left( \left(\omega_2-\cos(40^\circ)\omega_1\right) \bar{i} + \omega_1\cos(50^\circ)\bar{k} \right)
-                \times \omega_2 (-\bar{i})\\
-            &= -\omega_2 \left( \left(\omega_2-\cos(40^\circ)\omega_1\right) \bar{i} + \omega_1\cos(50^\circ)\bar{k} \right)
-                \times \bar{i}\\
-\end{aligned}
-\end{equation*}
-
-Which solves to:
-
-\begin{answer}
-$$ \bar{\alpha} = -\omega_1 \omega_2 \cos(50^\circ) \bar{j} $$
-\end{answer}
-
-\subsection*{EXERCISE 3.37}
-\subsubsection*{The angle $\bm{\theta}$ describing the rotation of a reconnaissance satellite's solar panels about the body-fixed $\bm{x}$ axis is an arbitrary function of time.
-The satellite spins about the $\bm{z}$ axis at the constant rate $\bm{\Omega}$.
-Derive expressions for the absolute velocity and acceleration of point $\bm{B}$ relative to the origin of $\bm{xyz}$.
 \begin{figure}[H]
     \centering
-    \includegraphics[frame]{images/Q3_37.png}
-\end{figure}}
+    \includegraphics[scale=0.8,frame]{images/Q4_44.png}
+\end{figure}
 
-This problem can be defined in terms of three reference frames: the inertially fixed $\{XYZ\}$ frame, the satellite body fixed frame $\{xyz\}$, and a frame defining the rotation of the solar panel relative to the satellite body frame $\{x'y'z'\}$.
-These are all detailed in the following diagram:
-
+In the following sketch, we will define two coordinate frames, $\{XYZ\}$ and $\{xyz\}$:
 
 \begin{center}
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
-%Flowchart: Magnetic Disk [id:dp3635321013642623] 
-\draw   (219,105.18) -- (219,131.82) .. controls (219,135.79) and (210.94,139) .. (201,139) .. controls (191.06,139) and (183,135.79) .. (183,131.82) -- (183,105.18)(219,105.18) .. controls (219,109.14) and (210.94,112.35) .. (201,112.35) .. controls (191.06,112.35) and (183,109.14) .. (183,105.18) .. controls (183,101.21) and (191.06,98) .. (201,98) .. controls (210.94,98) and (219,101.21) .. (219,105.18) -- cycle ;
-%Flowchart: Data [id:dp3120937293163366] 
-\draw   (248.94,114.29) -- (320,124) -- (299.68,150.47) -- (228.62,140.76) -- cycle ;
-%Straight Lines [id:da5131444866807715] 
-\draw    (201,121) -- (332,139) ;
-%Straight Lines [id:da3197855635030902] 
-\draw  [dash pattern={on 4.5pt off 4.5pt}]  (201,121) -- (369,144) ;
-%Straight Lines [id:da9045678164619011] 
-\draw    (201,121) -- (201,65) ;
-%Straight Lines [id:da1980514691616675] 
-\draw    (201,121) -- (268,96) ;
-%Straight Lines [id:da15286153807833958] 
-\draw  [dash pattern={on 4.5pt off 4.5pt}]  (201,121) -- (244,72) ;
-%Curve Lines [id:da34869742372984613] 
-\draw    (236,82) .. controls (244,84) and (249,101) .. (244,105) ;
-%Straight Lines [id:da2648942609548608] 
-\draw  [dash pattern={on 0.84pt off 2.51pt}]  (310,136) -- (377,111) ;
-%Straight Lines [id:da8634219746067795] 
-\draw  [dash pattern={on 0.84pt off 2.51pt}]  (310,136) -- (353,87) ;
-%Curve Lines [id:da1290081440816302] 
-\draw    (348,97) .. controls (356,99) and (358,116) .. (353,120) ;
-%Straight Lines [id:da32191607843243353] 
-\draw  [dash pattern={on 4.5pt off 4.5pt}]  (201,121) -- (166,74) ;
-%Curve Lines [id:da41691895480714614] 
-\draw    (174,85) .. controls (179.5,75.5) and (190,72) .. (201,77) ;
-
-% Text Node
-\draw (373,136.4) node [anchor=north west][inner sep=0.75pt]    {$x=x'$};
-% Text Node
-\draw (182,47.4) node [anchor=north west][inner sep=0.75pt]    {$z=Z$};
-% Text Node
-\draw (227,95.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$\theta $};
-% Text Node
-\draw (272,84.4) node [anchor=north west][inner sep=0.75pt]    {$y$};
-% Text Node
-\draw (247,53.4) node [anchor=north west][inner sep=0.75pt]    {$y'$};
-% Text Node
-\draw (336,110.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$\theta $};
-% Text Node
-\draw (183,84.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$\theta $};
-% Text Node
-\draw (149,58.4) node [anchor=north west][inner sep=0.75pt]    {$z'$};
-
-\end{tikzpicture}
-
+    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    %uncomment if require: \path (0,235); %set diagram left start at 0, and has height of 235
+    
+    %Shape: Circle [id:dp9205401865082012] 
+    \draw   (163,119.5) .. controls (156.92,80.01) and (184.01,48) .. (223.5,48) .. controls (262.99,48) and (299.92,80.01) .. (306,119.5) .. controls (312.08,158.99) and (284.99,191) .. (245.5,191) .. controls (206.01,191) and (169.08,158.99) .. (163,119.5) -- cycle ;
+    %Straight Lines [id:da08559310125076691] 
+    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (199,29) -- (261,189) ;
+    %Straight Lines [id:da7745554258225504] 
+    \draw    (234.5,119.5) -- (235,4) ;
+    %Straight Lines [id:da5729101269761203] 
+    \draw    (234.5,119.5) -- (218,78) ;
+    %Straight Lines [id:da5020321684594107] 
+    \draw    (199,201) -- (261,189) ;
+    %Straight Lines [id:da6204394260932975] 
+    \draw    (103,144) -- (165,132) ;
+    %Straight Lines [id:da9164486645364178] 
+    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (150,196) -- (315,45) ;
+    %Straight Lines [id:da7725448886535651] 
+    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (234.5,119.5) -- (332,91) ;
+    %Curve Left Arrow [id:dp9264565990410532] 
+    \draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (309.09,96.2) .. controls (308.14,90.42) and (313.75,84.69) .. (321.61,83.39) -- (322.32,87.67) .. controls (314.45,88.96) and (308.85,94.69) .. (309.8,100.47) ;\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (309.8,100.47) .. controls (310.5,104.76) and (314.63,107.86) .. (319.92,108.64) -- (320.16,110.07) -- (325.41,106.44) -- (318.99,102.95) -- (319.22,104.37) .. controls (313.92,103.59) and (309.8,100.48) .. (309.09,96.2)(309.8,100.47) -- (309.09,96.2) ;
+    %Curve Left Arrow [id:dp8307279304535069] 
+    \draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (304.83,56.36) .. controls (309.57,61.31) and (309.62,68.95) .. (304.93,73.43) -- (302.5,70.89) .. controls (307.18,66.41) and (307.13,58.76) .. (302.39,53.81) ;\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (302.39,53.81) .. controls (298.87,50.14) and (293.76,48.98) .. (289.44,50.46) -- (288.63,49.61) -- (286.55,54.23) -- (292.69,53.85) -- (291.87,53) .. controls (296.19,51.52) and (301.31,52.68) .. (304.83,56.36)(302.39,53.81) -- (304.83,56.36) ;
+    %Straight Lines [id:da643022670545905] 
+    \draw    (204,147) -- (232.5,120.5) ;
+    %Straight Lines [id:da9284388163365738] 
+    \draw    (276,107) -- (234.5,119.5) ;
+    %Straight Lines [id:da801176613507065] 
+    \draw    (261,189) -- (261,149) ;
+    %Curve Left Arrow [id:dp5279690544622797] 
+    \draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (233.16,23.09) .. controls (226.43,23.53) and (220.63,18.68) .. (220.22,12.26) -- (223.7,12.03) .. controls (224.12,18.46) and (229.92,23.31) .. (236.65,22.87) ;\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (236.65,22.87) .. controls (241.65,22.54) and (245.76,19.39) .. (247.37,15.17) -- (248.53,15.09) -- (246.34,10.56) -- (242.72,15.47) -- (243.88,15.39) .. controls (242.27,19.62) and (238.16,22.77) .. (233.16,23.09)(236.65,22.87) -- (233.16,23.09) ;
+    %Curve Lines [id:da0038494755563269756] 
+    \draw    (172,61) .. controls (183,47) and (189,45) .. (203,40) ;
+    %Curve Lines [id:da02069582648305146] 
+    \draw    (235,36) .. controls (253,37) and (261,42) .. (268,49) ;
+    %Curve Lines [id:da4975175378735417] 
+    \draw    (134,138) .. controls (145,153) and (162,168) .. (180,168) ;
+    %Straight Lines [id:da22471009384259655] 
+    \draw    (165,170) -- (180,168) ;
+    %Straight Lines [id:da9150875408939991] 
+    \draw    (180,168) -- (167,160) ;
+    %Straight Lines [id:da6261260756950517] 
+    \draw    (190,41) -- (203,40) ;
+    %Straight Lines [id:da06706977153636307] 
+    \draw    (235,36) -- (250,35) ;
+    %Straight Lines [id:da2976737615039562] 
+    \draw    (280,206) -- (261,189) ;
+    
+    % Text Node
+    \draw (211,27.4) node [anchor=north west][inner sep=0.75pt]    {$\beta $};
+    % Text Node
+    \draw (132,165.4) node [anchor=north west][inner sep=0.75pt]    {$\Psi $};
+    % Text Node
+    \draw (317,30.4) node [anchor=north west][inner sep=0.75pt]    {$\dot{\beta }$};
+    % Text Node
+    \draw (336,78.4) node [anchor=north west][inner sep=0.75pt]    {$\dot{\phi }$};
+    % Text Node
+    \draw (181,4.4) node [anchor=north west][inner sep=0.75pt]    {$\dot{\Psi }$};
+     % Text Node
+     \draw (182,193.4) node [anchor=north west][inner sep=0.75pt]    {$X$};
+     % Text Node
+     \draw (283,209.4) node [anchor=north west][inner sep=0.75pt]    {$Y$};
+     % Text Node
+     \draw (264,139.4) node [anchor=north west][inner sep=0.75pt]    {$Z$};
+     % Text Node
+     \draw (192,133) node [anchor=north west][inner sep=0.75pt]    {$x$};
+     % Text Node
+     \draw (275,107) node [anchor=north west][inner sep=0.75pt]    {$y$};
+     % Text Node
+     \draw (203,69) node [anchor=north west][inner sep=0.75pt]    {$z$};
+     % Text Node
+     \draw (260,69) node [anchor=north west][inner sep=0.75pt]    {$C$};
+     % Text Node
+     \draw (223,124) node [anchor=north west][inner sep=0.75pt]    {$A$};
+     % Text Node
+     \draw (194,157.4) node [anchor=north west][inner sep=0.75pt]    {$B$};
+    
+    \end{tikzpicture}
 \end{center}
 
-
-Construct the angular velocity vector $\bar{\omega}$ of $xyz$ by vectorially adding the simple rotation rates according to:
-
-$$ \bar{\omega} = \omega_1 \bar{e}_1 + \omega_2 \bar{e}_2$$
-
-This gives us:
-
-$$ \bar{\omega} = \Omega\ \bar{K} + \dot{\theta}\ \bar{i}'$$
-
-We find the global components of the unit vectors by inspection of the sketch, which leads to
-
-\begin{equation*}
-\begin{aligned}
-    \bar{i}' &=\bar{i} \\
-    \bar{K} &= \bar{k}
-\end{aligned}
-\end{equation*}
-
-This gives us:
-
-$$ \bar{\omega} = \dot{\theta}\ \bar{i}  +\Omega \bar{k} $$
-
-Next solve for angular acceleration:
-
-$$ \bar{\alpha} =
-\sum_n \left( \dot{\omega}_n \bar{e}_n + \bar{\Omega}_n \times \omega_n \bar{e}_n \right) $$
-
-Since $n=2$:
-
-$$ \bar{\alpha} =
-\dot{\omega}_1 \bar{e}_1 + \bar{\Omega}_1 \times \omega_1 \bar{e}_1 +
-\dot{\omega}_2 \bar{e}_2 + \bar{\Omega}_2 \times \omega_2 \bar{e}_2 $$
-
-And since $\dot{\omega}_1 = 0$:
-
-$$ \bar{\alpha} =
-\bar{\Omega}_1 \times \omega_1 \bar{e}_1 +
-\dot{\omega}_2 \bar{e}_2 + \bar{\Omega}_2 \times \omega_2 \bar{e}_2 $$
-
-Because the there is only a $z$ rotation for the frame $xyz$,
-and the frame $x'y'z'$ experience the full system rotation:
-
-$$ \bar{\Omega}_1 = \Omega, \ \ \bar{\Omega}_2 = \bar{\omega} $$
-
-Therefore,
-
-\begin{equation*}
-\begin{aligned}
-\bar{\alpha} &= \cancelto{0}{\Omega \bar{k} \times \Omega \bar{k}} + \dot{\theta} \bar{i}  + \bar{\omega} \times \dot{\theta} \bar{i} \\
-             &= \ddot{\theta}\bar{i} + \Omega \,\dot{\theta} \bar{j}
-\end{aligned}
-\end{equation*}
-
-The relative position to B from A is computed as:
-
-$$ \bar{r}_{B/A} = \left[\begin{array}{r} H \ \bar{i}\\
-    W\,\cos\left(\theta\right) \ \bar{j}\\
-    W\,\sin\left(\theta\right) \ \bar{k}
-\end{array}\right] $$
-
-Given this, we can solve for the absolute velocity of B relative to the origin as:
+The transformation to convert $\{XYZ\}$ to $\{xyz\}$ is:
 
 \begin{equation*}
     \begin{aligned}
-    \bar{v}_B &= \cancelto{0}{\bar{v}_A} + \bar{\omega} \times \bar{r}_{B/A} \\
-                 &= \left[\begin{array}{r} -\Omega \,W\,\cos\left(\theta\right) \bar{i}\\
-                    H\,\Omega -W\,\sin\left(\theta\right)\,\dot{\theta} \bar{j}\\
-                    W\,\cos\left(\theta\right)\,\dot{\theta} \bar{k}
-                \end{array}\right]
-    \end{aligned}
+R &= \left[\begin{array}{ccc} \cos\left(\Psi \right) & -\sin\left(\Psi \right) & 0\\ \sin\left(\Psi \right) & \cos\left(\Psi \right) & 0\\ 0 & 0 & 1 \end{array}\right]
+\left[\begin{array}{ccc} 1 & 0 & 0\\ 0 & \cos\left(\beta \right) & -\sin\left(\beta \right)\\ 0 & \sin\left(\beta \right) & \cos\left(\beta \right) \end{array}\right]\\
+&= \left[\begin{array}{ccc} \cos\left(\Psi \right) & -\sin\left(\Psi \right)\,\cos\left(\beta \right) & \sin\left(\Psi \right)\,\sin\left(\beta \right)\\ \sin\left(\Psi \right) & \cos\left(\Psi \right)\,\cos\left(\beta \right) & -\cos\left(\Psi \right)\,\sin\left(\beta \right)\\ 0 & \sin\left(\beta \right) & \cos\left(\beta \right) \end{array}\right]
+\end{aligned}
 \end{equation*}
 
-So,
-
-\begin{answer}
-    \begin{equation*}
-        \begin{aligned}
-        \bar{v}_B &= \left[\begin{array}{r} -\Omega \,W\,\cos\left(\theta\right) \bar{i}\\
-            H\,\Omega -W\,\sin\left(\theta\right)\,\dot{\theta} \bar{j}\\
-            W\,\cos\left(\theta\right)\,\dot{\theta} \bar{k}
-        \end{array}\right]
-        \end{aligned}
-    \end{equation*}
-\end{answer}
-
-We can also compute the absolute acceleration of B relative to the origin as:
+From this we see that:
 
 \begin{equation*}
-    \begin{aligned}
-    \bar{a}_B &= \cancelto{0}{\bar{a}_A} + \bar{\alpha} \times \bar{r}_{B/A} + \bar{\omega} \times \left( \bar{\omega} \times \bar{r}_{B/A} \right)  \\
-              &= \left[\begin{array}{r} \left\{ 2\,\Omega \,\dot{\theta}\,\sin\left(\theta\right)\,W-H\,\Omega ^2 \right\} \bar{i} \\
-                       \left\{ -\left({\dot{\theta}}^2+\Omega ^2\right)\,\cos\left(\theta\right)\,W-\ddot{\theta}\,\sin\left(\theta\right)\,W \right\} \bar{j} \\
-                       \left\{ \ddot{\theta}\,\cos\left(\theta\right)\,W-{\dot{\theta}}^2\,\sin\left(\theta\right)\,W \right\} \bar{k}
-                    \end{array}\right]
-    \end{aligned}
+\begin{aligned}
+    \bar{i} &= \left[\begin{array}{r} \cos\left(\Psi \right) \bar{I}\\ \sin\left(\Psi \right) \bar{J} \end{array}\right]\\
+    \bar{j} &= \left[\begin{array}{r} -\sin\left(\Psi \right)\,\cos\left(\beta \right) \bar{I} \\ \cos\left(\Psi \right)\,\cos\left(\beta \right) \bar{J}\\ \sin\left(\beta \right) \bar{K} \end{array} \right] \\
+    \bar{k} &= \left[\begin{array}{r} \sin\left(\Psi \right)\,\sin\left(\beta \right) \bar{I}\\ -\cos\left(\Psi \right)\,\sin\left(\beta \right) \bar{J}\\ \cos\left(\beta \right) \bar{K} \end{array} \right] \\
+\end{aligned}
 \end{equation*}
-
-So,
-
-\begin{answer}
-    \begin{equation*}
-        \begin{aligned}
-        \bar{a}_B = \left[\begin{array}{r} \left\{ 2\,\Omega \,\dot{\theta}\,\sin\left(\theta\right)\,W-H\,\Omega ^2 \right\} \bar{i} \\
-                           \left\{ -\left({\dot{\theta}}^2+\Omega ^2\right)\,\cos\left(\theta\right)\,W-\ddot{\theta}\,\sin\left(\theta\right)\,W \right\} \bar{j} \\
-                           \left\{ \ddot{\theta}\,\cos\left(\theta\right)\,W-{\dot{\theta}}^2\,\sin\left(\theta\right)\,W \right\} \bar{k}
-                        \end{array}\right]
-        \end{aligned}
-    \end{equation*}
-\end{answer}
 
 % \color{white}
 % \hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize]{matlab}
