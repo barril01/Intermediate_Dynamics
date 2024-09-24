@@ -14,11 +14,8 @@ syms phi(t)
 syms beta(t)
 syms Psi(t)
 
-% R = transpose(yRot(-beta)*zRot(Psi)*zRot(deg2rad(90)));
-% R= zRotT(deg2rad(90))*zRotT(Psi)*yRotT(-beta); 
-
-R = transpose(xRot(beta)*zRot(Psi));
-R= zRotT(Psi)*xRotT(beta); 
+R = transpose(yRot(-beta)*zRot(Psi)*zRot(deg2rad(90)));
+R= zRotT(deg2rad(90))*zRotT(Psi)*yRotT(-beta); 
 
 I = [1;0;0];
 J = [0;1;0];
@@ -28,10 +25,10 @@ i_hat = R*I;
 j_hat = R*J;
 k_hat = R*K;
 
-omega_bar = diff(Psi,t)*K + diff(beta,t)*i_hat + diff(phi,t)*j_hat ;
+omega_bar = diff(Psi,t) * K - diff(beta,t)*j_hat + diff(phi,t)*i_hat ;
 
 r_AD = 0.1*k_hat;
-r_BD = 0.1*(k_hat+i_hat);
+r_BD = 0.1*(k_hat-j_hat);
 
 v_A = simplify(cross(omega_bar,r_AD));
 v_B = simplify(cross(omega_bar,r_BD));
@@ -66,7 +63,7 @@ eqns = [ 0.4 == [1,0,0]*v_A
 soln = solve(eqns,...
     [phi_c,beta_dot,Psi_c,phi_dot,Psi_dot]);
 
-num = 2;
+num = 1;
 
 disp(['Psi     :',latex(soln.Psi_c(num)*180/pi)])
 disp(['Psi_dot :',latex(soln.Psi_dot(num))])
