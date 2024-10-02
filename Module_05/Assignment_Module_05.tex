@@ -117,14 +117,14 @@ the centroidal inertia mass properties of a homogeneous cylinder where in the bo
     \end{aligned}
 \end{equation*}
 
-This expressed the inertia tensor is:
+This expressed as the inertia tensor is:
 
 $$ I_{x'y'z'} = \left[\begin{array}{ccc} \frac{1}{2} m R^2 & 0 & 0\\
     0 & \frac{7}{12} m\,R^2 & 0\\ 0 & 0 & \frac{7}{12}m\,R^2 \end{array}\right] $$
 
 The distance from the body frame is:
 
-$$ d = \left[\begin{array}{c} R\\ R\\ 0 \end{array}\right] $$
+$$ d_{x'y'z'} = \left[\begin{array}{c} R\\ R\\ 0 \end{array}\right] $$
 
 Using the parallel axis theorem to get the parallel axis transformation of inertia matrix
 relative to the center of the frame of reference in question:
@@ -155,6 +155,13 @@ All together, we can compute the inertia properties of the cylinder with respect
 
 \subsubsection*{Explain the physical reasons for the off diagonal terms.}
 
+\begin{answer}
+The off-diagonal terms of an inertia tensor,
+also called the products of inertia,
+describe the degree to which mass is distributed symmetrically relative to three coordinate planes.
+These terms effectively describe how rotation around one axis is coupled with the rotation around another.
+\end{answer}
+
 \subsection*{Problem 2:}
 \subsubsection*{A rigid body has an inertia matrix given by:
 $$ \bm{I = } \left[\begin{array}{ccc}
@@ -181,7 +188,7 @@ $$ R = \left[\begin{array}{ccc} \cos\left(\theta \right) & 0 & \sin\left(\theta 
 
 The relationship between the provided inertia matrix and the principal moment of inertia matrix, $I_D$, is:
 
-$$ I == R I_D R^T $$
+$$ I = R\ I_D R^T $$
 
 This evaluates to:
 
@@ -201,11 +208,22 @@ $$ R = \left[\begin{array}{ccc} 0.3404 & 0 & -0.9403\\ 0 & 1 & 0\\ 0.9403 & 0 & 
 
 If we evaluate the following, we can prove that the rotation matrix can transform the principal moment of inertia matrix to the original inertia matrix:
 
-$$ R I_D R^T = \left[\begin{array}{ccc} 400 & 0 & -125\\ 0 & 350 & 0\\ -125 & 0 & 100 \end{array}\right] $$
+$$ R\ I_D R^T = \left[\begin{array}{ccc} 400 & 0 & -125\\ 0 & 350 & 0\\ -125 & 0 & 100 \end{array}\right] $$
 
 This proves that the transformation matrix, $R$, is valid and does diagonalizes $I$.
+\\\\
+This diagonal matrix has the following properties:
 
+$$ R^T\ R = R\ R^T = \left[\begin{array}{ccc} 1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & 1 \end{array}\right] $$
 
+$$ \left| R \right| = 1 $$
+
+The columns of the rotation matrix,
+which constitute the eigenvectors,
+are unit vectors:
+
+$$ R = \left[ v_1 , v_2 , v_3 \right] \ \  \rightarrow \ \ 
+ ||v_1|| = ||v_2|| = ||v_3|| = 1 $$
 
 
 \end{document}

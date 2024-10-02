@@ -27,9 +27,9 @@ R = Dynamics.Body2Inertial.yRot(theta);
 
 eqns = (I == R*I_pa*R') ;
 
-thetas = solve(eqns(3,1));
+thetas = solve(eqns(1,1));
 
-Rval = Dynamics.Body2Inertial.yRot(thetas(2))
+Rval = Dynamics.Body2Inertial.yRot(thetas(1))
 
 Rval*I_pa*Rval'
 
