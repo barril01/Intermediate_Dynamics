@@ -1,5 +1,6 @@
-function I_pat = parallelAxisTransform(d)
+function I_pat = parallelAxisTransform(m,d)
     arguments
+        m (1,1)
         d (3,1)
     end
     % The parallel axis transformation of inertia matrix:
