@@ -203,6 +203,35 @@ Derive the differential equation of motion for $\bm{\beta}$.}
 \end{figure}
 
 
+Construct the angular velocity vector $\bar{\omega}$ of $xyz$ by vectorially adding the simple rotation rates according to:
+
+$$ \bar{\omega} = \omega_1 \bar{e}_1 + \omega_2 \bar{e}_2 + \omega_3 \bar{e}_3$$
+
+This gives us:
+
+$$ \bar{\omega} = \Omega_2\ k + \dot{\beta}(-j')
+                + \Omega_1 (-i') $$
+
+We can equate $k$, given the following rotation as:
+
+$$ R(-\beta) = \left[\begin{array}{ccc} \cos\left(\beta \right) & 0 & \sin\left(\beta \right)\\ 0 & 1 & 0\\ -\sin\left(\beta \right) & 0 & \cos\left(\beta \right) \end{array}\right] $$
+
+$$ k = R(-\beta)  \left[\begin{array}{ccc} 0\\ 0\\ 1 \end{array}\right]
+= \left[\begin{array}{r} \sin\left(\beta\right)\ i' \\ 0 \ j\\ \cos\left(\beta\right)\ k' \end{array}\right] $$
+
+This allows us to express the angular velocity vector as:
+
+$$ \bar{\omega} = \Omega_2\ \left( \sin(\beta) \ i' + \cos(\beta) \ k' \right)
+                -\dot{\beta}\ j'
+                - \Omega_1\ i' $$
+
+Or:
+
+$$ \bar{\omega} =
+\left[\begin{array}{r} \sin\left(\beta\right)\,\Omega _{2}-\Omega _{1}\ i'\\
+    -\dot{\beta}\ j'\\ \cos\left(\beta\right)\,\Omega _{2}\ k' \end{array}\right] $$
+
+
 % \begin{figure}[H]
 %     \centering
 %     \includegraphics[scale=0.7,frame]{images/Q5_13.png}
