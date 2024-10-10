@@ -162,8 +162,8 @@ m\left[\begin{array}{ccc} 0 & 0 & 0\\ 0 & \frac{1}{36}\,L^2 & 0\\ 0 & 0 & \frac{
 
 This makes the inertia tensor at point C:
 
-$$ I_{C} = I_{x'y'z'} + I_{pat}
-m\left(\begin{array}{ccc} 0 & 0 & 0\\ 0 & \frac{1}{9}\,L^2 & 0\\ 0 & 0 & \frac{1}{9}\,L^2 \end{array}\right)$$
+$$ I_{C} = I_{x'y'z'} + I_{pat} =
+m\left[\begin{array}{ccc} 0 & 0 & 0\\ 0 & \frac{1}{9}\,L^2 & 0\\ 0 & 0 & \frac{1}{9}\,L^2 \end{array}\right]$$
 
 From this we can compute the angular momentum as:
 
@@ -188,6 +188,14 @@ $$ \dot{\bar{H}}_C = \cancelto{0}{\frac{\partial}{\partial t} \bar{H}_C} + \bar{
 \end{aligned}
 \end{equation*}
 \end{answer}
+
+\subsubsection*{Matlab Code Used}
+The following MATLAB code was used to solve this problem:
+
+% \color{white}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize]{matlab}
+{./matlab/Q5_26.m}
+% \color{black} 
 
 \subsection*{EXERCISE 6.8}
 \subsubsection*{The torque M acting on the gimbal of the gyroscopic turn indicator is exerted by a torsional spring, so $\bm{M = -k\beta}$.
@@ -347,8 +355,13 @@ $$  k \beta =
 \cos\left(\beta \right)\,\sin\left(\beta \right)\,{\Omega _{2}}^2\,\left(I_{1}-I_{2}\right)-I_{2}\ddot{\beta} -I_{2} \Omega _{1}\,\cos\left(\beta \right)\,\Omega _{2}$$
 \end{answer}
 
-\subsubsection*{Attached}
-The MATLAB scripts used to solve both problems are included in the submission.
+\subsubsection*{Matlab Code Used}
+The following MATLAB code was used to solve this problem:
+
+% \color{white}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize]{matlab}
+{./matlab/Q6_8.m}
+% \color{black} 
 
 % \begin{figure}[H]
 %     \centering
