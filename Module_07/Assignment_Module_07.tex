@@ -73,15 +73,15 @@ Given the graphic provided, we can write that the velocities in the generalized 
 \end{aligned}
 \end{equation*}
 
-Taking the integral of $\dot{X}$:
+The position of $X$ is defined as:
 
 $$ X = ut + x \ \ \rightarrow \ \ x = X - ut $$
 
-We can combine the above, and find that the velocity constraint is:
+We can combine the above, and find that the velocity constraint for $\dot{Y}$ becomes:
 
 $$ \dot{Y}  = 2 \beta \left( X - ut \right) \left( \dot{X} - u \right)  $$
 
-Or:
+This can be written as:
 
 \begin{answer}
 $$  2 \beta \left( X - ut \right)\dot{X}- \dot{Y} - 2 \beta \left( X - ut \right)u = 0  $$
@@ -103,7 +103,13 @@ $$ \int f(g(x))\ g'(x)\ dx = F(g(x)) + C $$
 
 Where for the velocity constraint:
 
-$$ f(g(x)) = 2 \left( X - ut \right), \ \ F(g(x)) = \left( X - ut \right)^2 $$
+\begin{equation*}
+    \begin{aligned}
+        f(g(x)) &= 2 \left( X - ut \right)\\
+        g'(x) &= \left( \dot{X} - u \right)\\
+        F(g(x)) &= \left( X - ut \right)^2
+    \end{aligned}
+\end{equation*}
 
 Therefore:
 
@@ -112,8 +118,12 @@ $$ Y = \beta \int \left(2 \left( X - ut \right)\right) \left( \dot{X} - u \right
 
 We can integrate the velocity constraint to get the configuration constraint:
 
+$$ Y =  \beta \left( X - ut \right)^2 + C $$
+
+If the initial condition constant of integration, $C$ is zero:
+
 \begin{answer}
-    $$ Y =  \beta \left( X - ut \right)^2 + C $$
+    $$ Y =  \beta \left( X - ut \right)^2 $$
 \end{answer}
 
 
@@ -214,14 +224,14 @@ $$ \bar{\omega} = \phi \left(-\bar{i}\right) + \Psi \bar{k} = -\phi \bar{i}+ \Ps
 
 The velocity of the center of the disk at point $G$ from the no-slip point, point $p$ is defined as:
 
-$$ \bar{v}_G = \cancelto{0}{\bar{v}_p} + \bar{\omega} \times \bar{r}_{G/p} $$
+$$ \bar{v}_G^{xyz} = \cancelto{0}{\bar{v}_p} + \bar{\omega} \times \bar{r}_{G/p} $$
 
 This evaluates to:
 
 
-$$ \bar{v}_G = \bar{\omega} \times \bar{r}_{G/p}  = \left( -\phi \bar{i}+ \Psi \bar{k}  \right) \times R \bar{k} = R \dot{\phi}\ \bar{j}  $$
+$$ \bar{v}_G^{xyz} = \bar{\omega} \times \bar{r}_{G/p}  = \left( -\phi \bar{i}+ \Psi \bar{k}  \right) \times R \bar{k} = R \dot{\phi}\ \bar{j}  $$
 
-The rotation from the body frame to the inertial frame de defined by the following sequence of rotations:
+The rotation from the body frame to the (inertial) generalized coordinate frame is defined by the following sequence of rotations:
 
 $$  R_\text{rot} = 
 \left[\begin{array}{ccc} \cos\left(-\frac{\pi}{2} \right) & -\sin\left(-\frac{\pi}{2} \right) & 0\\ \sin\left(-\frac{\pi}{2} \right) & \cos\left(-\frac{\pi}{2} \right) & 0\\ 0 & 0 & 1 \end{array}\right]
@@ -235,7 +245,7 @@ $$  R_\text{rot} =
 
 Therefore, the velocity $\bar{v}_G$ can be expressed as:
 
-$$ \bar{v}_G = R_\text{rot} \left(\bar{v}_G\right)^{xyz} = 
+$$ \bar{v}_G^{XYZ} = R_\text{rot}\ \bar{v}_G^{xyz} = 
 \left[\begin{array}{ccc} \sin\left(\Psi \right) & \cos\left(\Psi \right) & 0\\ -\cos\left(\Psi \right) & \sin\left(\Psi \right) & 0\\ 0 & 0 & 1 \end{array}\right]
 \left[\begin{array}{r} 0 \ \bar{i}\\ R \dot{\phi}\ \bar{j}\\ 0 \ \bar{k} \end{array}\right]
 = \left[\begin{array}{r} R\ \dot{\phi} \,\cos\left(\Psi \right)\ \bar{I}\\ R\ \dot{\phi}\,\sin\left(\Psi \right)\ \bar{J}\\ 0\ \ \bar{K} \end{array}\right]$$
@@ -243,7 +253,7 @@ $$ \bar{v}_G = R_\text{rot} \left(\bar{v}_G\right)^{xyz} =
 This can be expressed as the following velocity constraints:
 
 \begin{answer}
-$$ \dot{X} = R\ \dot{\phi} \,\cos\left(\Psi \right) $$
+$$ \dot{X} = R\ \dot{\phi}\,\cos\left(\Psi \right) $$
 $$ \dot{Y} = R\ \dot{\phi}\,\sin\left(\Psi \right) $$
 \end{answer}
 
@@ -257,23 +267,19 @@ This system has $4$ generalized coordinates, $q_i = \left\{X, Y, \Psi, \phi\righ
 Subtracting the two gives us $2 \textbf{ degrees of freedom}.$
 \end{answer}
 
-Evaluating whether the system is holonomic:
+To evaluate whether the system is holonomic,
+we can isolate the coefficients of each generalized velocity:
 
 $$ a_{11} = 1,\ a_{12} = 0,\ a_{13} = 0,\ a_{14} = -R\ \,\cos\left(\Psi\right), \ b_1 = 0 $$
 $$ a_{21} = 0,\ a_{22} = 1,\ a_{23} = 0,\ a_{24} = -R\ \,\sin\left(\Psi\right), \ b_2 = 0 $$
 
-% Looking at the terms $a_{14}$ and $a_{24}$, since the terms do not contain $\phi$, there is no derivative that can result in:
+Looking at the terms $a_{13}$ and $a_{14}$:
 
-% $$ \frac{\partial f_1}{\partial \phi} \ne -R\ \,\cos\left(\Psi\right) \dot{\phi} $$
-% $$ \frac{\partial f_2}{\partial \phi} \ne -R\ \,\sin\left(\Psi\right) \dot{\phi} $$
-
-Looking at the terms $a_{13}$ and $a_{24}$:
-
-$$ \frac{\partial f_1}{\partial \Psi} = g_1\left(X, Y, \Psi , \phi\right)\ 0$$
+$$ \frac{\partial f_1}{\partial \Psi} = g_1\left(X, Y, \Psi , \phi\right)\ 0 = 0$$
 $$ \frac{\partial f_1}{\partial \phi} = g_1\left(X, Y, \Psi , \phi\right) \left(-R\ \,\cos\left(\Psi\right) \dot{\phi}\right) $$
 
-The first equation implies that the function $f_1$ must be a function of $\Psi$, however the second implies that the derivative of the function with respect to $\Psi$ will be zero.
-This is inconsistent.
+The second equation implies that the derivative of the function $f_1$ with respect to $\phi$, will contain $\Psi$, however the second implies that the derivative of the function with respect to $\Psi$ will be zero.
+This is inconsistent. We see the same thing evaluating $a_{23}$ and $a_{24}$.
 There is no integrating factor $g_1$ that can satisfy both of these, therefore the system is not integrable.
 
 \begin{answer}
