@@ -228,6 +228,12 @@ We get that:
 \end{equation*}
 \end{answer}
 
+The following MATLAB script was used to solve this problem:
+% \color{white}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize]{matlab}
+{./matlab/Problem_1.m}
+% \color{black} 
+
 \subsection*{Problem 2}
 \subsubsection*{The disk spins about its axis C D at 1200 rev/min as the system rotates about the vertical axis at 20 rev/min.
 Both rates are constant.
@@ -346,26 +352,30 @@ Using the following relative positions:
 
 \begin{equation*}
     \begin{aligned}
-        r_{B/A} &= L\left(\begin{array}{c} \cos\left(\beta \right)\ i\\ 0 \ j\\ \sin\left(\beta \right) \ k \end{array}\right)\\
-        r_{CD/B} &= L\ i\\
-        r_{E/CD} &= R\ i\\
+        \bar{r}_{B/A} &= L\left(\begin{array}{c} \cos\left(\beta \right)\ i\\ 0 \ j\\ \sin\left(\beta \right) \ k \end{array}\right)\\
+        \bar{r}_{CD/B} &= L\ i\\
+        \bar{r}_{E/CD} &= R\ i\\
     \end{aligned}
 \end{equation*}
+
+Referencing the velocity equation:
+
+$$ \bar{v}_P = \bar{v}_O + \bar{\omega} \times \bar{r}_{P/O}$$
     
-Solving for velocities along the system from A to E:
+We solve for the velocities along the system from A to E:
 
 \begin{equation*}
     \begin{aligned}
-        v_B &= \Omega_1 \times r_{B/A} = \left[\begin{array}{c} 0\\ -2.0944\,L\\ 0 \end{array}\right] \\
-        v_{CD} &= v_B + \Omega_2 \times r_{CD/B} = \left[\begin{array}{c} 0\\ -3.7699\,L\\ -10\,L \end{array}\right] \\
-        v_E &= v_{CD} + \Omega_3 \times r_{E/CD} = \left[\begin{array}{c} 0\\ -3.7699\,L-127.34\,R\\ -10\,L-10\,R \end{array}\right]
+        \bar{v}_B &= \Omega_1 \times \bar{r}_{B/A} = \left[\begin{array}{c} 0\\ -2.0944\,L\\ 0 \end{array}\right] \\
+        \bar{v}_{CD} &= \bar{v}_B + \Omega_2 \times \bar{r}_{CD/B} = \left[\begin{array}{c} 0\\ -3.7699\,L\\ -10\,L \end{array}\right] \\
+        \bar{v}_E &= \bar{v}_{CD} + \Omega_3 \times \bar{r}_{E/CD} = \left[\begin{array}{c} 0\\ -3.7699\,L-127.34\,R\\ -10\,L-10\,R \end{array}\right]
     \end{aligned}
 \end{equation*}
 
 Therefore:
 
 \begin{answer}
-$$ v_E =   -\left(3.7699\,L+127.34\,R\right) j - 10\left(L+R \right)k $$
+$$ \bar{v}_E =   -\left(3.7699\,L+127.34\,R\right) j - 10\left(L+R \right)k $$
 \end{answer}
 
 We can solve for the angular rotation at the rotation points using the equation for angular acceleration:
@@ -377,9 +387,9 @@ The relative angular accelerations across the system for points A to E are:
 
 \begin{equation*}
 \begin{aligned}
-\alpha_1 &= \Omega_1 \times \Omega_1 = 0\\
-\alpha_2 &= \alpha_1 + \ddot{\beta} j + \Omega_2 \times \dot{\beta} j\\
-\alpha_3 &= \alpha_2 + \Omega_3 \times \omega_2(-k) = \bar{\alpha} % alpha_bar
+\bar{\alpha}_1 &= \Omega_1 \times \Omega_1 = 0\\
+\bar{\alpha}_2 &= \bar{\alpha}_1 + \ddot{\beta} j + \Omega_2 \times \dot{\beta} j\\
+\bar{\alpha}_3 &= \bar{\alpha}_2 + \Omega_3 \times \omega_2(-k) = \bar{\alpha} % alpha_bar
 \end{aligned}
 \end{equation*}
 
@@ -391,11 +401,11 @@ Solving for the acceleration across the system for points A to E:
 
 \begin{equation*}
     \begin{aligned}
-        a_B &= 0 + \alpha_1 \times r_{B/A} + \Omega_1 \times \left(\Omega_1 \times r_{B/A}\right)
+        \bar{a}_B &= 0 + \bar{\alpha}_1 \times \bar{r}_{B/A} + \Omega_1 \times \left(\Omega_1 \times \bar{r}_{B/A}\right)
         =\left[\begin{array}{c} -3.5092\,L\\ 0\\ -2.6319\,L \end{array}\right]\\
-        a_{CD} &= a_B + \alpha_2 \times r_{CD/B} + \Omega_2 \times \left(\Omega_2 \times r_{CD/B}\right)
+        \bar{a}_{CD} &= \bar{a}_B + \bar{\alpha}_2 \times \bar{r}_{CD/B} + \Omega_2 \times \left(\Omega_2 \times \bar{r}_{CD/B}\right)
         =\left[\begin{array}{c} -106.32\,L\\ 25.133\,L\\ 495.26\,L \end{array}\right]\\
-        a_E &= a_{CD} + \alpha_3 \times r_{E/CD} + \Omega_3 \times \left(\Omega_3 \times r_{E/CD}\right)
+        \bar{a}_E &= \bar{a}_{CD} + \bar{\alpha}_3 \times \bar{r}_{E/CD} + \Omega_3 \times \left(\Omega_3 \times \bar{r}_{E/CD}\right)
         =\left[\begin{array}{c} -106.32\,L-16315\,R\\ 25.133\,L+25.133\,R\\ 495.26\,L+182.07\,R \end{array}\right]
     \end{aligned}
 \end{equation*}
@@ -407,6 +417,12 @@ $$ a_E = -(106.32\,L+16315\,R)\ i + 25.133(L+R)\ j + (495.26\,L+182.07\,R)\ k $$
 \end{answer}
 
 These solutions match the text.
+\\\\
+The following MATLAB script was used to solve this problem:
+% \color{white}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize]{matlab}
+{./matlab/Problem_2.m}
+% \color{black} 
 
 
 % We can compute the velocity vector as:

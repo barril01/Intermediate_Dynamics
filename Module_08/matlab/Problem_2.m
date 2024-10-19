@@ -31,9 +31,12 @@ alpha_1 = cross(Omega_1,Omega_1);
 alpha_2 = alpha_1 + beta_ddot*y + cross(Omega_2,beta_dot*y);
 alpha_3 = alpha_2 + cross(Omega_3,-omega_2*z); % alpha_bar
 
-a_B = 0 + cross(alpha_1,r_B_A) + cross(Omega_1,cross(Omega_1,r_B_A));
-a_CD = a_B + cross(alpha_2,r_CD_B) + cross(Omega_2,cross(Omega_2,r_CD_B));
-a_E = a_CD + cross(alpha_3,r_E_CD) + cross(Omega_3,cross(Omega_3,r_E_CD));
+a_B = 0 + cross(alpha_1,r_B_A) + ...
+    cross(Omega_1,cross(Omega_1,r_B_A));
+a_CD = a_B + cross(alpha_2,r_CD_B) + ...
+    cross(Omega_2,cross(Omega_2,r_CD_B));
+a_E = a_CD + cross(alpha_3,r_E_CD) + ...
+    cross(Omega_3,cross(Omega_3,r_E_CD));
 
 function R = yRot(ang)
 R = [ cos(ang) 0 sin(ang);
