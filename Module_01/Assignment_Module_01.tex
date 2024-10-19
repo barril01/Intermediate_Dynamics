@@ -205,7 +205,7 @@ $$ v_\theta = \left(\frac{A}{R}\right)\sin(\theta) $$
 The acceleration can be expressed by equation 2.3.14 from the textbook where the $\bar{e}_z$ term is zero:
 
 $$ \bar{a} = \left( \ddot{R} - R \dot{\theta}^2 \right) \bar{e}_R +
-\left( R \ddot{\theta} - 2 \dot{R} \dot{\theta} \right) \bar{e}_\theta $$
+\left( R \ddot{\theta} + 2 \dot{R} \dot{\theta} \right) \bar{e}_\theta $$
 
 Since,
 
@@ -221,16 +221,29 @@ We can solve for the remaining undefined terms $\ddot{R}$ and $\ddot{\theta}$
 \begin{equation*}
    \begin{aligned}
        \ddot{R} &= \frac{\partial \dot{R}}{\partial R} \dot{R} + \frac{\partial \dot{R}}{\partial \theta} \dot{\theta}\\
-       &= -\frac{A^2\,{\cos\left(\theta \right)}^2}{R^3}
-       -\frac{A^2\,{\sin\left(\theta \right)}^2}{R^3}\\
+       &= \left(-\frac{A\,\cos\left(\theta \right)}{R^2}\right)\left(\frac{A\,\cos\left(\theta \right)}{R}\right)
+       + \left( -\frac{A\,\sin\left(\theta \right)}{R} \right)\left( \frac{A\,\sin\left(\theta \right)}{R^2} \right)\\
        &= -\frac{A^2}{R^3}\\
        \ddot{\theta} &= \frac{\partial \dot{\theta}}{\partial R} \dot{R} + \frac{\partial \dot{\theta}}{\partial \theta} \dot{\theta}\\
-       &= -\frac{2\,A^2}{R^4} \cos\left(\theta \right)\,\sin\left(\theta \right)
-       +\frac{A^2}{R^4}\cos\left(\theta \right)\,\sin\left(\theta \right)\\
+       &= \left( -\frac{2\,A\,\sin\left(\theta \right)}{R^3} \right)\left(\frac{A\,\cos\left(\theta \right)}{R}\right)
+       + \left( \frac{A\,\cos\left(\theta \right)}{R^2} \right)\left( \frac{A\,\sin\left(\theta \right)}{R^2} \right)\\
        &= -\frac{A^2}{R^4} \cos\left(\theta \right)\,\sin\left(\theta \right)\\
-       &= -\frac{1}{2}\frac{A^2}{R^4}\sin\left(2\,\theta \right)
    \end{aligned}
 \end{equation*}
+
+We can solve for $a_r$ and $a_\theta$:
+
+\begin{equation*}
+    \begin{aligned}
+        a_R &= \ddot{R} - R \dot{\theta}^2\\
+        &= -\frac{A^2}{R^3} - R \left( \frac{A}{R^2}\sin(\theta)  \right) \\
+        &= -\frac{A^2}{R^3}\,\left(1+{\sin^2\left(\theta \right)}\right) \\
+        a_\theta &= R \ddot{\theta} + 2 \dot{R}\dot{\theta} \\
+        &= R \left( -\frac{A^2}{R^4} \cos\left(\theta \right)\,\sin\left(\theta \right) \right)
+        + 2 \left( \frac{A}{R}\cos(\theta) \right) \left( \frac{A}{R^2}\sin(\theta) \right) \\
+        &= \frac{A^2}{R^3}\sin(\theta)\cos(\theta)
+    \end{aligned}
+ \end{equation*}
 
 The expressions for acceleration are:
 
@@ -240,7 +253,9 @@ The expressions for acceleration are:
        \bar{a} &= \left( \ddot{R} - R \dot{\theta}^2 \right) \bar{e}_R +
            \left( R \ddot{\theta} - 2 \dot{R} \dot{\theta} \right) \bar{e}_\theta\\
        \ddot{R} &= -\frac{A^2}{R^3}\\
-       \ddot{\theta} &= -\frac{1}{2}\frac{A^2}{R^4}\sin\left(2\,\theta \right)
+       \ddot{\theta} &= -\frac{A^2}{R^4} \cos\left(\theta \right)\,\sin\left(\theta \right)\\
+       a_R &= -\frac{A^2}{R^3}\,\left(1+{\sin^2\left(\theta \right)}\right) \\
+       a_\theta &= \frac{A^2}{R^3}\sin(\theta)\cos(\theta)
    \end{aligned}
 \end{equation*}
 \end{answer}
