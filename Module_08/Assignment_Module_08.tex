@@ -416,12 +416,354 @@ Therefore:
 $$ a_E = -(106.32\,L+16315\,R)\ i + 25.133(L+R)\ j + (495.26\,L+182.07\,R)\ k $$
 \end{answer}
 
+
+If I solve this for the solution where the vertical axis rotation is counter clockwise,
+we get that:
+
+\begin{answer}
+    \begin{equation*}
+        \begin{aligned}
+    v_E &= \left( 0.4189L - 127.3392R \right)j - 10 \left(L+R\right)k \\
+    a_E &= -(106.32\,L+16315\,R)\ i + 25.133(L+R)\ j + (495.26\,L+182.07\,R)\ k 
+\end{aligned}
+\end{equation*}
+\end{answer}
+    
+
 These solutions match the text.
 \\\\
 The following MATLAB script was used to solve this problem:
 % \color{white}
 \hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize]{matlab}
 {./matlab/Problem_2.m}
+% \color{black} 
+
+\subsection*{Problem 3}
+\subsubsection*{The gyroscopic turn indicator consists of a 1-kg flywheel whose principal radii of gyration are $\bm{k =50}$ mm and $\bm{k = k = 40}$ mm.
+The center of mass of the flywheel coincides with the intersection of axes AB and CD.
+The flywheel spins relative to the gimbal at the constant rate $\bm{\omega_1 = 10,000}$ rev/min.
+A couple $\bm{\bar{M}}$ acts about shaft CD,
+which supports the gimbal,
+in order to control the angle $\bm{\beta}$  between the gimbal and the horizontal.
+Determine $\bm{\bar{M}}$ when the rotation rate about the vertical axis is $\bm{\Omega = 0.8}$ rad/s.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5,frame]{images/Problem_3.png}
+\end{figure}
+
+We will define the following frames for the system:
+
+\begin{center}
+
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    %uncomment if require: \path (0,235); %set diagram left start at 0, and has height of 235
+    
+    %Straight Lines [id:da0462652485240338] 
+    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (98,182) -- (125.15,119.23) -- (157,30) ;
+    %Straight Lines [id:da2781887940807206] 
+    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (136,90) -- (219,90) ;
+    %Straight Lines [id:da0781192111029887] 
+    \draw  [dash pattern={on 0.84pt off 2.51pt}]  (136,90) -- (211,61) ;
+    %Straight Lines [id:da6711962405398284] 
+    \draw  [dash pattern={on 0.84pt off 2.51pt}]  (112,28) -- (136,90) ;
+    %Curve Lines [id:da9209612993523657] 
+    \draw    (186,70) .. controls (203,76) and (195,90) .. (199,91) ;
+    %Curve Right Arrow [id:dp14539415705721326] 
+    \draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (104.84,202.37) .. controls (94.99,202.57) and (86.9,196.72) .. (86.75,189.32) -- (82.73,189.4) .. controls (82.88,196.8) and (90.97,202.65) .. (100.82,202.45) ;\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (100.82,202.45) .. controls (108.13,202.31) and (114.34,198.88) .. (117,194.09) -- (115.66,194.12) -- (120.39,188.67) -- (122.36,193.99) -- (121.02,194.02) .. controls (118.36,198.8) and (112.15,202.23) .. (104.84,202.37)(100.82,202.45) -- (104.84,202.37) ;
+    %Shape: Can [id:dp3314145556815138] 
+    \draw   (160.27,112.63) -- (135.14,120.04) .. controls (132.16,120.92) and (126.08,109.16) .. (121.55,93.79) .. controls (117.02,78.42) and (115.75,65.24) .. (118.73,64.37) -- (143.86,56.96) .. controls (146.84,56.08) and (152.92,67.84) .. (157.45,83.21) .. controls (161.98,98.58) and (163.25,111.76) .. (160.27,112.63) .. controls (157.3,113.51) and (151.21,101.76) .. (146.68,86.38) .. controls (142.15,71.01) and (140.89,57.84) .. (143.86,56.96) ;
+    %Straight Lines [id:da31109279394214395] 
+    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (106,163) -- (189,163) ;
+    %Straight Lines [id:da8479867066098676] 
+    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (105,215) -- (106,111) ;
+    %Curve Right Arrow [id:dp15885928167198493] 
+    \draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (194.04,63.97) .. controls (196.49,69.41) and (204.28,71.21) .. (211.43,67.98) -- (213.18,71.87) .. controls (206.03,75.09) and (198.24,73.29) .. (195.79,67.85) ;\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (195.79,67.85) .. controls (193.97,63.81) and (195.59,58.89) .. (199.48,55.31) -- (200.06,56.61) -- (203.41,50.22) -- (197.14,50.14) -- (197.73,51.43) .. controls (193.84,55.01) and (192.21,59.93) .. (194.04,63.97)(195.79,67.85) -- (194.04,63.97) ;
+    %Curve Right Arrow [id:dp7167518498909757] 
+    \draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (114.65,126.13) .. controls (123.61,126.16) and (130.84,132.42) .. (130.82,140.11) -- (135,140.13) .. controls (135.02,132.44) and (127.78,126.18) .. (118.83,126.15) ;\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (118.83,126.15) .. controls (112.18,126.13) and (106.46,129.54) .. (103.94,134.45) -- (105.33,134.46) -- (100.48,140.01) -- (98.37,134.44) -- (99.76,134.44) .. controls (102.28,129.53) and (108,126.11) .. (114.65,126.13)(118.83,126.15) -- (114.65,126.13) ;
+    
+    % Text Node
+    \draw (178,73.4) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$\beta $};
+    % Text Node
+    \draw (192,152.4) node [anchor=north west][inner sep=0.75pt]    {$X$};
+    % Text Node
+    \draw (98,7.4) node [anchor=north west][inner sep=0.75pt]    {$z$};
+    % Text Node
+    \draw (119,197.49) node [anchor=north west][inner sep=0.75pt]    {$\Omega$};
+    % Text Node
+    \draw (97,90.4) node [anchor=north west][inner sep=0.75pt]    {$Z$};
+    % Text Node
+    \draw (137,12.4) node [anchor=north west][inner sep=0.75pt]    {$Y=y$};
+    % Text Node
+    \draw (215,49.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
+    % Text Node
+    \draw (199,29.4) node [anchor=north west][inner sep=0.75pt]    {$\omega _{1}$};
+    % Text Node
+    \draw (141,130.4) node [anchor=north west][inner sep=0.75pt]    {$\bar{M}$};
+    
+    
+    \end{tikzpicture}
+
+\end{center}
+
+For this problem the prompt seems to imply that the rotation rate about the vertical axis is constant. 
+\\\\
+Constructing the angular velocity vector $\bar{\omega}$ of $\left\{xyz\right\}$ by vectorially adding the simple rotation rates according to:
+
+$$ \bar{\omega} = \omega_1 \bar{e}_1 + \omega_2 \bar{e}_2 $$
+
+This gives us:
+
+$$ \bar{\omega} = \Omega K + \omega_1 (-i)$$
+
+Using the following coordinate transformation:
+
+$$ R_\text{rot} = 
+\left[\begin{array}{ccc} \cos\left(-\beta \right) & 0 & -\sin\left(-\beta \right)\\ 0 & 1 & 0\\ \sin\left(-\beta \right) & 0 & \cos\left(-\beta \right) \end{array}\right]
+$$
+
+$$ K = R_\text{rot}
+\left[\begin{array}{ccc} 0 \ I \\ 0 \ J \\1 \ K \end{array}\right] = 
+\left[\begin{array}{c} \sin\left(\beta \right)\\ 0\\ \cos\left(\beta \right) \end{array}\right]
+= \sin\left(\beta \right) i + \cos\left(\beta \right) k$$
+
+This gives us the angular velocity vector in the form:
+
+$$ \bar{\omega} = \left[\begin{array}{r} \left(\Omega \,\sin\left(\beta \right)-\omega _{1}\right)\ i \\ 0\ j \\ \Omega \,\cos\left(\beta \right) \ k \end{array}\right]
+= \left(\Omega \,\sin\left(\beta \right)-\omega _{1}\right) i + \Omega \,\cos\left(\beta \right)k $$
+
+Using the equation for angular acceleration:
+
+$$ \bar{\alpha} =
+\sum_n \left( \dot{\omega}_n \bar{e}_n + \bar{\Omega}_n \times \omega_n \bar{e}_n \right) $$
+
+We see compute that the angular acceleration is:
+
+$$ \bar{\alpha} = \bar{\omega} \times \omega_1 (-i) = 
+-\Omega \,\omega _{1}\,\cos\left(\beta \right) j $$
+
+Since the torque $\bar{M}$ is acting in the $j$ direction,
+we can refer to equation 6.1.6 in the textbook:
+
+$$ \sum \bar{M} \ j =  I_{yy}\alpha_y +
+    \left( I_{zz} - I_{xx} \right) \omega_x \omega_z $$
+
+Solving for the principal axis inertia quantities:
+
+\begin{equation*}
+    \begin{aligned}
+        I_{xx} &= m k_1^2 = (1\ \text{kg})\left(\frac{50}{1000} \ \text{m} \right)^2 = 0.0025\ \text{kg-m}^2\\
+        I_{yy} = I_{zz} &= m k_2^2 = (1\ \text{kg})\left(\frac{40}{1000} \ \text{m} \right)^2 = 0.0016\ \text{kg-m}^2
+    \end{aligned}
+\end{equation*}
+
+We can solve for $\bar{M}$ as:
+
+\begin{equation*}
+\begin{aligned}
+\bar{M} &=  0.0016 \left( -\Omega \,\omega _{1}\,\cos\left(\beta \right) \right) +
+    \left( 0.0016 - 0.0025 \right) \left(\Omega \,\sin\left(\beta \right)-\omega _{1}\right)\left(\Omega \,\cos\left(\beta \right)\right) \\
+    &=  0.0016 \left( -0.8\left(\frac{10000(2\pi)}{60}\right)\,\cos\left(\beta \right) \right) +\\
+    & \ \ \ \ \ \ \ \ \ \left( 0.0016 - 0.0025 \right) \left(0.8 \,\sin\left(\beta \right)-\left(\frac{10000(2\pi)}{60}\right)\right)\left(0.8 \,\cos\left(\beta \right)\right)\\
+    &= 0.000576 \cos(\beta)\sin(\beta) - 2.0944\cos(\beta)\ \text{N-m}
+\end{aligned}
+\end{equation*}
+
+The couple $\bm{\bar{M}}$ when the rotation rate about the vertical axis is $\bm{\Omega = 0.8}$ rad/s is:
+
+\begin{answer}
+    \begin{equation*}
+        \begin{aligned}
+        \bar{M} &= 0.000576 \cos(\beta)\sin(\beta) - 2.0944\cos(\beta)\ \textbf{N-m}
+        \end{aligned}
+        \end{equation*}
+\end{answer}
+
+The following MATLAB script was used to solve this problem:
+% \color{white}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize]{matlab}
+{./matlab/Problem_3.m}
+% \color{black} 
+
+\subsection*{Problem 4}
+\subsubsection*{A 50-kg rectangular plate is mounted diagonally on a shaft whose mass is negligible.
+The system was initially at rest when a constant torque of 5 kN-m is applied to the shaft.
+Determine the reactions at bearings A and B four seconds after the application of the torque.
+}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7,frame]{images/Problem_4.png}
+\end{figure}
+
+The following sketch details the body fixed frames $\left\{xyz\right\}$ and $\left\{x'y'z'\right\}$
+and the reaction forces $F_A$ and $F_B$.
+
+\begin{center}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,235); %set diagram left start at 0, and has height of 235
+
+%Flowchart: Process [id:dp1937554667130883] 
+\draw   (152.26,116.4) -- (270.74,52.15) -- (306.24,117.6) -- (187.76,181.85) -- cycle ;
+%Straight Lines [id:da21993139585186694] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (106,117) -- (352.5,117) ;
+%Straight Lines [id:da5736578881029808] 
+\draw    (106,117) -- (157.5,117) ;
+%Straight Lines [id:da6954603030707542] 
+\draw    (300.5,117) -- (383.5,117) ;
+%Straight Lines [id:da03706111604319795] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (229.25,117) -- (228.5,40) ;
+%Straight Lines [id:da3150865947087089] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (318.5,64) -- (229.25,117) ;
+%Curve Left Arrow [id:dp012656221372428167] 
+\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (366.6,119.83) .. controls (366.55,127.07) and (371.43,132.96) .. (377.5,133) -- (377.52,129.7) .. controls (371.45,129.67) and (366.57,123.77) .. (366.62,116.53) ;\draw  [fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (366.62,116.53) .. controls (366.65,111.16) and (369.39,106.56) .. (373.28,104.56) -- (373.29,103.46) -- (377.67,105.15) -- (373.25,108.96) -- (373.26,107.86) .. controls (369.37,109.86) and (366.63,114.46) .. (366.6,119.83)(366.62,116.53) -- (366.6,119.83) ;
+%Curve Lines [id:da5655245788316494] 
+\draw    (273.88,90.5) .. controls (281.5,95) and (283.5,105) .. (279.5,117) ;
+%Straight Lines [id:da966127253606895] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (190.5,48) -- (229.25,117) ;
+%Right Arrow [id:dp17651596458244656] 
+\draw   (348.8,155.53) -- (348.62,132.43) -- (344.62,132.46) -- (352.5,117) -- (360.62,132.34) -- (356.62,132.37) -- (356.8,155.47) -- cycle ;
+%Right Arrow [id:dp9866532395728287] 
+\draw   (102.3,155.53) -- (102.12,132.43) -- (98.12,132.46) -- (106,117) -- (114.12,132.34) -- (110.12,132.37) -- (110.3,155.47) -- cycle ;
+%Shape: Donut [id:dp5981937430024424] 
+\draw   (105.67,117) .. controls (105.67,117) and (105.82,117) .. (106,117) .. controls (106.18,117) and (106.33,117) .. (106.33,117) .. controls (106.33,117) and (106.18,117) .. (106,117) .. controls (105.82,117) and (105.67,117) .. (105.67,117)(99.4,117) .. controls (99.4,113.54) and (102.36,110.73) .. (106,110.73) .. controls (109.64,110.73) and (112.6,113.54) .. (112.6,117) .. controls (112.6,120.46) and (109.64,123.27) .. (106,123.27) .. controls (102.36,123.27) and (99.4,120.46) .. (99.4,117) ;
+%Shape: Donut [id:dp6783191468997352] 
+\draw   (351.83,117) .. controls (351.83,117) and (351.98,117) .. (352.17,117) .. controls (352.35,117) and (352.5,117) .. (352.5,117) .. controls (352.5,117) and (352.35,117) .. (352.17,117) .. controls (351.98,117) and (351.83,117) .. (351.83,117)(345.57,117) .. controls (345.57,113.54) and (348.52,110.73) .. (352.17,110.73) .. controls (355.81,110.73) and (358.77,113.54) .. (358.77,117) .. controls (358.77,120.46) and (355.81,123.27) .. (352.17,123.27) .. controls (348.52,123.27) and (345.57,120.46) .. (345.57,117) ;
+
+% Text Node
+\draw (384,86.4) node [anchor=north west][inner sep=0.75pt]    {$5\ kN-m$};
+% Text Node
+\draw (260,97.4) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
+% Text Node
+\draw (390,108.4) node [anchor=north west][inner sep=0.75pt]    {$x$};
+% Text Node
+\draw (223,17.4) node [anchor=north west][inner sep=0.75pt]    {$y$};
+% Text Node
+\draw (328,50.4) node [anchor=north west][inner sep=0.75pt]    {$x'$};
+% Text Node
+\draw (178,29.4) node [anchor=north west][inner sep=0.75pt]    {$y'$};
+% Text Node
+\draw (96,157.4) node [anchor=north west][inner sep=0.75pt]    {$F_{A_{y}}$};
+% Text Node
+\draw (343,156.4) node [anchor=north west][inner sep=0.75pt]    {$F_{B_{y}}$};
+% Text Node
+\draw (71,89.4) node [anchor=north west][inner sep=0.75pt]    {$F_{A_{z}}$};
+% Text Node
+\draw (322,90.4) node [anchor=north west][inner sep=0.75pt]    {$F_{B_{z}}$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+The forces both consist of $x$ and $z$ components.
+The $x$-components are in the positive $x$ direction which is up in the sketch,
+and the $z$-components are in the positive $z$ direction which is out of the page in the sketch.
+The $z$-components are denoted by the circles in the sketch.
+\\\\
+There is one rotation about the $x$-axis that I will denote as $\Omega$.
+The angular velocity and angular rotation for the system is:
+
+$$ \bar{\omega} = \omega_1 \bar{e}_1 = -\Omega\ i $$
+
+$$ \bar{\alpha} = \dot{\omega}_1 \bar{e}_1 + \cancelto{0}{\bar{\Omega}_1 \times \omega_1 \bar{e}_1}
+= -\dot{\Omega}\ i  $$
+
+Using the centriodal inertia properties of a rectangular parallelepiped from the back of the textbook:
+
+\begin{equation*}
+    \begin{aligned}
+        I_{x'x'} &= \frac{1}{12} m \left( 0.15 \right)^2 = 0.09375 \ \text{kg-m}^2 \\
+        I_{y'y'} &= \frac{1}{12} m \left( 0.25 \right)^2 = 0.26042 \ \text{kg-m}^2\\
+        I_{z'z'} &= \frac{1}{12} m \left(0.15^2 +0.25^2 \right) = 0.35417 \ \text{kg-m}^2
+    \end{aligned}
+\end{equation*}
+
+This expressed as an inertia tensor is:
+
+$$ I_\text{pa} = \left[\begin{array}{ccc} 0.0938 & 0 & 0\\ 0 & 0.2604 & 0\\ 0 & 0 & 0.3542 \end{array}\right] $$
+
+Solving for $\theta$, and the rotation matrix that expresses $\{x'y'z'\}$ in terms of $\{xyz\}$:
+
+$$ \theta = \tan^{-1}\left(\frac{75}{125}\right) = 0.5404\ \text{rads} $$
+
+$$ R = \left[\begin{array}{ccc} \cos\left(\theta \right) & \sin\left(\theta \right) & 0\\ -\sin\left(\theta \right) & \cos\left(\theta \right) & 0\\ 0 & 0 & 1 \end{array}\right]
+= \left[\begin{array}{rrr} 0.8575 & 0.5145 & 0\\ -0.5145 & 0.8575 & 0\\ 0 & 0 & 1 \end{array}\right]$$
+
+With this we can solve for the inertia tensor in the $\{xyz\}$ frame:
+
+$$ I = I_{\{xyz\}} =  R^T I_\text{pa} R =
+\left[\begin{array}{ccc} 0.1379 & -0.0735 & 0\\ -0.0735 & 0.2163 & 0\\ 0 & 0 & 0.3542 \end{array}\right] $$
+
+The equation for the resultant moment is:
+
+$$ \sum \bar{M}_A = \frac{\partial \bar{H}_A}{\partial t} + \bar{\omega} \times \bar{H}_A $$
+
+Computing $\bar{H}_A$ and $\frac{\partial \bar{H}_A}{\partial t}$ by:
+
+\begin{equation*}
+    \begin{aligned}
+\bar{H}_A &=
+\left( I_{xx}\omega_x - I_{xy}\omega_y - I_{xz}\omega_z \right) i
++\left( I_{yy}\omega_y - I_{yx}\omega_x - I_{yz}\omega_z \right) j
++\left( I_{zz}\omega_z - I_{zx}\omega_x - I_{zy}\omega_y \right) k\\
+&= \left[\begin{array}{c} -0.1379\,\Omega \\ -0.0735\,\Omega \\ 0 \end{array}\right]\\
+\frac{\partial \bar{H}_A}{\partial t} &=
+\left( I_{xx}\alpha_x - I_{xy}\alpha_y - I_{xz}\alpha_z \right) i
++\left( I_{yy}\alpha_y - I_{yx}\alpha_x - I_{yz}\alpha_z \right) j
++\left( I_{zz}\alpha_z - I_{zx}\alpha_x - I_{zy}\alpha_y \right) k\\
+&=\left[\begin{array}{c} -0.1379\,\dot{\Omega }\\ -0.0735\,\dot{\Omega }\\ 0 \end{array}\right]
+\end{aligned}
+\end{equation*}
+
+The equation for the resultant moment becomes:
+
+$$ \bar{M} = \frac{\partial \bar{H}_A}{\partial t} + \bar{\omega} \times \bar{H}_A
+=\left[\begin{array}{r} -0.1379\,\dot{\Omega }\\ -0.0735\,\dot{\Omega }\\ 0.0735\,\Omega ^2 \end{array}\right]$$
+
+Equating this to the moments acting on the system:
+
+$$ \left[\begin{array}{r} 5000 \ \text{N-m} \\ 0.2 F_{A_z} - 0.2 F_{B_z} \\ 0.2 F_{B_y} - 0.2 F_{A_y} \end{array}\right]
+=\left[\begin{array}{r} -0.1379\,\dot{\Omega }\\ -0.0735\,\dot{\Omega }\\ 0.0735\,\Omega ^2 \end{array}\right]$$
+
+Since we can see by inspection that $\sum F_y =  F_{A_y} + F_{B_y} = 0$ and  $\sum F_z =  F_{A_z} + F_{B_z} = 0$,
+we can rewrite the equation as:
+
+$$ \left[\begin{array}{r} 5000 \\ 0.4 F_{A_z} \\ - 0.4 F_{A_y} \end{array}\right]
+=\left[\begin{array}{r} -0.1379\,\dot{\Omega }\\ -0.0735\,\dot{\Omega }\\ 0.0735\,\Omega ^2 \end{array}\right]$$
+
+Given that $\Omega = \dot{\Omega}t$ we have four equations and four unknowns.
+Solving this system of equations, we get that:
+
+
+\begin{equation*}
+    \begin{aligned}
+        \Omega &= 145066.7\ \text{rad/s}\\
+        \dot{\Omega} &=  36266.67 \text{rad/s}^2
+\end{aligned}
+\end{equation*}
+
+\begin{answer}
+    \begin{equation*}
+        \begin{aligned}
+            F_{A_y} &=  -3.8684\times 10^9 \ \text{N}\\
+            F_{A_z} &=  -6666.7  \ \text{N}\\
+            F_{B_y} &= 3.8684\times 10^9 \ \text{N}\\
+            F_{B_z} &=  6666.7  \ \text{N}
+    \end{aligned}
+    \end{equation*}
+\end{answer}
+
+The following MATLAB script was used to solve this problem:
+% \color{white}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize]{matlab}
+{./matlab/Problem_4.m}
 % \color{black} 
 
 
