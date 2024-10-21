@@ -4,8 +4,8 @@ syms t
 syms theta(t)
 assume(t,{'real','positive'})
 
-e_t = zRot(theta)*[1;0;0];
-e_n = zRot(theta)*[0;0;0];
+e_t = zRot(-theta)*[1;0;0];
+e_n = zRot(-theta)*[0;1;0];
 
 R = 24000E3;
 Re = 6370E3;
@@ -25,6 +25,6 @@ theta_ddot = (a_bar(2) - 2*R_dot*theta_dot)/R; % rad/s^2 (2.3.13)
 
 function R = zRot(ang)
     R = [ cos(ang) -sin(ang) 0;
-          sin(ang) cos(ang) 0;
-                  0         0 1];
+          sin(ang)  cos(ang) 0;
+                 0         0 1];
 end

@@ -20,7 +20,7 @@ I_pa_zz = (1/12)*m*(0.15^2+0.25^2);
 % Principal axi inertia tensor:
 I_pa = diag([I_pa_xx,I_pa_yy,I_pa_zz]);
 
-I = transpose(R)*I_pa*R;
+I = R*I_pa*transpose(R);
 
 [M_A,H_A,d_H_A] = computeResultantMoment(I,omega_bar,alpha_bar);
 
@@ -30,8 +30,8 @@ soln = solve([-5000;0.4*Fz;-0.4*Fy;Omega] == [M_A;Omega_dot*4]);
 
 function R = zRot(ang)
     R = [ cos(ang) -sin(ang) 0;
-          sin(ang) cos(ang) 0;
-                  0         0 1]';
+          sin(ang)  cos(ang) 0;
+                 0         0 1];
 end
 
 function [M_A,H_A,d_H_A] = computeResultantMoment(I,omega,alpha)

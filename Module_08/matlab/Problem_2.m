@@ -1,9 +1,7 @@
 clear
 syms L R
 
-x = [1;0;0];
-y = [0;1;0];
-z = [0;0;1];
+x = [1;0;0]; y = [0;1;0]; z = [0;0;1];
 
 omega_1 = 20*2*pi/60; % rad/s
 omega_2 = 1200*2*pi/60; % rad/s
@@ -40,6 +38,6 @@ a_E = a_CD + cross(alpha_3,r_E_CD) + ...
 
 function R = yRot(ang)
 R = [ cos(ang) 0 sin(ang);
-0 1 0;
--sin(ang) 0 cos(ang)]';
+             0 1        0;
+     -sin(ang) 0 cos(ang)]';
 end

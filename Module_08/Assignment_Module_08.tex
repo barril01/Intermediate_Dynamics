@@ -74,83 +74,138 @@ and the normal direction unit vector $e_n$ extends toward the center of curvatur
 
 \begin{center}
 
+    % \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+    % \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    % %uncomment if require: \path (0,235); %set diagram left start at 0, and has height of 235
+    
+    % %Shape: Arc [id:dp5609708917361678] 
+    % \draw  [draw opacity=0] (78.78,70.17) .. controls (99.75,61.78) and (138.28,56.32) .. (182.31,56.63) .. controls (223.72,56.92) and (260.21,62.24) .. (281.74,70.1) -- (182.11,85.65) -- cycle ; \draw   (78.78,70.17) .. controls (99.75,61.78) and (138.28,56.32) .. (182.31,56.63) .. controls (223.72,56.92) and (260.21,62.24) .. (281.74,70.1) ;  
+    % %Straight Lines [id:da5753428027341958] 
+    % \draw    (98.88,55.94) -- (179.5,55.75) ;
+    % %Flowchart: Connector [id:dp6687027633584581] 
+    % \draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (171,55.75) .. controls (171,51.19) and (174.81,47.5) .. (179.5,47.5) .. controls (184.19,47.5) and (188,51.19) .. (188,55.75) .. controls (188,60.31) and (184.19,64) .. (179.5,64) .. controls (174.81,64) and (171,60.31) .. (171,55.75) -- cycle ;
+    % %Straight Lines [id:da46457095104622814] 
+    % \draw    (179,114.5) -- (179.5,64) ;
+    % %Straight Lines [id:da07390647343570356] 
+    % \draw    (223,112.5) -- (179.5,55.75) ;
+    % %Straight Lines [id:da7232134312062481] 
+    % \draw  [dash pattern={on 4.5pt off 4.5pt}]  (146.88,13.44) -- (212.13,98.06) ;
+    % %Straight Lines [id:da15646105402572963] 
+    % \draw    (98.88,55.94) -- (106.88,51.94) ;
+    % %Straight Lines [id:da09244139347199365] 
+    % \draw    (104.88,59.94) -- (98.88,55.94) ;
+    % %Straight Lines [id:da006527953719763557] 
+    % \draw    (174,105.5) -- (179,114.5) ;
+    % %Straight Lines [id:da504994600380142] 
+    % \draw    (179,114.5) -- (183,104.5) ;
+    % %Straight Lines [id:da019968065751189146] 
+    % \draw    (214,110.5) -- (223,112.5) ;
+    % %Straight Lines [id:da7293082455780622] 
+    % \draw    (223,103.5) -- (223,112.5) ;
+    % %Curve Lines [id:da5442907492375646] 
+    % \draw    (137,56.5) .. controls (137,46.38) and (148,30.5) .. (157,27.5) ;
+    % %Straight Lines [id:da9878841341299782] 
+    % \draw    (147,22.5) -- (146.88,13.44) ;
+    % %Straight Lines [id:da49273640195015456] 
+    % \draw    (156,15.5) -- (146.88,13.44) ;
+    % %Straight Lines [id:da8219412910683288] 
+    % \draw  [dash pattern={on 4.5pt off 4.5pt}]  (98.88,55.94) -- (260.13,55.56) ;
+    % %Straight Lines [id:da6180368985701121] 
+    % \draw  [dash pattern={on 4.5pt off 4.5pt}]  (179.5,55.75) -- (137,91) ;
+    % %Straight Lines [id:da7552791067737405] 
+    % \draw    (137,91) -- (138,82) ;
+    % %Straight Lines [id:da9150337620515048] 
+    % \draw    (145,91) -- (137,91) ;
+    % %Curve Lines [id:da7268486900699349] 
+    % \draw    (179.25,89.25) .. controls (166.25,96.25) and (155,88) .. (151,78) ;
+    
+    % % Text Node
+    % \draw (66,45.4) node [anchor=north west][inner sep=0.75pt]    {$v,e_{t}$};
+    % % Text Node
+    % \draw (171,120.4) node [anchor=north west][inner sep=0.75pt]    {$e_{n}$};
+    % % Text Node
+    % \draw (225,115.9) node [anchor=north west][inner sep=0.75pt]    {$F_{g}$};
+    % % Text Node
+    % \draw (148,38.4) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
+    % % Text Node
+    % \draw (161,9.4) node [anchor=north west][inner sep=0.75pt]    {$e_{R}$};
+    % % Text Node
+    % \draw (163,69.4) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
+    % % Text Node
+    % \draw (114,87.4) node [anchor=north west][inner sep=0.75pt]    {$e_{\theta }$};
+    
+    
+    % \end{tikzpicture}
+
+
+
     \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
     \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
     %uncomment if require: \path (0,235); %set diagram left start at 0, and has height of 235
     
-    %Shape: Arc [id:dp5609708917361678] 
-    \draw  [draw opacity=0] (78.78,70.17) .. controls (99.75,61.78) and (138.28,56.32) .. (182.31,56.63) .. controls (223.72,56.92) and (260.21,62.24) .. (281.74,70.1) -- (182.11,85.65) -- cycle ; \draw   (78.78,70.17) .. controls (99.75,61.78) and (138.28,56.32) .. (182.31,56.63) .. controls (223.72,56.92) and (260.21,62.24) .. (281.74,70.1) ;  
-    %Straight Lines [id:da5753428027341958] 
-    \draw    (98.88,55.94) -- (179.5,55.75) ;
-    %Flowchart: Connector [id:dp6687027633584581] 
-    \draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (171,55.75) .. controls (171,51.19) and (174.81,47.5) .. (179.5,47.5) .. controls (184.19,47.5) and (188,51.19) .. (188,55.75) .. controls (188,60.31) and (184.19,64) .. (179.5,64) .. controls (174.81,64) and (171,60.31) .. (171,55.75) -- cycle ;
-    %Straight Lines [id:da46457095104622814] 
-    \draw    (179,114.5) -- (179.5,64) ;
-    %Straight Lines [id:da07390647343570356] 
-    \draw    (223,112.5) -- (179.5,55.75) ;
-    %Straight Lines [id:da7232134312062481] 
-    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (146.88,13.44) -- (212.13,98.06) ;
-    %Straight Lines [id:da15646105402572963] 
-    \draw    (98.88,55.94) -- (106.88,51.94) ;
-    %Straight Lines [id:da09244139347199365] 
-    \draw    (104.88,59.94) -- (98.88,55.94) ;
-    %Straight Lines [id:da006527953719763557] 
-    \draw    (174,105.5) -- (179,114.5) ;
-    %Straight Lines [id:da504994600380142] 
-    \draw    (179,114.5) -- (183,104.5) ;
-    %Straight Lines [id:da019968065751189146] 
-    \draw    (214,110.5) -- (223,112.5) ;
-    %Straight Lines [id:da7293082455780622] 
-    \draw    (223,103.5) -- (223,112.5) ;
-    %Curve Lines [id:da5442907492375646] 
-    \draw    (137,56.5) .. controls (137,46.38) and (148,30.5) .. (157,27.5) ;
-    %Straight Lines [id:da9878841341299782] 
-    \draw    (147,22.5) -- (146.88,13.44) ;
-    %Straight Lines [id:da49273640195015456] 
-    \draw    (156,15.5) -- (146.88,13.44) ;
-    %Straight Lines [id:da8219412910683288] 
-    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (98.88,55.94) -- (260.13,55.56) ;
-    %Straight Lines [id:da6180368985701121] 
-    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (179.5,55.75) -- (137,91) ;
-    %Straight Lines [id:da7552791067737405] 
-    \draw    (137,91) -- (138,82) ;
-    %Straight Lines [id:da9150337620515048] 
-    \draw    (145,91) -- (137,91) ;
-    %Curve Lines [id:da7268486900699349] 
-    \draw    (179.25,89.25) .. controls (166.25,96.25) and (155,88) .. (151,78) ;
+    %Shape: Arc [id:dp43676387722362553] 
+    \draw  [draw opacity=0] (137.95,127.94) .. controls (154.85,123.32) and (176.19,120.43) .. (199.41,120.15) .. controls (225.08,119.84) and (248.52,122.76) .. (266.26,127.81) -- (199.82,153.18) -- cycle ; \draw   (137.95,127.94) .. controls (154.85,123.32) and (176.19,120.43) .. (199.41,120.15) .. controls (225.08,119.84) and (248.52,122.76) .. (266.26,127.81) ;  
+    %Shape: Circle [id:dp34836189390800176] 
+    \draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (196,120.5) .. controls (196,118.01) and (198.01,116) .. (200.5,116) .. controls (202.99,116) and (205,118.01) .. (205,120.5) .. controls (205,122.99) and (202.99,125) .. (200.5,125) .. controls (198.01,125) and (196,122.99) .. (196,120.5) -- cycle ;
+    %Straight Lines [id:da7688555301359179] 
+    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (112,121) -- (299,120) ;
+    %Straight Lines [id:da7065463346451957] 
+    \draw    (112,121) -- (200.5,120.5) ;
+    %Straight Lines [id:da2912602822077428] 
+    \draw    (112,121) -- (119,118) ;
+    %Straight Lines [id:da16266471763282175] 
+    \draw    (112,121) -- (118,125) ;
+    %Straight Lines [id:da8499840717399565] 
+    \draw    (201,164) -- (200.5,120.5) ;
+    %Straight Lines [id:da47561513104380615] 
+    \draw    (195,157) -- (201,164) ;
+    %Straight Lines [id:da5340595821402228] 
+    \draw    (201,164) -- (207,158) ;
+    %Straight Lines [id:da3742473949950429] 
+    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (167.5,77) -- (233.5,164) ;
+    %Straight Lines [id:da7318042246352303] 
+    \draw    (200.5,120.5) -- (233.5,164) ;
+    %Straight Lines [id:da5717504083889309] 
+    \draw    (233.5,164) -- (233,154) ;
+    %Straight Lines [id:da6288600911674769] 
+    \draw    (225,163) -- (233.5,164) ;
+    %Straight Lines [id:da3904137858589003] 
+    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (200.5,120.5) -- (246,92) ;
+    %Curve Lines [id:da7164866059502566] 
+    \draw    (171,121) .. controls (169,110) and (174,102) .. (182,96) ;
     
     % Text Node
-    \draw (66,45.4) node [anchor=north west][inner sep=0.75pt]    {$v,e_{t}$};
+    \draw (239,163.4) node [anchor=north west][inner sep=0.75pt]    {$F_{g}$};
     % Text Node
-    \draw (171,120.4) node [anchor=north west][inner sep=0.75pt]    {$e_{n}$};
+    \draw (192,165.4) node [anchor=north west][inner sep=0.75pt]    {$e_{n}$};
     % Text Node
-    \draw (225,115.9) node [anchor=north west][inner sep=0.75pt]    {$F_{g}$};
+    \draw (249,75.4) node [anchor=north west][inner sep=0.75pt]    {$e_{\theta }$};
     % Text Node
-    \draw (148,38.4) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
+    \draw (153,54.4) node [anchor=north west][inner sep=0.75pt]    {$e_{R}$};
     % Text Node
-    \draw (161,9.4) node [anchor=north west][inner sep=0.75pt]    {$e_{R}$};
+    \draw (78,110.4) node [anchor=north west][inner sep=0.75pt]    {$e_t||v$};
     % Text Node
-    \draw (163,69.4) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
-    % Text Node
-    \draw (114,87.4) node [anchor=north west][inner sep=0.75pt]    {$e_{\theta }$};
+    \draw (174,103.4) node [anchor=north west][inner sep=0.75pt]    {$\theta $};
     
     
     \end{tikzpicture}
+    
     
 \end{center}
 
 From this, we can define the unit tangent vector as: %and the normal direction unit vector as:
 
-$$ \bar{e}_t = \left[\begin{array}{rr} \cos\left(\theta \right) & -\sin\left(\theta \right)\\ \sin\left(\theta \right) & \cos\left(\theta \right) \end{array}\right]
+$$ \bar{e}_t = \left[\begin{array}{rr} \cos\left(-\theta \right) & -\sin\left(-\theta \right)\\ \sin\left(-\theta \right) & \cos\left(-\theta \right) \end{array}\right]
 \left[\begin{array}{rr} 1\\ 0 \end{array}\right] = 
-\left[\begin{array}{c} \cos\left(\theta \right) \ \bar{e}_R \\ \sin\left(\theta \right) \ \bar{e}_\theta \end{array}\right]  $$
+\left[\begin{array}{c} \cos\left(\theta \right) \ \bar{e}_R \\ -\sin\left(\theta \right) \ \bar{e}_\theta \end{array}\right]  $$
 
 Because $\dot{v}$ is the tangential component of acceleration, we find that:
 
 $$ \dot{v} = \bar{a} \cdot \bar{e}_t = g\left(\frac{R_e}{R}\right)^2
 \left[\begin{array}{rr} -1 \ \bar{e}_R \\ 0 \ \bar{e}_\theta \end{array}\right]\cdot
-\left[\begin{array}{c} \cos\left(\theta \right) \ \bar{e}_R \\ \sin\left(\theta \right) \ \bar{e}_\theta \end{array}\right]
+\left[\begin{array}{c} \cos\left(\theta \right) \ \bar{e}_R \\ -\sin\left(\theta \right) \ \bar{e}_\theta \end{array}\right]
 = -9.807\left(\frac{6370 \times 10^3}{24000 \times 10^3}\right)^2 \cos\left(\theta \right)  $$
 
 This evaluates to:
@@ -173,7 +228,7 @@ The radius of curvature is:
 $$ \rho = \frac{v^2}{|\bar{a} -\dot{v} \bar{e}_t|} =
 \frac{\left(27\ 000 \times 10^3/3600\right)^2}{\left|-9.807\left(\frac{6370 \times 10^3}{24000 \times 10^3}\right)^2
 \left[\begin{array}{rr} -1\ \bar{e}_R\\ 0 \ \bar{e}_\theta \end{array}\right] -\left(-0.4441\right) 
-\left[\begin{array}{c} \cos\left(\theta \right) \ \bar{e}_R \\ \sin\left(\theta \right)\ \bar{e}_\theta \end{array}\right]\right|}
+\left[\begin{array}{c} \cos\left(\theta \right) \ \bar{e}_R \\ -\sin\left(\theta \right)\ \bar{e}_\theta \end{array}\right]\right|}
 $$
 
 This evaluates to:
@@ -190,7 +245,7 @@ $$ \bar{v} = \dot{R}\ \bar{e}_R + R \dot{\theta}\ \bar{e}_\theta $$
 Looking at the sketch:
 
 $$ \bar{v} = \left(\frac{27\ 000 \times 10^3}{3600}\right)
-\left[\begin{array}{c} \cos\left(\theta \right) \ \bar{e}_R \\ \sin\left(\theta \right)\ \bar{e}_\theta \end{array}\right]$$
+\left[\begin{array}{c} \cos\left(\theta \right) \ \bar{e}_R \\ -\sin\left(\theta \right)\ \bar{e}_\theta \end{array}\right]$$
 
 From these two equations we get that:
 
@@ -200,7 +255,7 @@ From these two equations we get that:
         \dot{R} &= \left(\frac{27\ 000 \times 10^3}{3600}\right)\cos\left(\theta \right)
         = 4820.9  \ \textbf{m}/\textbf{s}\\
         \dot{\theta}& = \left(\frac{27\ 000 \times 10^3}{3600}\right)\sin\left(\theta \right)/R
-        = 0.0002393  \ \textbf{rad}/\textbf{s}
+        = -0.0002394  \ \textbf{rad}/\textbf{s}
     \end{aligned}
 \end{equation*}
 \end{answer}
@@ -223,7 +278,7 @@ We get that:
         \ddot{R} &= \bar{a} \cdot \bar{e}_R + R \dot{\theta}^2
         = 0.6845  \ \textbf{m}/\textbf{s}^2\\
         \ddot{\theta}& = \left( \cancelto{0}{\bar{a} \cdot \bar{e}_\theta} - 2\dot{R}\dot{\theta} \right)/R = 
-        -9.617\times 10^8 \ \textbf{rad}/\textbf{s}^2
+        9.617\times 10^8 \ \textbf{rad}/\textbf{s}^2
     \end{aligned}
 \end{equation*}
 \end{answer}
@@ -235,7 +290,7 @@ The following MATLAB script was used to solve this problem:
 % \color{black} 
 
 \subsection*{Problem 2}
-\subsubsection*{The disk spins about its axis C D at 1200 rev/min as the system rotates about the vertical axis at 20 rev/min.
+\subsubsection*{The disk spins about its axis CD at 1200 rev/min as the system rotates about the vertical axis at 20 rev/min.
 Both rates are constant.
 The angle of elevation of the arm supporting the disk is such that $\bm{\dot{\beta} = 10}$ rad/s and $\bm{\ddot{\beta} = -500}\ \textbf{rad/s}^2$  when $\bm{\beta = 36.87^\circ}$.
 Determine the velocity and acceleration of point E,
@@ -416,8 +471,9 @@ Therefore:
 $$ a_E = -(106.32\,L+16315\,R)\ i + 25.133(L+R)\ j + (495.26\,L+182.07\,R)\ k $$
 \end{answer}
 
-
-If I solve this for the solution where the vertical axis rotation is counter clockwise,
+These solutions match the text.
+\\\\
+If I solve this for the solution where the vertical axis rotation is counter-clockwise,
 we get that:
 
 \begin{answer}
@@ -429,9 +485,6 @@ we get that:
 \end{equation*}
 \end{answer}
     
-
-These solutions match the text.
-\\\\
 The following MATLAB script was used to solve this problem:
 % \color{white}
 \hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize]{matlab}
@@ -439,7 +492,7 @@ The following MATLAB script was used to solve this problem:
 % \color{black} 
 
 \subsection*{Problem 3}
-\subsubsection*{The gyroscopic turn indicator consists of a 1-kg flywheel whose principal radii of gyration are $\bm{k =50}$ mm and $\bm{k = k = 40}$ mm.
+\subsubsection*{The gyroscopic turn indicator consists of a 1-kg flywheel whose principal radii of gyration are $\bm{k_x =50}$ mm and $\bm{k_y = k_z = 40}$ mm.
 The center of mass of the flywheel coincides with the intersection of axes AB and CD.
 The flywheel spins relative to the gimbal at the constant rate $\bm{\omega_1 = 10,000}$ rev/min.
 A couple $\bm{\bar{M}}$ acts about shaft CD,
@@ -693,12 +746,12 @@ Solving for $\theta$, and the rotation matrix that expresses $\{x'y'z'\}$ in ter
 
 $$ \theta = \tan^{-1}\left(\frac{75}{125}\right) = 0.5404\ \text{rads} $$
 
-$$ R = \left[\begin{array}{ccc} \cos\left(\theta \right) & \sin\left(\theta \right) & 0\\ -\sin\left(\theta \right) & \cos\left(\theta \right) & 0\\ 0 & 0 & 1 \end{array}\right]
-= \left[\begin{array}{rrr} 0.8575 & 0.5145 & 0\\ -0.5145 & 0.8575 & 0\\ 0 & 0 & 1 \end{array}\right]$$
+$$ R = \left[\begin{array}{ccc} \cos\left(\theta \right) & -\sin\left(\theta \right) & 0\\ \sin\left(\theta \right) & \cos\left(\theta \right) & 0\\ 0 & 0 & 1 \end{array}\right]
+= \left[\begin{array}{rrr} 0.8575 & -0.5145 & 0\\ 0.5145 & 0.8575 & 0\\ 0 & 0 & 1 \end{array}\right]$$
 
 With this we can solve for the inertia tensor in the $\{xyz\}$ frame:
 
-$$ I = I_{\{xyz\}} =  R^T I_\text{pa} R =
+$$ I = I_{\{xyz\}} =  R I_\text{pa} R^T =
 \left[\begin{array}{ccc} 0.1379 & -0.0735 & 0\\ -0.0735 & 0.2163 & 0\\ 0 & 0 & 0.3542 \end{array}\right] $$
 
 The equation for the resultant moment is:
@@ -745,17 +798,17 @@ Solving this system of equations, we get that:
 \begin{equation*}
     \begin{aligned}
         \Omega &= 145066.7\ \text{rad/s}\\
-        \dot{\Omega} &=  36266.67 \text{rad/s}^2
+        \dot{\Omega} &=  36266.67\ \text{rad/s}^2
 \end{aligned}
 \end{equation*}
 
 \begin{answer}
     \begin{equation*}
         \begin{aligned}
-            F_{A_y} &=  -3.8684\times 10^9 \ \text{N}\\
-            F_{A_z} &=  -6666.7  \ \text{N}\\
-            F_{B_y} &= 3.8684\times 10^9 \ \text{N}\\
-            F_{B_z} &=  6666.7  \ \text{N}
+            F_{A_y} &=  -3.8684\times 10^9 \ \textbf{N}\\
+            F_{A_z} &=  -6666.7  \ \textbf{N}\\
+            F_{B_y} &= 3.8684\times 10^9 \ \textbf{N}\\
+            F_{B_z} &=  6666.7  \ \textbf{N}
     \end{aligned}
     \end{equation*}
 \end{answer}
