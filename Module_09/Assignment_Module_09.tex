@@ -152,7 +152,7 @@ $$ L = \frac{1}{2}\,m\,\left({\dot{r}}^2+{r}^2\,{\dot{\theta}}^2+a^2\,\omega ^2+
 - \frac{1}{2}k\left( r - r_0 \right)^2  $$
 
 We will solve for the equations of motion along the two generalized coordinates, $\theta$ and $r$.
-Starting with $\theta$, we will solve:
+Starting with $r$, we will solve:
 
 $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{r}} - \frac{\partial L}{\partial r} = 0 $$
 
@@ -212,12 +212,9 @@ The following MATLAB script was used to solve this problem:
 \subsubsection*{Derive the equations of motion for the base-excited structure subject to an axial load $\bm{P(t)}$.}
 
 \begin{center}
-
     \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
     \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
     %uncomment if require: \path (0,235); %set diagram left start at 0, and has height of 235
-    
     %Straight Lines [id:da7988239387661931] 
     \draw    (85,161) -- (221,161) ;
     %Straight Lines [id:da433967165778121] 
@@ -290,7 +287,6 @@ The following MATLAB script was used to solve this problem:
     \draw    (88.97,140.99) -- (84.96,134) ;
     %Straight Lines [id:da7163454736261037] 
     \draw    (79.97,141.01) -- (84.96,134) ;
-    
     % Text Node
     \draw (195,74.65) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$m$};
     % Text Node
@@ -300,28 +296,112 @@ The following MATLAB script was used to solve this problem:
     % Text Node
     \draw (233,121.65) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$\overline{F}_{a}$};
     % Text Node
-    \draw (85.67,181.32) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$U_{\text{spring}} =\ \frac{1}{2} k_{p} \theta ^{2}$};
+    \draw (85.67,190.0) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$U_{\text{spring}} =\ \frac{1}{2} k_{p} \theta ^{2}$};
     % Text Node
     \draw (181.67,113.07) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$L$};
     % Text Node
     \draw (50,142.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$X(t)$};
-        
     \end{tikzpicture}
-    
 \end{center}
+
+
+For this problem, the kinetic energy of the system, $T$, is defined as:
+
+$$ T = \frac{1}{2} m v^2 $$
+
+Therefore:
+
+$$ T = \frac{1}{2} m \left(\dot{x}^2 + \dot{y}^2\right)  $$
+
+By inspection of the sketch:
+
+\begin{equation*}
+    \begin{aligned}
+    x &= L\sin(\theta)\\
+    y &= L\cos(\theta)
+    \end{aligned}
+\end{equation*}
+
+Taking the time derivative of both:
+
+\begin{equation*}
+    \begin{aligned}
+    \dot{x} &= L\,\cos\left(\theta \right)\,\dot{\theta}  \\
+    \dot{y} &= -L\,\sin\left(\theta \right)\,\dot{\theta} 
+    \end{aligned}
+\end{equation*}
+
+This gives:
+
+$$ T = \frac{1}{2}m\,L^2\,{\dot{\theta}}^2  $$
+
+The potential energy of the system, $V$ is defined by:
+
+$$ V = \frac{1}{2} k_p \theta^2 + m a y $$
+
+
+Given that the Lagrange is $ L = T - V $:
+
+$$ L = \frac{1}{2}m\,L^2\,{\dot{\theta}}^2 - \left( \frac{1}{2} k_p \theta^2 + m a y \right)$$
+% - \frac{1}{2}k\left( r - r_0 \right)^2  $$
+
+We will solve for the equation of motion along the generalized coordinate, $\theta$:
+
+$$ \frac{d}{d t} \frac{\partial L}{\partial \dot{\theta}} - \frac{\partial L}{\partial \theta} = Q_\theta $$
+
+The component parts of this equation are:
+
+$$ \frac{\partial L}{\partial \theta} = 
+L\,m\,a\,\sin\left(\theta \right)-k_{p}\,\theta  $$
+
+$$ \frac{\partial L}{\partial \dot{\theta}}  =
+L^2\,m\,\dot{\theta}  $$
+
+$$ \frac{d}{d t} \frac{\partial L}{\partial \dot{\theta}} =
+L^2\,m\,\ddot{\theta}  $$
+
+\begin{equation*}
+\begin{aligned}
+Q_\theta &= \sum_{k=1}^{N=3} F_k \frac{\partial x_k }{\partial \theta}\\
+&=\left[\begin{array}{r} 0\\ -P\left(t\right) \end{array}\right] \cdot \left[\begin{array}{r} L\,\cos\left(\theta \right)\\ -L\,\sin\left(\theta \right) \end{array}\right]\\
+&= L\sin(\theta(t)) P(t)
+\end{aligned}
+\end{equation*}
+
+This results in the system equation of motion:
+
+$$ m\,L^2\,\ddot{\theta} -m\,a\,\sin\left(\theta \right)\,L+k_{p}\,\theta  = L\ P(t)\ \sin(\theta)   $$
+
+Or:
+
+$$ m\,L\,\ddot{\theta} -m\,a\,\sin\left(\theta \right)+k_{p}\,\theta  = P(t)\ \sin(\theta)   $$
+
+
+% \begin{answer}
+% \begin{equation*}
+% \begin{aligned}
+% \ddot{r}-r\,{\dot{\theta} }^2-a\,\omega ^2\,\cos\left(\theta -\omega \,t\right) + \frac{k}{m}\,(r-r_{0}) &= 0 \\
+% r\,\ddot{\theta} +2\,\dot{\theta} \,\dot{r}+a\,\omega ^2\,\sin\left(\theta -\omega \,t\right) &= 0 
+% \end{aligned}
+% \end{equation*}
+% \end{answer}
+
+The following MATLAB script was used to solve this problem:
+
+% \color{white}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize]{matlab}
+{./matlab/Problem_1.m}
+% \color{black} 
+
 
 \subsection*{Problem 3}
 \subsubsection*{The double pendulum. Find the equations governing a rigid bar attached to a string as shown
 in the figure.}
 
 \begin{center}
-    
-
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 %uncomment if require: \path (0,235); %set diagram left start at 0, and has height of 235
-
 %Straight Lines [id:da5098103873800055] 
 \draw    (217.02,98.76) -- (81.02,99.24) ;
 %Straight Lines [id:da9938488817744722] 

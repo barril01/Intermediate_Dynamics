@@ -1,8 +1,6 @@
 clc,clear
 syms t m L k_p a
 syms theta(t)
-
-
 % Position
 x = L*sin(theta);
 y = L*cos(theta);
@@ -23,3 +21,8 @@ dL_dtheta_dot = diff(L,theta_dot);
 dL_dtheta_dot_dt = diff(dL_dtheta_dot,t);
 % Resulting equations of motion excluding external forces
 EOM = simplify(dL_dtheta_dot_dt-dL_dtheta);
+% External force:
+syms P(t); assume(P(t),'real')
+r = [x;y];
+dr_dtheta = diff(r,theta);
+F = (P*[0;-1])' * dr_dtheta; % dot product
