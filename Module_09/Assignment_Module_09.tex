@@ -212,96 +212,109 @@ The following MATLAB script was used to solve this problem:
 \subsubsection*{Derive the equations of motion for the base-excited structure subject to an axial load $\bm{P(t)}$.}
 
 \begin{center}
-    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-    %uncomment if require: \path (0,235); %set diagram left start at 0, and has height of 235
-    %Straight Lines [id:da7988239387661931] 
-    \draw    (85,161) -- (221,161) ;
-    %Straight Lines [id:da433967165778121] 
-    \draw    (84,169) -- (94,161) ;
-    %Straight Lines [id:da3638550034994057] 
-    \draw    (92,169) -- (102,161) ;
-    %Straight Lines [id:da16117109148667996] 
-    \draw    (100,169) -- (110,161) ;
-    %Straight Lines [id:da4375189563254478] 
-    \draw    (108,169) -- (118,161) ;
-    %Straight Lines [id:da4196959967714724] 
-    \draw    (117,169) -- (127,161) ;
-    %Straight Lines [id:da604525149658292] 
-    \draw    (125,169) -- (135,161) ;
-    %Straight Lines [id:da7218062027735146] 
-    \draw    (133,169) -- (143,161) ;
-    %Straight Lines [id:da4011814914295413] 
-    \draw    (141,169) -- (151,161) ;
-    %Straight Lines [id:da4361083143725917] 
-    \draw    (149,169) -- (159,161) ;
-    %Straight Lines [id:da3771400943430454] 
-    \draw    (157,169) -- (167,161) ;
-    %Straight Lines [id:da4811503235326229] 
-    \draw    (166,169) -- (176,161) ;
-    %Straight Lines [id:da2562781992520886] 
-    \draw    (174,169) -- (184,161) ;
-    %Straight Lines [id:da6870325307074283] 
-    \draw    (183,169) -- (193,161) ;
-    %Straight Lines [id:da7783982945825645] 
-    \draw    (191,169) -- (201,161) ;
-    %Straight Lines [id:da20511703014012728] 
-    \draw    (199,169) -- (209,161) ;
-    %Straight Lines [id:da6029246345254777] 
-    \draw    (207,169) -- (217,161) ;
-    %Straight Lines [id:da2989222865393577] 
-    \draw  [dash pattern={on 4.5pt off 4.5pt}]  (153,161) -- (153,85) ;
-    %Straight Lines [id:da6331140346824675] 
-    \draw    (153,161) -- (193,74) ;
-    %Shape: Circle [id:dp2247586059899751] 
-    \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (190.25,74) .. controls (190.25,72.48) and (191.48,71.25) .. (193,71.25) .. controls (194.52,71.25) and (195.75,72.48) .. (195.75,74) .. controls (195.75,75.52) and (194.52,76.75) .. (193,76.75) .. controls (191.48,76.75) and (190.25,75.52) .. (190.25,74) -- cycle ;
-    %Curve Lines [id:da555130849372792] 
-    \draw    (153,106) .. controls (159,107) and (166,104) .. (173,117.5) ;
-    %Straight Lines [id:da35567044308417683] 
-    \draw    (172,109) -- (173,117.5) ;
-    %Straight Lines [id:da03561483139923505] 
-    \draw    (167,117) -- (173,117.5) ;
-    %Straight Lines [id:da813880146614568] 
-    \draw    (193,66) -- (193,39) ;
-    %Straight Lines [id:da949816246697498] 
-    \draw    (189,59) -- (193,66) ;
-    %Straight Lines [id:da5009384915479953] 
-    \draw    (198,59) -- (193,66) ;
-    %Shape: Spiral [id:dp1781996928710754] 
-    \draw   (151,161) .. controls (151.24,161) and (151.42,161.1) .. (151.56,161.31) .. controls (151.7,161.53) and (151.73,161.79) .. (151.65,162.08) .. controls (151.55,162.41) and (151.33,162.67) .. (151,162.88) .. controls (150.63,163.11) and (150.19,163.2) .. (149.71,163.17) .. controls (149.16,163.12) and (148.66,162.92) .. (148.2,162.56) .. controls (147.69,162.16) and (147.33,161.64) .. (147.13,161) .. controls (146.9,160.3) and (146.88,159.57) .. (147.08,158.81) .. controls (147.31,157.99) and (147.76,157.28) .. (148.42,156.67) .. controls (149.13,156.01) and (150,155.58) .. (151,155.38) .. controls (152.07,155.15) and (153.15,155.22) .. (154.23,155.59) .. controls (155.37,155.97) and (156.35,156.63) .. (157.15,157.56) .. controls (158.01,158.55) and (158.53,159.69) .. (158.75,161) .. controls (158.98,162.38) and (158.81,163.73) .. (158.27,165.06) .. controls (157.7,166.46) and (156.78,167.63) .. (155.52,168.58) .. controls (154.2,169.57) and (152.69,170.17) .. (151,170.38) .. controls (149.23,170.59) and (147.51,170.35) .. (145.83,169.66) .. controls (144.09,168.94) and (142.64,167.82) .. (141.49,166.31) .. controls (140.29,164.74) and (139.59,162.97) .. (139.38,161) .. controls (139.15,158.95) and (139.48,156.97) .. (140.37,155.06) .. controls (141.3,153.08) and (142.68,151.45) .. (144.54,150.17) .. controls (146.46,148.85) and (148.61,148.08) .. (151,147.88) .. controls (153.14,147.69) and (155.21,147.97) .. (157.22,148.72) ;
-    %Straight Lines [id:da2299544324594225] 
-    \draw    (225,133) -- (225,106) ;
-    %Straight Lines [id:da08869481177778638] 
-    \draw    (221,126) -- (225,133) ;
-    %Straight Lines [id:da26327615187069675] 
-    \draw    (230,126) -- (225,133) ;
-    %Straight Lines [id:da22452872090838816] 
-    \draw    (146.16,170.57) -- (129.47,191.8) ;
-    %Straight Lines [id:da8751075985411929] 
-    \draw    (144.97,178.55) -- (146.16,170.57) ;
-    %Straight Lines [id:da6619340703061136] 
-    \draw    (137.9,172.99) -- (146.16,170.57) ;
-    %Straight Lines [id:da8009572560395279] 
-    \draw    (84.96,134) -- (85,161) ;
-    %Straight Lines [id:da1426979973961593] 
-    \draw    (88.97,140.99) -- (84.96,134) ;
-    %Straight Lines [id:da7163454736261037] 
-    \draw    (79.97,141.01) -- (84.96,134) ;
-    % Text Node
-    \draw (195,74.65) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$m$};
-    % Text Node
-    \draw (155,116.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$\theta $};
-    % Text Node
-    \draw (197,29.65) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$P( t)$};
-    % Text Node
-    \draw (233,121.65) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$\overline{F}_{a}$};
-    % Text Node
-    \draw (85.67,190.0) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$U_{\text{spring}} =\ \frac{1}{2} k_{p} \theta ^{2}$};
-    % Text Node
-    \draw (181.67,113.07) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$L$};
-    % Text Node
-    \draw (50,142.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$X(t)$};
-    \end{tikzpicture}
+ 
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,235); %set diagram left start at 0, and has height of 235
+
+%Straight Lines [id:da7988239387661931] 
+\draw    (85,161) -- (221,161) ;
+%Straight Lines [id:da433967165778121] 
+\draw    (84,169) -- (94,161) ;
+%Straight Lines [id:da3638550034994057] 
+\draw    (92,169) -- (102,161) ;
+%Straight Lines [id:da16117109148667996] 
+\draw    (100,169) -- (110,161) ;
+%Straight Lines [id:da4375189563254478] 
+\draw    (108,169) -- (118,161) ;
+%Straight Lines [id:da4196959967714724] 
+\draw    (117,169) -- (127,161) ;
+%Straight Lines [id:da604525149658292] 
+\draw    (125,169) -- (135,161) ;
+%Straight Lines [id:da7218062027735146] 
+\draw    (133,169) -- (143,161) ;
+%Straight Lines [id:da4011814914295413] 
+\draw    (141,169) -- (151,161) ;
+%Straight Lines [id:da4361083143725917] 
+\draw    (149,169) -- (159,161) ;
+%Straight Lines [id:da3771400943430454] 
+\draw    (157,169) -- (167,161) ;
+%Straight Lines [id:da4811503235326229] 
+\draw    (166,169) -- (176,161) ;
+%Straight Lines [id:da2562781992520886] 
+\draw    (174,169) -- (184,161) ;
+%Straight Lines [id:da6870325307074283] 
+\draw    (183,169) -- (193,161) ;
+%Straight Lines [id:da7783982945825645] 
+\draw    (191,169) -- (201,161) ;
+%Straight Lines [id:da20511703014012728] 
+\draw    (199,169) -- (209,161) ;
+%Straight Lines [id:da6029246345254777] 
+\draw    (207,169) -- (217,161) ;
+%Straight Lines [id:da2989222865393577] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (153,161) -- (153,85) ;
+%Straight Lines [id:da6331140346824675] 
+\draw    (153,161) -- (193,74) ;
+%Shape: Circle [id:dp2247586059899751] 
+\draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 255; green, 255; blue, 255 }  ,fill opacity=1 ] (190.25,74) .. controls (190.25,72.48) and (191.48,71.25) .. (193,71.25) .. controls (194.52,71.25) and (195.75,72.48) .. (195.75,74) .. controls (195.75,75.52) and (194.52,76.75) .. (193,76.75) .. controls (191.48,76.75) and (190.25,75.52) .. (190.25,74) -- cycle ;
+%Curve Lines [id:da555130849372792] 
+\draw    (153,106) .. controls (159,107) and (166,104) .. (173,117.5) ;
+%Straight Lines [id:da35567044308417683] 
+\draw    (172,109) -- (173,117.5) ;
+%Straight Lines [id:da03561483139923505] 
+\draw    (167,117) -- (173,117.5) ;
+%Straight Lines [id:da813880146614568] 
+\draw    (193,66) -- (193,39) ;
+%Straight Lines [id:da949816246697498] 
+\draw    (189,59) -- (193,66) ;
+%Straight Lines [id:da5009384915479953] 
+\draw    (198,59) -- (193,66) ;
+%Shape: Spiral [id:dp1781996928710754] 
+\draw   (151,161) .. controls (151.24,161) and (151.42,161.1) .. (151.56,161.31) .. controls (151.7,161.53) and (151.73,161.79) .. (151.65,162.08) .. controls (151.55,162.41) and (151.33,162.67) .. (151,162.88) .. controls (150.63,163.11) and (150.19,163.2) .. (149.71,163.17) .. controls (149.16,163.12) and (148.66,162.92) .. (148.2,162.56) .. controls (147.69,162.16) and (147.33,161.64) .. (147.13,161) .. controls (146.9,160.3) and (146.88,159.57) .. (147.08,158.81) .. controls (147.31,157.99) and (147.76,157.28) .. (148.42,156.67) .. controls (149.13,156.01) and (150,155.58) .. (151,155.38) .. controls (152.07,155.15) and (153.15,155.22) .. (154.23,155.59) .. controls (155.37,155.97) and (156.35,156.63) .. (157.15,157.56) .. controls (158.01,158.55) and (158.53,159.69) .. (158.75,161) .. controls (158.98,162.38) and (158.81,163.73) .. (158.27,165.06) .. controls (157.7,166.46) and (156.78,167.63) .. (155.52,168.58) .. controls (154.2,169.57) and (152.69,170.17) .. (151,170.38) .. controls (149.23,170.59) and (147.51,170.35) .. (145.83,169.66) .. controls (144.09,168.94) and (142.64,167.82) .. (141.49,166.31) .. controls (140.29,164.74) and (139.59,162.97) .. (139.38,161) .. controls (139.15,158.95) and (139.48,156.97) .. (140.37,155.06) .. controls (141.3,153.08) and (142.68,151.45) .. (144.54,150.17) .. controls (146.46,148.85) and (148.61,148.08) .. (151,147.88) .. controls (153.14,147.69) and (155.21,147.97) .. (157.22,148.72) ;
+%Straight Lines [id:da2299544324594225] 
+\draw    (225,133) -- (225,106) ;
+%Straight Lines [id:da08869481177778638] 
+\draw    (221,126) -- (225,133) ;
+%Straight Lines [id:da26327615187069675] 
+\draw    (230,126) -- (225,133) ;
+%Straight Lines [id:da22452872090838816] 
+\draw    (146.16,170.57) -- (129.47,191.8) ;
+%Straight Lines [id:da8751075985411929] 
+\draw    (144.97,178.55) -- (146.16,170.57) ;
+%Straight Lines [id:da6619340703061136] 
+\draw    (137.9,172.99) -- (146.16,170.57) ;
+%Straight Lines [id:da8009572560395279] 
+\draw    (84.96,134) -- (85,161) ;
+%Straight Lines [id:da1426979973961593] 
+\draw    (88.97,140.99) -- (84.96,134) ;
+%Straight Lines [id:da7163454736261037] 
+\draw    (79.97,141.01) -- (84.96,134) ;
+%Straight Lines [id:da14612441859367897] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (257,161.33) -- (85,161) ;
+
+% Text Node
+\draw (195,74.65) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$m$};
+% Text Node
+\draw (155,116.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$\theta $};
+% Text Node
+\draw (197,29.65) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$P( t)$};
+% Text Node
+\draw (233,121.65) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$\overline{F}_{a}$};
+% Text Node
+\draw (85.67,190) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$U_{\text{spring}} =\ \frac{1}{2} k_{p} \theta ^{2}$};
+% Text Node
+\draw (181.67,113.07) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$L$};
+% Text Node
+\draw (59.67,142.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$X( t)$};
+% Text Node
+\draw (147.67,67.07) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$x$};
+% Text Node
+\draw (261.67,154.4) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize]  {$y$};
+
+
+\end{tikzpicture}
 \end{center}
 
 
@@ -367,10 +380,14 @@ $$ \frac{\partial L}{\partial \theta} =
 -L\,m\,a\,\sin\left(\theta\right)-L\,m\,\cos\left(\theta\right)\,\dot{\theta}\,X'\left(t\right)-k_{p}\,\theta  $$
 
 $$ \frac{\partial L}{\partial \dot{\theta}}  =
-\frac{1}{2}\,m\,\left(2\,L^2\,\dot{\theta}-2\,L\,\sin\left(\theta\right)\,X'\left(t\right)\right) $$
+m\,L^2\,\dot{\theta}-m\,L\,\sin\left(\theta\right)\,X'\left(t\right) $$
+
+% $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{\theta}} =
+% \frac{1}{2}\,m\,\left(-2\,L^2\,\ddot{\theta}+2\,\sin\left(\theta\right)\,L\,X''\left(t\right)+2\,\cos\left(\theta\right)\,\dot{\theta}\,L\,X'\left(t\right)\right)  $$
 
 $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{\theta}} =
-\frac{1}{2}\,m\,\left(-2\,L^2\,\ddot{\theta}+2\,\sin\left(\theta\right)\,L\,X''\left(t\right)+2\,\cos\left(\theta\right)\,\dot{\theta}\,L\,X'\left(t\right)\right)  $$
+m\,L^2\,\ddot{\theta} - m\,\sin(\theta)\,L\,X''(t) - m\,\cos(\theta)\dot{\theta}\,L\,X'(t)  $$
+
 
 \begin{equation*}
 \begin{aligned}
@@ -390,23 +407,9 @@ $$ m\,L^2\,\ddot{\theta}-m\,L\sin\left(\theta\right)\,X''\left(t\right)+k_{p}\,\
 Or:
 
 \begin{answer}
-    $$ m\,L^2\,\ddot{\theta}+k_{p}\,\theta+\left(a-X''\left(t\right)\right)m\,L\sin\left(\theta\right) =  P(t)\ L \sin(\theta)   $$
+    $$ m\,L^2\,\ddot{\theta}+\left[a-X''\left(t\right)\right]m\,L\sin\left(\theta\right)+k_{p}\,\theta =  P(t)\ L \sin(\theta)   $$
 \end{answer}
 
-% Or:
-
-% % $$ m\,L\,\ddot{\theta} -m\,a\,\sin\left(\theta \right)+k_{p}\,\theta  = P(t)\ \sin(\theta)   $$
-% $$ m\,L\,\ddot{\theta}-m\,\sin\left(\theta\right)\,X''\left(t\right)-m\,a\,\sin\left(\theta\right)\,L+k_{p}\,\theta = L\ P(t)\ \sin(\theta)   $$
-
-
-% \begin{answer}
-% \begin{equation*}
-% \begin{aligned}
-% \ddot{r}-r\,{\dot{\theta} }^2-a\,\omega ^2\,\cos\left(\theta -\omega \,t\right) + \frac{k}{m}\,(r-r_{0}) &= 0 \\
-% r\,\ddot{\theta} +2\,\dot{\theta} \,\dot{r}+a\,\omega ^2\,\sin\left(\theta -\omega \,t\right) &= 0 
-% \end{aligned}
-% \end{equation*}
-% \end{answer}
 
 The following MATLAB script was used to solve this problem:
 

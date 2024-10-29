@@ -18,7 +18,7 @@ theta_dot = diff(theta,t);
 % theta coordinate derivatives
 dL_dtheta     = diff(L,theta);
 dL_dtheta_dot = diff(L,theta_dot);
-dL_dtheta_dot_dt = diff(dL_dtheta_dot,t);
+dL_dtheta_dot_dt = simplify(diff(dL_dtheta_dot,t));
 % Resulting equations of motion excluding external forces
 EOM = simplify(dL_dtheta_dot_dt-dL_dtheta);
 % External force:
