@@ -317,8 +317,8 @@ By inspection of the sketch:
 
 \begin{equation*}
     \begin{aligned}
-    x &= L\sin(\theta)\\
-    y &= L\cos(\theta)
+    x &= L\cos(\theta)+X(t)\\    
+    y &= L\sin(\theta)
     \end{aligned}
 \end{equation*}
 
@@ -326,23 +326,26 @@ Taking the time derivative of both:
 
 \begin{equation*}
     \begin{aligned}
-    \dot{x} &= L\,\cos\left(\theta \right)\,\dot{\theta}  \\
-    \dot{y} &= -L\,\sin\left(\theta \right)\,\dot{\theta} 
+    \dot{x} &= X'(t)-L\,\sin\left(\theta \right)\,\dot{\theta}\\         
+    \dot{y} &=  L\,\cos\left(\theta \right)\,\dot{\theta} 
     \end{aligned}
 \end{equation*}
 
 This gives:
 
-$$ T = \frac{1}{2}m\,L^2\,{\dot{\theta}}^2  $$
+% $$ T = \frac{1}{2}m\,L^2\,{\dot{\theta}}^2  $$
+
+$$ T = \frac{1}{2} m \left(X'(t)^2 + L^2\dot{\theta}^2 - 2 L \sin(\theta)X'(t)\dot{\theta}\right)  $$
 
 The potential energy of the system, $V$ is defined by:
 
-$$ V = \frac{1}{2} k_p \theta^2 + m a y $$
+$$ V = \frac{1}{2} k_p \theta^2 + m (-a) x $$
 
 
 Given that the Lagrange is $ L = T - V $:
 
-$$ L = \frac{1}{2}m\,L^2\,{\dot{\theta}}^2 - \left( \frac{1}{2} k_p \theta^2 + m a y \right)$$
+%$$ L = \frac{1}{2}m\,L^2\,{\dot{\theta}}^2 - \left( \frac{1}{2} k_p \theta^2 + m a y \right)$$
+$$ L = \frac{1}{2} m \left(X'(t)^2 + L^2\dot{\theta}^2 - 2 L \sin(\theta)X'(t)\dot{\theta}\right)- \left( \frac{1}{2} k_p \theta^2 - m a \left(L\cos(\theta)+X(t)\right) \right)$$
 % - \frac{1}{2}k\left( r - r_0 \right)^2  $$
 
 We will solve for the equation of motion along the generalized coordinate, $\theta$:
@@ -351,14 +354,23 @@ $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{\theta}} - \frac{\partial L}{\p
 
 The component parts of this equation are:
 
+% $$ \frac{\partial L}{\partial \theta} = 
+% L\,m\,a\,\sin\left(\theta \right)-k_{p}\,\theta  $$
+
+% $$ \frac{\partial L}{\partial \dot{\theta}}  =
+% L^2\,m\,\dot{\theta}  $$
+
+% $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{\theta}} =
+% L^2\,m\,\ddot{\theta}  $$
+
 $$ \frac{\partial L}{\partial \theta} = 
-L\,m\,a\,\sin\left(\theta \right)-k_{p}\,\theta  $$
+-L\,m\,a\,\sin\left(\theta\right)-L\,m\,\cos\left(\theta\right)\,\dot{\theta}\,X'\left(t\right)-k_{p}\,\theta  $$
 
 $$ \frac{\partial L}{\partial \dot{\theta}}  =
-L^2\,m\,\dot{\theta}  $$
+\frac{1}{2}\,m\,\left(2\,L^2\,\dot{\theta}-2\,L\,\sin\left(\theta\right)\,X'\left(t\right)\right) $$
 
 $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{\theta}} =
-L^2\,m\,\ddot{\theta}  $$
+\frac{1}{2}\,m\,\left(-2\,L^2\,\ddot{\theta}+2\,\sin\left(\theta\right)\,L\,X''\left(t\right)+2\,\cos\left(\theta\right)\,\dot{\theta}\,L\,X'\left(t\right)\right)  $$
 
 \begin{equation*}
 \begin{aligned}
@@ -370,11 +382,21 @@ Q_\theta &= \sum_{k=1}^{N=3} F_k \frac{\partial x_k }{\partial \theta}\\
 
 This results in the system equation of motion:
 
-$$ m\,L^2\,\ddot{\theta} -m\,a\,\sin\left(\theta \right)\,L+k_{p}\,\theta  = L\ P(t)\ \sin(\theta)   $$
+% $$ m\,L^2\,\ddot{\theta} -m\,a\,\sin\left(\theta \right)\,L+k_{p}\,\theta  = L\ P(t)\ \sin(\theta)   $$
+% \begin{answer}
+$$ m\,L^2\,\ddot{\theta}-m\,L\sin\left(\theta\right)\,X''\left(t\right)+k_{p}\,\theta+m\,a\,L\sin\left(\theta\right) =  P(t)\ L \sin(\theta)   $$
+% \end{answer}
 
 Or:
 
-$$ m\,L\,\ddot{\theta} -m\,a\,\sin\left(\theta \right)+k_{p}\,\theta  = P(t)\ \sin(\theta)   $$
+\begin{answer}
+    $$ m\,L^2\,\ddot{\theta}+k_{p}\,\theta+\left(a-X''\left(t\right)\right)m\,L\sin\left(\theta\right) =  P(t)\ L \sin(\theta)   $$
+\end{answer}
+
+% Or:
+
+% % $$ m\,L\,\ddot{\theta} -m\,a\,\sin\left(\theta \right)+k_{p}\,\theta  = P(t)\ \sin(\theta)   $$
+% $$ m\,L\,\ddot{\theta}-m\,\sin\left(\theta\right)\,X''\left(t\right)-m\,a\,\sin\left(\theta\right)\,L+k_{p}\,\theta = L\ P(t)\ \sin(\theta)   $$
 
 
 % \begin{answer}
@@ -499,6 +521,28 @@ in the figure.}
 
 \subsubsection*{a. This system starts with 9 degrees of freedom. What constraints exist that reduce this system to
 only two degrees of freedom?}
+The system is composed of two objects; a mass particle and a ridged body.
+The mass, $m_1$, particle has three translational dimensions, $x_1$, $y_1$ and $z_1$.
+The ridged body, $m_2$, particle has three translational dimensions, $x_2$, $y_2$ and $z_2$,
+and three rotational dimensions, $R_{x_2}$, $R_{y_2}$ and $R_{z_2}$.
+\\\\
+Because this is a 2-D problem, the following four constraints are inherent:
+
+$$z_1 = z_2= R_{x_2} = R_{y_2} = C =0$$
+
+Via inspection of the diagram we can see the following 3 constraints:
+
+$$ {L_1}^2  = {x_1}^2  + {y_1}^2 $$
+
+$$ \left(\frac{L_1}{2}\right)^2  = \left({x_2}-{x_1}\right)^2  + \left({y_2}-{y_1}\right)^2 $$
+
+$$ R_{z_2}= \theta_2 = \tan^{-1}\left( \frac{{x_2}-{x_1}}{{y_2}-{y_1}} \right) $$
+
+\begin{answer}
+With \textbf{9 degrees of freedom for the unconstrained system} and \textbf{7 constraints},
+the system has $2$ \textbf{degrees of freedom}.
+\end{answer}
+
 \subsubsection*{b. Show that the Lagrangian is:
 $$ \footnotesize \bm{L = \frac{1}{2}m\left[
     L_1^2 \dot{\theta}_1^2 +
