@@ -40,10 +40,10 @@ EOM_phi = simplify(dL_dphi_dot_dt-dL_dphi) %[output:7796cc0c]
 %   data: {"dataType":"symbolic","outputData":{"name":"p_dot(t)","value":"\\left(\\begin{array}{c}\n-\\cos \\left(\\theta \\right)\\,\\frac{\\partial }{\\partial t}\\;s\\left(t\\right)\\\\\n\\cos \\left(\\phi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right)\\,\\frac{\\partial }{\\partial t}\\;s\\left(t\\right)-\\sin \\left(\\phi \\left(t\\right)\\right)\\,s\\left(t\\right)\\,\\sin \\left(\\theta \\right)\\,\\frac{\\partial }{\\partial t}\\;\\phi \\left(t\\right)\\\\\n\\sin \\left(\\phi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right)\\,\\frac{\\partial }{\\partial t}\\;s\\left(t\\right)+\\cos \\left(\\phi \\left(t\\right)\\right)\\,s\\left(t\\right)\\,\\sin \\left(\\theta \\right)\\,\\frac{\\partial }{\\partial t}\\;\\phi \\left(t\\right)\n\\end{array}\\right)"}}
 %---
 %[output:04ea3874]
-%   data: {"dataType":"symbolic","outputData":{"name":"T(t)","value":"0.5000\\,m\\,{\\left({s\\left(t\\right)}^2 \\,{\\sin \\left(\\theta \\right)}^2 \\,{{\\left(\\frac{\\partial }{\\partial t}\\;\\phi \\left(t\\right)\\right)}}^2 +{{\\left(\\frac{\\partial }{\\partial t}\\;s\\left(t\\right)\\right)}}^2 \\right)}+0.5000\\,\\textrm{I}\\,{{\\left(\\frac{\\partial }{\\partial t}\\;\\phi \\left(t\\right)\\right)}}^2"}}
+%   data: {"dataType":"symbolic","outputData":{"name":"T(t)","value":"\\frac{m\\,{\\left({s\\left(t\\right)}^2 \\,{\\sin \\left(\\theta \\right)}^2 \\,{{\\left(\\frac{\\partial }{\\partial t}\\;\\phi \\left(t\\right)\\right)}}^2 +{{\\left(\\frac{\\partial }{\\partial t}\\;s\\left(t\\right)\\right)}}^2 \\right)}}{2}+\\frac{\\textrm{I}\\,{{\\left(\\frac{\\partial }{\\partial t}\\;\\phi \\left(t\\right)\\right)}}^2 }{2}"}}
 %---
 %[output:3372388c]
-%   data: {"dataType":"symbolic","outputData":{"name":"V(t)","value":"0.5000\\,k\\,{s\\left(t\\right)}^2 +g\\,m\\,\\cos \\left(\\phi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right)\\,s\\left(t\\right)"}}
+%   data: {"dataType":"symbolic","outputData":{"name":"V(t)","value":"\\frac{k\\,{s\\left(t\\right)}^2 }{2}+g\\,m\\,\\cos \\left(\\phi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right)\\,s\\left(t\\right)"}}
 %---
 %[output:3c912068]
 %   data: {"dataType":"symbolic","outputData":{"name":"dL_ds(t)","value":"m\\,s\\left(t\\right)\\,{\\sin \\left(\\theta \\right)}^2 \\,{{\\left(\\frac{\\partial }{\\partial t}\\;\\phi \\left(t\\right)\\right)}}^2 -g\\,m\\,\\cos \\left(\\phi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right)-k\\,s\\left(t\\right)"}}
