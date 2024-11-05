@@ -35,16 +35,20 @@ V = m*g*([0 -1]*p_cg_1)+m*g*([0 -1]*p_cg_2) %[output:6221af15]
 L = T-V %[output:6857e415]
 
 % theta_1 coordinate derivatives
-dL_dtheta_1     = diff(L,theta_1);
-dL_dtheta_1_dot = diff(L,theta_1_dot);
-dL_dtheta_1_dot_dt = simplify(diff(dL_dtheta_1_dot,t));
+dL_dtheta_1     = diff(L,theta_1) %[output:0722c161]
+dL_dtheta_1_dot = diff(L,theta_1_dot) %[output:9bb59a00]
+dL_dtheta_1_dot_dt = simplify(diff(dL_dtheta_1_dot,t)) %[output:3b3555ba]
 % theta_2 coordinate derivatives
-dL_dtheta_2     = diff(L,theta_2);
-dL_dtheta_2_dot = diff(L,theta_2_dot);
-dL_dtheta_2_dot_dt = simplify(diff(dL_dtheta_2_dot,t));
+dL_dtheta_2     = diff(L,theta_2) %[output:368c1aa0]
+dL_dtheta_2_dot = diff(L,theta_2_dot) %[output:86dc97c0]
+dL_dtheta_2_dot_dt = simplify(diff(dL_dtheta_2_dot,t)) %[output:27624ea1]
 % Resulting equations of motion excluding external forces
-EOM_1 = simplify(dL_dtheta_1_dot_dt-dL_dtheta_1) %[output:0722c161]
-EOM_2 = simplify(dL_dtheta_2_dot_dt-dL_dtheta_2) %[output:9bb59a00]
+EOM_1 = simplify(dL_dtheta_1_dot_dt-dL_dtheta_1) %[output:0c1ac215]
+EOM_2 = simplify(dL_dtheta_2_dot_dt-dL_dtheta_2) %[output:7b04de84]
+%[text] The constraint is:
+r_B_A = [p_b,;0];
+v_c = [v_c;0];
+[0,0,1]*simplify(cross(v_c,r_B_A),1000) == 0 %[output:2d8b85d9]
 
 %[appendix]
 %---
@@ -88,8 +92,29 @@ EOM_2 = simplify(dL_dtheta_2_dot_dt-dL_dtheta_2) %[output:9bb59a00]
 %   data: {"dataType":"symbolic","outputData":{"name":"L(t)","value":"g\\,m\\,{\\left(L\\,\\cos \\left(\\theta_1 \\left(t\\right)\\right)+\\frac{L\\,\\cos \\left(\\theta_2 \\left(t\\right)\\right)}{2}\\right)}+\\frac{2\\,L^2 \\,m\\,{{\\left(\\frac{\\partial }{\\partial t}\\;\\theta_1 \\left(t\\right)\\right)}}^2 }{3}+\\frac{L^2 \\,m\\,{{\\left(\\frac{\\partial }{\\partial t}\\;\\theta_2 \\left(t\\right)\\right)}}^2 }{6}+\\frac{L\\,g\\,m\\,\\cos \\left(\\theta_1 \\left(t\\right)\\right)}{2}+\\frac{L^2 \\,m\\,\\cos \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,\\frac{\\partial }{\\partial t}\\;\\theta_2 \\left(t\\right)\\,\\frac{\\partial }{\\partial t}\\;\\theta_1 \\left(t\\right)}{2}"}}
 %---
 %[output:0722c161]
-%   data: {"dataType":"symbolic","outputData":{"name":"EOM_1(t)","value":"\\frac{4\\,L^2 \\,m\\,\\frac{\\partial^2 }{\\partial t^2 }\\;\\theta_1 \\left(t\\right)}{3}+\\frac{L^2 \\,m\\,\\sin \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,{{\\left(\\frac{\\partial }{\\partial t}\\;\\theta_2 \\left(t\\right)\\right)}}^2 }{2}+\\frac{L^2 \\,m\\,\\cos \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,\\frac{\\partial^2 }{\\partial t^2 }\\;\\theta_2 \\left(t\\right)}{2}+\\frac{3\\,L\\,g\\,m\\,\\sin \\left(\\theta_1 \\left(t\\right)\\right)}{2}"}}
+%   data: {"dataType":"symbolic","outputData":{"name":"dL_dtheta_1(t)","value":"\\frac{L^2 \\,m\\,\\sin \\left(\\theta_2 \\left(t\\right)-\\theta_1 \\left(t\\right)\\right)\\,\\frac{\\partial }{\\partial t}\\;\\theta_2 \\left(t\\right)\\,\\frac{\\partial }{\\partial t}\\;\\theta_1 \\left(t\\right)}{2}-\\frac{3\\,L\\,g\\,m\\,\\sin \\left(\\theta_1 \\left(t\\right)\\right)}{2}"}}
 %---
 %[output:9bb59a00]
+%   data: {"dataType":"symbolic","outputData":{"name":"dL_dtheta_1_dot(t)","value":"\\frac{4\\,L^2 \\,m\\,\\frac{\\partial }{\\partial t}\\;\\theta_1 \\left(t\\right)}{3}+\\frac{L^2 \\,m\\,\\cos \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,\\frac{\\partial }{\\partial t}\\;\\theta_2 \\left(t\\right)}{2}"}}
+%---
+%[output:3b3555ba]
+%   data: {"dataType":"symbolic","outputData":{"name":"dL_dtheta_1_dot_dt(t)","value":"\\frac{4\\,L^2 \\,m\\,\\frac{\\partial^2 }{\\partial t^2 }\\;\\theta_1 \\left(t\\right)}{3}+\\frac{L^2 \\,m\\,\\cos \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,\\frac{\\partial^2 }{\\partial t^2 }\\;\\theta_2 \\left(t\\right)}{2}-\\frac{L^2 \\,m\\,\\sin \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,{\\left(\\frac{\\partial }{\\partial t}\\;\\theta_1 \\left(t\\right)-\\frac{\\partial }{\\partial t}\\;\\theta_2 \\left(t\\right)\\right)}\\,\\frac{\\partial }{\\partial t}\\;\\theta_2 \\left(t\\right)}{2}"}}
+%---
+%[output:368c1aa0]
+%   data: {"dataType":"symbolic","outputData":{"name":"dL_dtheta_2(t)","value":"\\frac{L^2 \\,m\\,\\sin \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,\\frac{\\partial }{\\partial t}\\;\\theta_2 \\left(t\\right)\\,\\frac{\\partial }{\\partial t}\\;\\theta_1 \\left(t\\right)}{2}-\\frac{L\\,g\\,m\\,\\sin \\left(\\theta_2 \\left(t\\right)\\right)}{2}"}}
+%---
+%[output:86dc97c0]
+%   data: {"dataType":"symbolic","outputData":{"name":"dL_dtheta_2_dot(t)","value":"\\frac{L^2 \\,m\\,\\frac{\\partial }{\\partial t}\\;\\theta_2 \\left(t\\right)}{3}+\\frac{L^2 \\,m\\,\\cos \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,\\frac{\\partial }{\\partial t}\\;\\theta_1 \\left(t\\right)}{2}"}}
+%---
+%[output:27624ea1]
+%   data: {"dataType":"symbolic","outputData":{"name":"dL_dtheta_2_dot_dt(t)","value":"\\frac{L^2 \\,m\\,\\frac{\\partial^2 }{\\partial t^2 }\\;\\theta_2 \\left(t\\right)}{3}+\\frac{L^2 \\,m\\,\\cos \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,\\frac{\\partial^2 }{\\partial t^2 }\\;\\theta_1 \\left(t\\right)}{2}-\\frac{L^2 \\,m\\,\\sin \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,{\\left(\\frac{\\partial }{\\partial t}\\;\\theta_1 \\left(t\\right)-\\frac{\\partial }{\\partial t}\\;\\theta_2 \\left(t\\right)\\right)}\\,\\frac{\\partial }{\\partial t}\\;\\theta_1 \\left(t\\right)}{2}"}}
+%---
+%[output:0c1ac215]
+%   data: {"dataType":"symbolic","outputData":{"name":"EOM_1(t)","value":"\\frac{4\\,L^2 \\,m\\,\\frac{\\partial^2 }{\\partial t^2 }\\;\\theta_1 \\left(t\\right)}{3}+\\frac{L^2 \\,m\\,\\sin \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,{{\\left(\\frac{\\partial }{\\partial t}\\;\\theta_2 \\left(t\\right)\\right)}}^2 }{2}+\\frac{L^2 \\,m\\,\\cos \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,\\frac{\\partial^2 }{\\partial t^2 }\\;\\theta_2 \\left(t\\right)}{2}+\\frac{3\\,L\\,g\\,m\\,\\sin \\left(\\theta_1 \\left(t\\right)\\right)}{2}"}}
+%---
+%[output:7b04de84]
 %   data: {"dataType":"symbolic","outputData":{"name":"EOM_2(t)","value":"\\frac{L^2 \\,m\\,\\frac{\\partial^2 }{\\partial t^2 }\\;\\theta_2 \\left(t\\right)}{3}-\\frac{L^2 \\,m\\,\\sin \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,{{\\left(\\frac{\\partial }{\\partial t}\\;\\theta_1 \\left(t\\right)\\right)}}^2 }{2}+\\frac{L^2 \\,m\\,\\cos \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,\\frac{\\partial^2 }{\\partial t^2 }\\;\\theta_1 \\left(t\\right)}{2}+\\frac{L\\,g\\,m\\,\\sin \\left(\\theta_2 \\left(t\\right)\\right)}{2}"}}
+%---
+%[output:2d8b85d9]
+%   data: {"dataType":"symbolic","outputData":{"name":"ans(t)","value":"L^2 \\,\\frac{\\partial }{\\partial t}\\;\\theta_1 \\left(t\\right)+L^2 \\,\\cos \\left(\\theta_1 \\left(t\\right)-\\theta_2 \\left(t\\right)\\right)\\,\\frac{\\partial }{\\partial t}\\;\\theta_2 \\left(t\\right)=0"}}
 %---
