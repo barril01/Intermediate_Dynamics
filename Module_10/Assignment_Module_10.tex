@@ -115,7 +115,7 @@ $$ m\,\ddot{s}-m\,s\,{\sin \left(\theta \right)}^2 \,{{\dot{\phi}}}^2 +m\,g\,\co
 Solving for the equations of motion along the generalized coordinate, $\phi$:
 
 $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{\phi}} - \frac{\partial L}{\partial \phi} = 
-M_i \frac{\partial \omega_i}{\partial \dot{\phi}} = M $$
+\sum_i M_i \frac{\partial \omega_i}{\partial \dot{\phi}} = M $$
 
 The component parts of this equation are:
 
@@ -296,7 +296,7 @@ $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{\theta_1}} =
 
 
 This results in the equation of motion,
-where $Q_{\theta_1} = M_i \frac{\partial \omega_{R_z}}{\partial \dot{\theta_1}} = M $ :
+where $Q_{\theta_1} = \sum_{i} M \frac{\partial \omega_i}{\partial \dot{\theta_1}} = M $ :
 
 $$ \frac{4}{3}\,L^2 \,m\,\ddot{\theta_1} +
 \frac{1}{2}L^2 \,m\,\sin \left(\theta_1 -\theta_2 \right)\,{\dot{\theta_2}}^2+
@@ -325,7 +325,7 @@ $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{\theta_2}} =
 \frac{1}{2}L^2 \,m\,\sin \left(\theta_1 -\theta_2 \right)\,{\left(\dot{\theta_1} -\dot{\theta_2} \right)}\,\dot{\theta_1}  $$
 
 This results in the equation of motion,
-where $Q_{\theta_1} = 0 $ :
+where $Q_{\theta_2} = 0 $ :
 
 
 $$ \frac{1}{3}L^2 \,m\,\ddot{\theta_2}-
