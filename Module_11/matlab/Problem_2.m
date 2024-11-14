@@ -7,10 +7,6 @@ syms gamma_1(t) gamma_2(t)
 r_G = [(L+sin(theta)*L/2)*cos(psi); %[output:group:7db8fe06] %[output:1a1aebde]
        (L+sin(theta)*L/2)*sin(psi); %[output:1a1aebde]
        -cos(theta)*L/2]  %[output:group:7db8fe06] %[output:1a1aebde]
-
-% r_G = subs(r_G,...
-%     [theta psi],[gamma_1,gamma_2])
-
 v_G = diff(r_G,t) %[output:30bffc96]
 a_G = simplify(diff(v_G,t))  %[output:42414e71]
 

@@ -13,8 +13,6 @@ r_p_o = [x;y;z];
 
 v_p = v_o + cross(omega_bar,r_p_o) % gamma_dot %[output:3f34eeb3]
 
-% gamma_dot = v_p
-
 syms gamma_dot_1(t) ...
      gamma_dot_2(t) ...
      gamma_dot_3(t)

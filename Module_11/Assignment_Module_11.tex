@@ -171,6 +171,13 @@ Where:
     \end{aligned}
 \end{equation*}
 
+The following MATLAB script was used to solve this problem:
+
+% \color{white}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize,lastline=38]{matlab}
+{./matlab/Problem_1.m}
+% \color{black} 
+
 \subsection*{Problem 2:}
 \subsubsection*{Use the Gibbs-Appell approach to find the equations of motion for this problem.}
 \subsubsection*{A torque $\bm{\Gamma}$ applied to the vertical shaft of the T-bar
@@ -208,16 +215,16 @@ $$ \bar{v}_G = \left<\begin{array}{c}
 
 Which we can then use to compute acceleration at point $G$:
 
-  $$ \bar{a}_G = \left<\begin{array}{c} \frac{L\,\cos\left(\psi \right)\,\cos\left(\theta \right)\,\frac{\partial ^2}{\partial t^2} \theta }{2}-\frac{L\,\cos\left(\psi \right)\,\sin\left(\theta \right)\,{\left(\frac{\partial }{\partial t} \theta \right)}^2}{2}-\frac{L\,\cos\left(\psi \right)\,\left(\sin\left(\theta \right)+2\right)\,{\left(\frac{\partial }{\partial t} \psi \right)}^2}{2}-\frac{L\,\sin\left(\psi \right)\,\left(\sin\left(\theta \right)+2\right)\,\frac{\partial ^2}{\partial t^2} \psi }{2}-L\,\cos\left(\theta \right)\,\sin\left(\psi \right)\,\frac{\partial }{\partial t} \theta \,\frac{\partial }{\partial t} \psi \\
+  $$ \bar{a}_G = {\scriptsize\left<\begin{array}{c} \frac{L\,\cos\left(\psi \right)\,\cos\left(\theta \right)\,\frac{\partial ^2}{\partial t^2} \theta }{2}-\frac{L\,\cos\left(\psi \right)\,\sin\left(\theta \right)\,{\left(\frac{\partial }{\partial t} \theta \right)}^2}{2}-\frac{L\,\cos\left(\psi \right)\,\left(\sin\left(\theta \right)+2\right)\,{\left(\frac{\partial }{\partial t} \psi \right)}^2}{2}-\frac{L\,\sin\left(\psi \right)\,\left(\sin\left(\theta \right)+2\right)\,\frac{\partial ^2}{\partial t^2} \psi }{2}-L\,\cos\left(\theta \right)\,\sin\left(\psi \right)\,\frac{\partial }{\partial t} \theta \,\frac{\partial }{\partial t} \psi \\
     \frac{L\,\cos\left(\theta \right)\,\sin\left(\psi \right)\,\frac{\partial ^2}{\partial t^2} \theta }{2}-\frac{L\,\sin\left(\psi \right)\,\sin\left(\theta \right)\,{\left(\frac{\partial }{\partial t} \theta \right)}^2}{2}-\frac{L\,\sin\left(\psi \right)\,\left(\sin\left(\theta \right)+2\right)\,{\left(\frac{\partial }{\partial t} \psi \right)}^2}{2}+\frac{L\,\cos\left(\psi \right)\,\left(\sin\left(\theta \right)+2\right)\,\frac{\partial ^2}{\partial t^2} \psi }{2}+L\,\cos\left(\psi \right)\,\cos\left(\theta \right)\,\frac{\partial }{\partial t} \theta \,\frac{\partial }{\partial t} \psi \\
-    \frac{L\,\sin\left(\theta \right)\,\frac{\partial ^2}{\partial t^2} \theta }{2}+\frac{L\,\cos\left(\theta \right)\,{\left(\frac{\partial }{\partial t} \theta \right)}^2}{2} \end{array}\right>$$
+    \frac{L\,\sin\left(\theta \right)\,\frac{\partial ^2}{\partial t^2} \theta }{2}+\frac{L\,\cos\left(\theta \right)\,{\left(\frac{\partial }{\partial t} \theta \right)}^2}{2} \end{array}\right>}$$
   
 Replacing $\dot{\theta}$ and $\dot{\psi}$ with the quasi-velocity terms gives us:
 
-$$ \bar{a}_G = \left<\begin{array}{c}
+$$ \bar{a}_G = {\footnotesize\left<\begin{array}{c}
   \frac{L\,\cos\left(\psi \right)\,\cos\left(\theta \right)\,\ddot{\gamma_1}}{2}-\frac{L\,\cos\left(\psi \right)\,\sin\left(\theta \right)\,{\left(\dot{\gamma_1}\right)}^2}{2}-\frac{L\,\cos\left(\psi \right)\,{\left(\dot{\gamma_2}\right)}^2\,\left(\sin\left(\theta \right)+2\right)}{2}-\frac{L\,\sin\left(\psi \right)\,\left(\sin\left(\theta \right)+2\right)\,\ddot{\gamma_2}}{2}-L\,\cos\left(\theta \right)\,\sin\left(\psi \right)\,\dot{\gamma_2}\,\dot{\gamma_1}\\
   \frac{L\,\cos\left(\theta \right)\,\sin\left(\psi \right)\,\ddot{\gamma_1}}{2}-\frac{L\,\sin\left(\psi \right)\,\sin\left(\theta \right)\,{\left(\dot{\gamma_1}\right)}^2}{2}-\frac{L\,\sin\left(\psi \right)\,{\left(\dot{\gamma_2}\right)}^2\,\left(\sin\left(\theta \right)+2\right)}{2}+\frac{L\,\cos\left(\psi \right)\,\left(\sin\left(\theta \right)+2\right)\,\ddot{\gamma_2}}{2}+L\,\cos\left(\psi \right)\,\cos\left(\theta \right)\,\dot{\gamma_2}\,\dot{\gamma_1}\\
-  \frac{L\,\sin\left(\theta \right)\,\ddot{\gamma_1}}{2}+\frac{L\,\cos\left(\theta \right)\,{\left(\dot{\gamma_1}\right)}^2}{2} \end{array}\right>$$
+  \frac{L\,\sin\left(\theta \right)\,\ddot{\gamma_1}}{2}+\frac{L\,\cos\left(\theta \right)\,{\left(\dot{\gamma_1}\right)}^2}{2} \end{array}\right>}$$
 
 
 To convert this acceleration into the body frame, we will define the following inertial to body rotation:
@@ -236,11 +243,11 @@ $$ R_{XYZ}^{xyz} = \left[\begin{array}{ccc} \cos\left(\psi \right)\,\cos\left(\t
 
 We can compute the acceleration term as:
 
-$$ \bar{a}_G = R_{XYZ}^{xyz} \bar{a}_G =  \left<
+$$ \bar{a}_G = R_{XYZ}^{xyz} \bar{a}_G =  {\footnotesize\left<
   \begin{array}{c}
     \frac{L\,\cos\left(2\,\theta \right)\,\ddot{\gamma_1}}{2}-\frac{L\,\sin\left(2\,\theta \right)\,{\left(\dot{\gamma_1}\right)}^2}{2}-\frac{L\,\sin\left(2\,\theta \right)\,{\left(\dot{\gamma_2}\right)}^2}{4}-L\,\cos\left(\theta \right)\,{\left(\dot{\gamma_2}\right)}^2\\
     L\,\ddot{\gamma_2}+\frac{L\,\sin\left(\theta \right)\,\ddot{\gamma_2}}{2}+L\,\cos\left(\theta \right)\,\dot{\gamma_2}\,\dot{\gamma_1}\\
-    \frac{L\,\left(2\,{\cos\left(\theta \right)}^2-1\right)\,{\left(\dot{\gamma_1}\right)}^2}{2}-L\,\sin\left(\theta \right)\,{\left(\dot{\gamma_2}\right)}^2-\frac{L\,{\left(\dot{\gamma_2}\right)}^2}{4}+\frac{L\,\left(2\,{\cos\left(\theta \right)}^2-1\right)\,{\left(\dot{\gamma_2}\right)}^2}{4}+L\,\cos\left(\theta \right)\,\sin\left(\theta \right)\,\ddot{\gamma_1} \end{array}\right>$$
+    \frac{L\,\left(2\,{\cos\left(\theta \right)}^2-1\right)\,{\left(\dot{\gamma_1}\right)}^2}{2}-L\,\sin\left(\theta \right)\,{\left(\dot{\gamma_2}\right)}^2-\frac{L\,{\left(\dot{\gamma_2}\right)}^2}{4}+\frac{L\,\left(2\,{\cos\left(\theta \right)}^2-1\right)\,{\left(\dot{\gamma_2}\right)}^2}{4}+L\,\cos\left(\theta \right)\,\sin\left(\theta \right)\,\ddot{\gamma_1} \end{array}\right>}$$
 
 The Gibbs-Appell function for the system is given by:
 
@@ -251,8 +258,15 @@ $$ S = \frac{1}{2}m \left(\bar{a}_G \cdot \bar{a}_G \right)
 
 The first term of $S$ is computed as:
 
-$$ \frac{1}{2}m \left(\bar{a}_G \cdot \bar{a}_G \right) =
-\frac{1}{2}m\,\left[{\left(L\,\ddot{\gamma_2}+\frac{L\,\sin\left(\theta \right)\,\ddot{\gamma_2}}{2}+L\,\cos\left(\theta \right)\,\dot{\gamma_2}\,\dot{\gamma_1}\right)}^2+{\left(L\,\cos\left(\theta \right)\,{\left(\dot{\gamma_2}\right)}^2+\frac{L\,\sin\left(2\,\theta \right)\,{\left(\dot{\gamma_1}\right)}^2}{2}+\frac{L\,\sin\left(2\,\theta \right)\,{\left(\dot{\gamma_2}\right)}^2}{4}-\frac{L\,\cos\left(2\,\theta \right)\,\ddot{\gamma_1}}{2}\right)}^2+{\left(\frac{L\,\left(2\,{\cos\left(\theta \right)}^2-1\right)\,{\left(\dot{\gamma_1}\right)}^2}{2}-L\,\sin\left(\theta \right)\,{\left(\dot{\gamma_2}\right)}^2-\frac{L\,{\left(\dot{\gamma_2}\right)}^2}{4}+\frac{L\,\left(2\,{\cos\left(\theta \right)}^2-1\right)\,{\left(\dot{\gamma_2}\right)}^2}{4}+L\,\cos\left(\theta \right)\,\sin\left(\theta \right)\,\ddot{\gamma_1}\right)}^2\right] $$
+\begin{equation*}
+  \begin{aligned}
+    \frac{1}{2}m \left(\bar{a}_G \cdot \bar{a}_G \right) =
+\frac{1}{2}m\,&{\left(L\,\ddot{\gamma_2}+\frac{L\,\sin\left(\theta \right)\,\ddot{\gamma_2}}{2}+L\,\cos\left(\theta \right)\,\dot{\gamma_2}\,\dot{\gamma_1}\right)}^2 \\
+&+{\frac{1}{2}m\,\left(L\,\cos\left(\theta \right)\,{\left(\dot{\gamma_2}\right)}^2+\frac{L\,\sin\left(2\,\theta \right)\,{\left(\dot{\gamma_1}\right)}^2}{2}+\frac{L\,\sin\left(2\,\theta \right)\,{\left(\dot{\gamma_2}\right)}^2}{4}-\frac{L\,\cos\left(2\,\theta \right)\,\ddot{\gamma_1}}{2}\right)}^2\\
+&+\frac{1}{2}m\,\left(\frac{L\,\left(2\,{\cos\left(\theta \right)}^2-1\right)\,{\left(\dot{\gamma_1}\right)}^2}{2}-L\,\sin\left(\theta \right)\,{\left(\dot{\gamma_2}\right)}^2-\frac{L\,{\left(\dot{\gamma_2}\right)}^2}{4}\right.\\
+&\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\left.\frac{L\,\left(2\,{\cos\left(\theta \right)}^2-1\right)\,{\left(\dot{\gamma_2}\right)}^2}{4}+L\,\cos\left(\theta \right)\,\sin\left(\theta \right)\,\ddot{\gamma_1}\right)^2
+\end{aligned}
+\end{equation*}
 
 The angular velocity vector of the system is in the body frame is, by inspection:
 
@@ -304,12 +318,57 @@ Imposing the constraint that $\dot{\gamma_2} = c\ \theta $ and $\ddot{\gamma_2} 
 
 \begin{equation*}
   \begin{aligned}
-    \frac{\partial S}{\partial \ddot{\gamma_1}} &= \frac{L^2\,m\,\ddot{\gamma_1}}{3}-\frac{L^2\,c^2\,m\,\sin\left(\theta \right)cos\left(\theta \right)\,{\gamma _{1}}^2}{3}-\frac{L^2\,c^2\,m\,\cos\left(\theta \right)\,{\gamma _{1}}^2}{2} \\
-    \frac{\partial S}{\partial \ddot{\gamma_2}} &= I_{2}\,c\,\dot{\gamma_1}+\frac{4\,L^2\,c\,m\,\dot{\gamma_1}}{3}-\frac{L^2\,c\,m\,{\cos\left(\theta \right)}^2\,\dot{\gamma_1}}{3}+L^2\,c\,m\,\sin\left(\theta \right)\,\dot{\gamma_1}\\
-    & \ \ \ \ \ \ \ +\frac{2 L^2\,c\,m\,\sin\left(\theta \right)cos\left(\theta \right)\,\gamma _{1}\,\dot{\gamma_1}}{3}+L^2\,c\,m\,\cos\left(\theta \right)\,\gamma _{1}\,\dot{\gamma_1}
+    \frac{\partial S}{\partial \ddot{\gamma_1}} &= \frac{1}{3}L^2\,m\,\ddot{\gamma_1}-\frac{1}{3}L^2\,c^2\,m\,\sin\left(\theta \right)cos\left(\theta \right)\,{\gamma _{1}}^2-\frac{1}{2}L^2\,c^2\,m\,\cos\left(\theta \right)\,{\gamma _{1}}^2 \\
+    \frac{\partial S}{\partial \ddot{\gamma_2}} &= I_{2}\,c\,\dot{\gamma_1}+\frac{4}{3}\,L^2\,c\,m\,\dot{\gamma_1}-\frac{1}{3}L^2\,c\,m\,{\cos\left(\theta \right)}^2\,\dot{\gamma_1}+L^2\,c\,m\,\sin\left(\theta \right)\,\dot{\gamma_1}\\
+    & \ \ \ \ \ \ \ +\frac{2}{3} L^2\,c\,m\,\sin\left(\theta \right)cos\left(\theta \right)\,\gamma _{1}\,\dot{\gamma_1}+L^2\,c\,m\,\cos\left(\theta \right)\,\gamma _{1}\,\dot{\gamma_1}
   \end{aligned}
 \end{equation*}
 
+Further simplifyng:
+
+\begin{equation*}
+  \begin{aligned}
+    \frac{\partial S}{\partial \ddot{\gamma_1}} &= \frac{1}{3}L^2\,m\,\ddot{\gamma_1}-L^2\,c^2\,m\,\cos\left(\theta \right)\,{\gamma _{1}}^2\left(\frac{1}{2}+\frac{1}{3}\sin\left(\theta \right) \right) = \Gamma_1\\
+    \frac{\partial S}{\partial \ddot{\gamma_2}} &= I_{2}\,c\,\dot{\gamma_1}+\,L^2\,c\,m\,\left(1+\sin\left(\theta \right)+\frac{1}{3}{\sin\left(\theta \right)}^2\,\right)\dot{\gamma_1}
+    + L^2\,c\,m\,\cos\left(\theta \right)\left(1+\frac{2}{3} cos\left(\theta \right)\right)\,\gamma _{1}\,\dot{\gamma_1} = \Gamma_2
+  \end{aligned}
+\end{equation*}
+
+Solving for $\Gamma_j$ based on the generalized forces:
+
+$$ \delta W = \bar{\Gamma} \cdot \delta \bar{\gamma} = \left[\begin{array}{r}
+  -m\,g\,\frac{L}{2}\sin(\theta)\ \delta \gamma_1\\
+  \Gamma\ \delta \gamma_2
+  \end{array}\right]  $$
+
+Therefore, the equations of motion for the system are:
+
+\begin{equation*}
+  \begin{aligned}
+      \frac{1}{3}L^2\,m\,\ddot{\gamma_1}-L^2\,c^2\,m\,\cos\left(\theta \right)\,{\gamma _{1}}^2\left(\frac{1}{2}+\frac{1}{3}\sin\left(\theta \right) \right) &= -m\,g\,\frac{L}{2}\sin(\theta)\\
+      I_{2}\,c\,\dot{\gamma_1}+\,L^2\,c\,m\,\left(1+\sin\left(\theta \right)+\frac{1}{3}{\sin\left(\theta \right)}^2\,\right)\dot{\gamma_1}
+      + L^2\,c\,m\,\cos\left(\theta \right)\left(1+\frac{2}{3} \cos\left(\theta \right)\right)\,\gamma _{1}\,\dot{\gamma_1} &= \Gamma
+  \end{aligned}
+\end{equation*}
+
+The equations of motion after simplification are:
+
+\begin{answer}
+  \begin{equation*}
+    \begin{aligned}
+        \frac{1}{3}\ddot{\gamma_1}-\,c^2\,\cos\left(\theta \right)\,{\gamma _{1}}^2\left(\frac{1}{2}+\frac{1}{3}\sin\left(\theta \right) \right) &= -\frac{g}{2L}\sin(\theta)\\
+        \frac{1}{\,L^2\,m\,}I_{2}\dot{\gamma_1}+\left(1+\sin\left(\theta \right)+\frac{1}{3}{\sin\left(\theta \right)}^2\,\right)\dot{\gamma_1}
+        + \cos\left(\theta \right)\left(1+\frac{2}{3} \cos\left(\theta \right)\right)\,\gamma _{1}\,\dot{\gamma_1} &= \frac{1}{\,L^2\,c\,m\,}\Gamma
+    \end{aligned}
+  \end{equation*}
+\end{answer}
+
+The following MATLAB script was used to solve this problem:
+
+% \color{white}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize,lastline=61]{matlab}
+{./matlab/Problem_2.m}
+% \color{black} 
 
 % % \color{white}
 % \hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize,lastline=51]{matlab}
