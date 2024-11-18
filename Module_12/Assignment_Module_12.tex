@@ -197,15 +197,50 @@ Solving for the equations of motion along the generalized coordinate, $q_1$:
 
 $$ \frac{d}{d t} \left( \frac{\partial L}{\partial \dot{q}_1}\right) - \frac{\partial L}{\partial q_1} = 0 $$
 
+The constituent components are:
+
+$$ \frac{\partial L}{\partial \dot{q}_1} = \frac{L}{2}\,\mu \,\dot{q_1}  $$
+$$ \frac{d}{d t} \left( \frac{\partial L}{\partial \dot{q}_1}\right) = \frac{L}{2}\,\mu \,\ddot{q_1}  $$
+$$ \frac{\partial L}{\partial {q}_1} = \frac{F}{16\,L^3 }\,\pi^2 \,q_1 \,{\left(-8\,L^2 +3\,\pi^2 \,{q_1 }^2 +24\,\pi^2 \,{q_2 }^2 \right)}-\frac{2\,L\,g\,\mu }{\pi } $$
+
+We get the equation of motion:
+
+$$ L\,\mu \,\ddot{q_1}
++\frac{4}{\pi }\,L\,g\,\mu
+-\frac{F}{8\,L^3 }\,\pi^2 \,q_1 \,{\left(3\,\pi^2 \,{q_1 }^2+24\,\pi^2 \,{q_2 }^2-8\,L^2 \right)} = 0 $$
+
+Solving for the equations of motion along the generalized coordinate, $q_2$:
+
+$$ \frac{d}{d t} \left( \frac{\partial L}{\partial \dot{q}_2}\right) - \frac{\partial L}{\partial q_2} = 0 $$
+
+The constituent components are:
+
+$$ \frac{\partial L}{\partial \dot{q}_2} = \frac{L}{2}\,\mu \,\dot{q_2} $$
+$$ \frac{d}{d t} \left( \frac{\partial L}{\partial \dot{q}_2}\right) =
+\frac{L}{2}\,\mu \,\ddot{q_2} $$
+$$ \frac{\partial L}{\partial {q}_2} = \frac{F}{2\,L^3 }\,\pi^2 \,q_2 \,{\left(-4\,L^2 +3\,\pi^2 \,{q_1 }^2 +6\,\pi^2 \,{q_2 }^2 \right)} $$
+
+We get the equation of motion:
+
+$$ L\,\mu \,\ddot{q_2}-\frac{F}{L^3 }\,\pi^2 \,q_2 \,{\left(3\,\pi^2 \,{q_1 }^2 +6\,\pi^2 \,{q_2 }^2-4\,L^2 \right)} = 0 $$
+
+Together the differential equations governing the two-term Ritz series are:
+
+\begin{answer}
 \begin{equation*}
   \begin{aligned}
-    \frac{\partial L}{\partial \dot{q}_1} &= \\
-    \frac{d}{d t} \left( \frac{\partial L}{\partial \dot{q}_1}\right) &= \\
-    \frac{\partial L}{\partial {q}_1} &= 
+    L\,\mu \,\ddot{q_1} &+ \frac{4}{\pi }\,L\,g\,\mu - \frac{F}{8\,L^3 }\,\pi^2 \,q_1 \,{\left(3\,\pi^2 \,{q_1 }^2+24\,\pi^2 \,{q_2 }^2-8\,L^2 \right)} = 0 \\
+    L\,\mu \,\ddot{q_2} &- \frac{F}{L^3 }\,\pi^2 \,q_2 \,{\left(3\,\pi^2 \,{q_1 }^2 +6\,\pi^2 \,{q_2 }^2-4\,L^2 \right)} = 0
   \end{aligned}
 \end{equation*}
+\end{answer}
 
+The following MATLAB script was used to solve this problem:
 
+% \color{white}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize,lastline=22]{matlab}
+{./matlab/Problem_2.m}
+% \color{black} 
 
 % \begin{equation*}
 %   \begin{aligned}
