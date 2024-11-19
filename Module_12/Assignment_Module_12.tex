@@ -132,6 +132,11 @@ With a natural boundary condition of:
   $$ \left. F \left( w' - \frac{1}{2}(w')^3 \right)\delta w \right|_{x = 0}^{x = L} = 0 $$
 \end{answer}
 
+\begin{answer}
+Since both ends are fixed,
+the geometric boundary condition exists that $w(0,t) = 0$ and $w(L,t) = 0$.
+\end{answer}
+
 \subsection*{Problem 2: Solve Ginsberg 9.7}
 \subsubsection*{It is desired to use the Ritz series method to derive approximate equations describing the effects of nonlinearity in the vibration of the stretched cable in Exercise 9.1.
 Both ends are stationary,
@@ -233,6 +238,12 @@ Together the differential equations governing the two-term Ritz series are:
     L\,\mu \,\ddot{q_2} &- \frac{F}{L^3 }\,\pi^2 \,q_2 \,{\left(3\,\pi^2 \,{q_1 }^2 +6\,\pi^2 \,{q_2 }^2-4\,L^2 \right)} = 0
   \end{aligned}
 \end{equation*}
+\end{answer}
+
+\begin{answer}
+  As stated in the problem prompt,
+  since both ends are fixed,
+  the geometric boundary condition exists that $w(0,t) = 0$ and $w(L,t) = 0$.
 \end{answer}
 
 The following MATLAB script was used to solve this problem:
