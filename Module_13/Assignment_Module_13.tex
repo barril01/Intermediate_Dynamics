@@ -97,7 +97,7 @@ $$ \omega_b = \textbf{vect}\left(  R^T \dot{R} \right) =
 The following MATLAB script was used to solve this problem:
 
 % \color{white}
-\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize,lastline=35]{matlab}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize,lastline=32]{matlab}
 {./matlab/Problem_1.m}
 % \color{black} 
 
@@ -112,32 +112,114 @@ The following MATLAB script was used to solve this problem:
 \subsubsection*{A football of mass m is flying at a velocity of 25 m/s along the y-axis of the body fixed frame.
 The radii of gyration about the axes of the body-fixed frame are 40 mm and 70 mm along the $\bm{x}$-/$\bm{z}$-and the $\bm{y}$-axis, respectively.}
 
-According to the appendix of the textbook,
-the centriodal inertia properties of the football are:
+The inertia properties of the football, given the radii of gyration given in the prompt are are:
 
 \begin{equation*}
   \begin{aligned}
-    I
+    I_b
     &= \left[\begin{array}{ccc}
-      \frac{1}{5} m (r_y^2+r_z^2) & 0 & 0\\
-      0 & \frac{1}{5} m (r_x^2+r_z^2) & 0\\
-      0 & 0 & \frac{1}{5} m (r_x^2+r_y^2)
+      m (0.04)^2 & 0 & 0\\
+      0 & m (0.07)^2 & 0\\
+      0 & 0 & m (0.04)^2
       \end{array}\right]\\
-    &= \left[\begin{array}{ccc}
-            0.0041\,m & 0 & 0\\
-            0 & 0.0013\,m & 0\\
-            0 & 0 & 0.0034\,m
-            \end{array}\right]
+    &= m\left[\begin{array}{ccc} 0.0016 & 0 & 0\\ 0 & 0.0049 & 0\\ 0 & 0 & 0.0016 \end{array}\right]
   \end{aligned}
 \end{equation*}
 
 \subsubsection*{(a) Compute the kinetic energy of the ball.
 Use the $\bm{ZYZ}$ Euler angles to represent the orientation of the ball.}
 
+The translational kinetic energy is computed as:
+
+$$ T_\text{trans} = \frac{1}{2}m\left( v \cdot v \right) $$
+
+Where $v = [0,25,0]^T$ m/s, the translational kinetic energy is:
+
+$$ T_\text{trans} = 312.5\,m \ \ \left[\text{kg}\left(\frac{\text{m}}{\text{s}}\right)^2\right] =  312.5\,m \ \ \left[\text{J}\right] $$
+
+Using the $ZYZ$ Euler angles to represent the orientation of the ball:
+
+
+\begin{equation*}
+  \begin{aligned}
+    R_{ZYZ} &= R_{Z}(\psi) R_{Y}(\theta) R_{Z}(\phi) \\
+    &= \left[\begin{array}{ccc} \cos\left(\psi \right) & -\sin\left(\psi \right) & 0\\ \sin\left(\psi \right) & \cos\left(\psi \right) & 0\\ 0 & 0 & 1 \end{array}\right]
+    \left[\begin{array}{ccc} \cos\left(\theta \right) & 0 & \sin\left(\theta \right)\\ 0 & 1 & 0\\ -\sin\left(\theta \right) & 0 & \cos\left(\theta \right) \end{array}\right]
+    \left[\begin{array}{ccc} \cos\left(\phi \right) & -\sin\left(\phi \right) & 0\\ \sin\left(\phi \right) & \cos\left(\phi \right) & 0\\ 0 & 0 & 1 \end{array}\right]\\
+    &= \footnotesize{\left[\begin{array}{ccc}
+      \cos \left(\phi \right)\,\cos \left(\psi \right)\,\cos \left(\theta \right)-\sin \left(\phi \right)\,\sin \left(\psi \right) & -\cos \left(\phi \right)\,\sin \left(\psi \right)-\cos \left(\psi \right)\,\cos \left(\theta \right)\,\sin \left(\phi \right) & \cos \left(\psi \right)\,\sin \left(\theta \right)\\
+      \cos \left(\psi \right)\,\sin \left(\phi \right)+\cos \left(\phi \right)\,\cos \left(\theta \right)\,\sin \left(\psi \right) & \cos \left(\phi \right)\,\cos \left(\psi \right)-\cos \left(\theta \right)\,\sin \left(\phi \right)\,\sin \left(\psi \right) & \sin \left(\psi \right)\,\sin \left(\theta \right)\\
+      -\cos \left(\phi \right)\,\sin \left(\theta \right) & \sin \left(\phi \right)\,\sin \left(\theta \right) & \cos \left(\theta \right)
+      \end{array}\right]}
+  \end{aligned}
+\end{equation*}
+
+
+Where computing the body angular velocity:
+
+$$ \omega_b = \textbf{vect}\left(  R^T \dot{R} \right) =
+\left<\begin{array}{c} \sin\left(\phi \right)\,\dot{\theta} -\cos\left(\phi \right)\,\sin\left(\theta \right)\,\dot{\psi} \\ \cos\left(\phi \right)\,\dot{\theta} +\sin\left(\phi \right)\,\sin\left(\theta \right)\,\dot{\psi} \\ \cos\left(\theta \right)\,\dot{\psi} +\dot{\phi}  \end{array}\right>$$
+
+The rotational kinetic energy is computed as:
+
+\begin{equation*}
+  \begin{aligned}
+    T_\text{rot} &= \frac{1}{2} \omega_b^T I_b\, \omega_b \\
+      &= \frac{m}{20000}\left(16\,\dot{\phi}^2+49\,\,\dot{\psi}^2+16\,\dot{\theta}^2-33\,\,{\cos\left(\phi \right)}^2\,\dot{\psi}^2+33\,\,{\cos\left(\phi \right)}^2\,\dot{\theta}^2-33\,\,{\cos\left(\theta \right)}^2\,\dot{\psi}^2\right. \\
+      & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left.+33\,\,{\cos\left(\phi \right)}^2\,{\cos\left(\theta \right)}^2\,\dot{\psi}^2+32\,\cos\left(\theta \right)\,\dot{\psi} \,\dot{\phi} +66\,\,\cos\left(\phi \right)\,\sin\left(\phi \right)\,\sin\left(\theta \right)\,\dot{\theta} \,\dot{\psi}\right)
+  \end{aligned}
+\end{equation*}
+
+The total kinetic energy is:
+
+\begin{answer}
+\begin{equation*}
+  \begin{aligned}
+    T &= T_\text{trans} + T_\text{rot} \\
+      &= 312.5\,m \ +\\
+      & \ \ \ \ \  \frac{m}{20000}\left(16\,\dot{\phi}^2+49\,\,\dot{\psi}^2+16\,\dot{\theta}^2-33\,\,{\cos\left(\phi \right)}^2\,\dot{\psi}^2+33\,\,{\cos\left(\phi \right)}^2\,\dot{\theta}^2\right. \\ 
+      & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -33\,\,{\cos\left(\theta \right)}^2\,\dot{\psi}^2 +33\,\,{\cos\left(\phi \right)}^2\,{\cos\left(\theta \right)}^2\,\dot{\psi}^2+32\,\cos\left(\theta \right)\,\dot{\psi} \,\dot{\phi} \\
+      & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left. +66\,\,\cos\left(\phi \right)\,\sin\left(\phi \right)\,\sin\left(\theta \right)\,\dot{\theta} \,\dot{\psi}\right)
+  \end{aligned}
+\end{equation*}
+\end{answer}
 
 \subsubsection*{(b) If the ball is spinning about the y-axis of the body-fixed frame at 5 rev/s,
 as shown in the figure,
 what is the kinetic energy?}
+
+If the ball is spinning about the y-axis of the body-fixed frame at 5 rev/s,
+as shown in the figure, we can state that the body angular velocity is:
+
+$$ \omega_b = \left<\begin{array}{c} 0 \\ 5 \\ 0  \end{array}\right>\ \  \left[\frac{\text{rev}}{\text{s}} \right] =
+\left<\begin{array}{c} 0 \\ 10 \pi \\ 0  \end{array}\right>\ \  \left[\frac{\text{rad}}{\text{s}} \right]$$
+
+For this body rate, the rotational kinetic energy is:
+
+\begin{equation*}
+  \begin{aligned}
+    T_\text{rot} &= \frac{1}{2} \omega_b^T I_b\, \omega_b \\
+      &= 0.245\,m\,\pi^2 \ \ \left[\text{kg}\left(\frac{\text{m}}{\text{s}}\right)^2\right]\\
+      &= 0.245\,m\,\pi^2 \ \ \left[ J \right]
+  \end{aligned}
+\end{equation*}
+
+The pairing this with the translational kinetic energy from part (a), the total kinetic energy is:
+
+\begin{answer}
+\begin{equation*}
+  \begin{aligned}
+    T = T_\text{trans} + T_\text{rot} = \left(312.5\,m +  0.245\,m\,\pi^2\right) \ \  \left[ J \right]
+  \end{aligned}
+\end{equation*}
+\end{answer}
+
+The following MATLAB script was used to solve this problem:
+
+% \color{white}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize,lastline=48]{matlab}
+{./matlab/Problem_2.m}
+% \color{black} 
 
 % \begin{equation*}
 %   \begin{aligned}
