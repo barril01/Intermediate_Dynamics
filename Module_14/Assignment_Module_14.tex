@@ -25,7 +25,8 @@
 \definecolor{header-blue}{rgb}{0,0,0.7}
 % \definecolor{header-blue}{rgb}{0.5137,0.8353,0.9176}
 \definecolor{header-blue}{rgb}{0,0.8,0.95}
-\definecolor{dark-gray}{rgb}{0.1,0.1,0.1}
+%\definecolor{dark-gray}{rgb}{0.1,0.1,0.1}
+\definecolor{dark-gray}{rgb}{0.07,0.07,0.07}
 \pagecolor{dark-gray}
 \color{white}
 
@@ -159,6 +160,29 @@ This evaluates to::
 
 $$ L = \frac{1}{2}\textrm{I}\,{{\dot{\theta} }}^2 +\frac{1}{2}m\,{{\dot{x}}}^2 +\frac{1}{2}m\,{{\dot{y}}}^2 $$
 
+Solving for the generalized forces, the virtual work for the system is:
+
+\begin{equation*}
+  \begin{aligned}
+    \delta W &= \sum_{j=1}^N Q_j \delta q_j \\
+             &= F_1 \cdot \delta r + F_2 \cdot \delta r + M \cdot \delta \theta \\
+             &= \left( F_1 + F_2 \right) \cdot \left< \begin{array}{ccc} \delta x \\ \delta y \end{array} \right> + M \cdot \delta \theta \\
+             &= \left( F_1 + F_2 \right) \cdot I\ \delta x + \left( F_1 + F_2 \right) \cdot J\ \delta y + \left(r_{A/G} \times F_1 + r_{B/G} \times F_2\right) \delta \theta
+  \end{aligned}
+\end{equation*}
+
+Therefore, the generalized forces are:
+
+\begin{equation*}
+  \begin{aligned}
+      Q_x &= \left( F_1 + F_2 \right) \cdot I\\
+      Q_y &= \left( F_1 + F_2 \right) \cdot J\\
+      Q_\theta &= \left(r_{A/G} \times F_1 + r_{B/G} \times F_2\right)
+  \end{aligned}
+\end{equation*}
+
+Because the forces were not provided as vectors, I cannot describe the terms more precisely.
+\\\\
 Solving for the equations of motion along the generalized coordinate, $x$:
 
 $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{x}} - \frac{\partial L}{\partial x} = 
@@ -175,8 +199,7 @@ m\,\dot{x} $$
 $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{x}} =
  m\,\ddot{x} $$
 
- This results in the equation of motion,
- where $Q_{x} = \sum_{k=1}^{N=3} F_{k} \frac{\partial r_k }{\partial x} = \left( F_1 + F_2 \right) \cdot I$ :
+ This results in the equation of motion:
  
  $$ m\,\ddot{x} =
  \left( F_1 + F_2 \right) \cdot I -\sin \left(\theta \right) \lambda_1 $$
@@ -197,8 +220,7 @@ $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{x}} =
  $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{y}} =
 m\,\ddot{y} $$
  
-This results in the equation of motion,
-where $Q_{y} = \sum_{k=1}^{N=3} F_{k} \frac{\partial r_k }{\partial y} = \left( F_1 + F_2 \right) \cdot J$ :
+This results in the equation of motion:
   
 $$ m\,\ddot{y} =
 \left( F_1 + F_2 \right) \cdot J +\cos \left(\theta \right) \lambda_1 $$
@@ -219,8 +241,7 @@ $$ \frac{\partial L}{\partial \dot{\theta}}  =
 $$ \frac{d}{d t} \frac{\partial L}{\partial \dot{\theta}} =
 \textrm{I}\,\ddot{\theta}  $$
 
- This results in the equation of motion,
- where $Q_{\theta} = \sum_{k=1}^{N=3} F_{k} \frac{\partial r_k }{\partial \theta} = r_{A/G} \times F_1 + r_{B/G} \times F_2 $ :
+ This results in the equation of motion:
  
  $$ \textrm{I}\,\ddot{\theta}  =
  r_{A/G} \times F_1 + r_{B/G} \times F_2 + L \lambda_1 $$
@@ -240,7 +261,7 @@ The Lagrange equations of motion are:
 The following MATLAB script was used to solve this problem:
 
 % \color{white}
-\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize,lastline=50]{matlab}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\scriptsize,lastline=50]{matlab}
 {./matlab/Problem_1.m}
 % \color{black} 
 
@@ -342,7 +363,7 @@ s\,\sin \left(\psi \right)\,\sin \left(\theta \right)\,\dot{\psi} \\
 0
 \end{array}\right> $$
 
-This results in the same kinetic energy equation as in part a:
+This results in the same kinetic energy equation as in part (a):
 
 \begin{answer}
   $$ T = \frac{1}{2}I_{z}\,\left(\dot{\phi} +\cos\left(\theta \right)\,\dot{\psi} \right)+\frac{1}{2}I_{x}\,\sin \left(\theta \right)^2\,\dot{\psi}^2+\frac{1}{2}M\,s^2\,\sin \left(\theta \right)^2\,\dot{\psi}^2 $$
@@ -351,7 +372,7 @@ This results in the same kinetic energy equation as in part a:
 The following MATLAB script was used to solve this problem:
 
 % \color{white}
-\hspace*{6em}\inputminted[frame=leftline,fontsize=\footnotesize,lastline=42]{matlab}
+\hspace*{6em}\inputminted[frame=leftline,fontsize=\scriptsize,lastline=42]{matlab}
 {./matlab/Problem_2.m}
 % \color{black} 
  

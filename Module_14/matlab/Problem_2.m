@@ -3,7 +3,7 @@ syms t psi(t) theta phi(t) s M L
 
 R = simplify(zRot(psi)*xRot(theta)*zRot(phi)) %[output:35ab0f9c]
 
-r = R*[0;0;s] %+ [L;0;0] % Comment second term for part (b) %[output:347c8fcc]
+r = R*[0;0;s]+ [L;0;0] % Comment second term for part (b) %[output:347c8fcc]
 syms x(t) y(t) z(t)
 
 v = diff(r,t) %[output:87e8cbe2]
@@ -50,7 +50,7 @@ end
 %   data: {"dataType":"symbolic","outputData":{"name":"R(t)","value":"\\left(\\begin{array}{ccc}\n\\cos \\left(\\phi \\left(t\\right)\\right)\\,\\cos \\left(\\psi \\left(t\\right)\\right)-\\sin \\left(\\phi \\left(t\\right)\\right)\\,\\sin \\left(\\psi \\left(t\\right)\\right)\\,\\cos \\left(\\theta \\right) & -\\cos \\left(\\psi \\left(t\\right)\\right)\\,\\sin \\left(\\phi \\left(t\\right)\\right)-\\cos \\left(\\phi \\left(t\\right)\\right)\\,\\sin \\left(\\psi \\left(t\\right)\\right)\\,\\cos \\left(\\theta \\right) & \\sin \\left(\\psi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right)\\\\\n\\cos \\left(\\phi \\left(t\\right)\\right)\\,\\sin \\left(\\psi \\left(t\\right)\\right)+\\cos \\left(\\psi \\left(t\\right)\\right)\\,\\sin \\left(\\phi \\left(t\\right)\\right)\\,\\cos \\left(\\theta \\right) & \\cos \\left(\\phi \\left(t\\right)\\right)\\,\\cos \\left(\\psi \\left(t\\right)\\right)\\,\\cos \\left(\\theta \\right)-\\sin \\left(\\phi \\left(t\\right)\\right)\\,\\sin \\left(\\psi \\left(t\\right)\\right) & -\\cos \\left(\\psi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right)\\\\\n\\sin \\left(\\phi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right) & \\cos \\left(\\phi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right) & \\cos \\left(\\theta \\right)\n\\end{array}\\right)"}}
 %---
 %[output:347c8fcc]
-%   data: {"dataType":"symbolic","outputData":{"name":"r(t)","value":"\\left(\\begin{array}{c}\ns\\,\\sin \\left(\\psi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right)\\\\\n-s\\,\\cos \\left(\\psi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right)\\\\\ns\\,\\cos \\left(\\theta \\right)\n\\end{array}\\right)"}}
+%   data: {"dataType":"symbolic","outputData":{"name":"r(t)","value":"\\left(\\begin{array}{c}\nL+s\\,\\sin \\left(\\psi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right)\\\\\n-s\\,\\cos \\left(\\psi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right)\\\\\ns\\,\\cos \\left(\\theta \\right)\n\\end{array}\\right)"}}
 %---
 %[output:87e8cbe2]
 %   data: {"dataType":"symbolic","outputData":{"name":"v(t)","value":"\\left(\\begin{array}{c}\ns\\,\\cos \\left(\\psi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right)\\,\\frac{\\partial }{\\partial t}\\;\\psi \\left(t\\right)\\\\\ns\\,\\sin \\left(\\psi \\left(t\\right)\\right)\\,\\sin \\left(\\theta \\right)\\,\\frac{\\partial }{\\partial t}\\;\\psi \\left(t\\right)\\\\\n0\n\\end{array}\\right)"}}
